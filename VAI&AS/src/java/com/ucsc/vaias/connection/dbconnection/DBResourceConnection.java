@@ -5,10 +5,16 @@
  */
 package com.ucsc.vaias.connection.dbconnection;
 
+import com.ucsc.vaias.connection.ResourceConnection;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  *
  * @author sajja
  */
-public interface DBResourceConnection {
-    
+public interface DBResourceConnection extends ResourceConnection {
+
+    public Connection getConnection() throws ClassNotFoundException, SQLException;
+
 }

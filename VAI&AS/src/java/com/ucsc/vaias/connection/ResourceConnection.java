@@ -10,5 +10,7 @@ package com.ucsc.vaias.connection;
  * @author sajja
  */
 public interface ResourceConnection {
-    
+
+    public Object getConnection() throws Exception;
+
 }
