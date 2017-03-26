@@ -39,6 +39,8 @@
             });
         </script>
 
+
+
     </head>
 
     <body>
@@ -82,7 +84,7 @@
                             </li>
                             <li><a href="#demo">demo</a>
                             </li>
-                            <li><a class="getApp" href="#getApp">get app</a>
+                            <li><a class="getApp" id="profileButton" href="#getApp">Profile</a>
                             </li>
                             <li><a href="support.jsp">support</a>
                             </li>
@@ -96,8 +98,9 @@
 
             <!--RevSlider-->
             <div id="banner"  style="height: 150px;">
-              
             </div>
+
+
 
             <div id="map" style="height: 700px;width: 100%;"></div>
             <script>
@@ -120,7 +123,7 @@
 
         </header>
 
-
+        <div id="viewprofile" style="display: none"><jsp:include page="profileview.jsp" /></div>
         <div class="wrapper">
             <footer>
                 <div class="container">
@@ -141,6 +144,19 @@
             <script>
                 $('#banner').css('background-image', 'url(assets/img/freeze/bk-freeze.jpg)');
                 $('#banner').css('height', '140px');
+            </script>
+
+
+            <script>
+                $('#profileButton').click(function () {
+                    $('#viewprofile').toggle("slow");
+                });
+
+                $('#profileButton').click(function () {
+                    $('#map').hide("slow");
+                });
+
+
             </script>
         </div>
 
