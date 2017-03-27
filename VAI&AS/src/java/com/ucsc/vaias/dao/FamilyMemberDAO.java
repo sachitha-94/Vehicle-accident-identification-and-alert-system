@@ -9,6 +9,6 @@ package com.ucsc.vaias.dao;
  *
  * @author sajja
  */
-public interface NewInterface {
+public interface FamilyMemberDAO {
     
 }
