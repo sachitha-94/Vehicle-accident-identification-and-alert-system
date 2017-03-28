@@ -9,6 +9,6 @@ package com.ucsc.vaias.service;
  *
  * @author sajja
  */
-public interface NewInterface {
+public interface FamilyMemberService {
     
 }
