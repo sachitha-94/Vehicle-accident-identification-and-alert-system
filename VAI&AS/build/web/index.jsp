@@ -155,7 +155,13 @@
                 $('#profileButton').click(function () {
                     $('#map').hide("slow");
                 });
-
+                
+                $('#close').click(function () {
+                    $('#viewprofile').hide("slow");
+                });
+                $('#close').click(function () {
+                    $('#map').toggle("slow");
+                });
 
             </script>
         </div>
