@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="shortcut icon" href="favicon.png">
-    
+            
     <!-- Bootstrap 3.3.2 -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     
@@ -47,45 +47,52 @@
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
                                 <form role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your name">
+                                        
+                                        <input type="text" class="form-control" placeholder="User ID" name="uid">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Your email">
+                                        <input type="text" class="form-control" placeholder="NIC" name="nic">
                                     </div>
                                     <div class="form-group">
-                                        <textarea cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                                        <input type="text" class="form-control" placeholder="Gender" name="gender">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name" name="fname">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name" name="lname">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="TP Home" name="tphome">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="TP Mobile" name="tpmobile">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="TP Home" name="tphome">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Address" name="tpmobile">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="License No" name="licenseno">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Blood Group" name="bloodgroup">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Email" name="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Birth Day" name="birthday">
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea cols="30" rows="10" class="form-control" placeholder="Other"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                                 </form>
                             </div>
-                            <div class="col-md-4 col-sm-4 contact-details scrollpoint sp-effect2">
-                                <div class="media">
-                                    <a class="pull-left" href="#" >
-                                        <i class="fa fa-map-marker fa-2x"></i>
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">4, Some street, California, USA</h4>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <a class="pull-left" href="#" >
-                                        <i class="fa fa-envelope fa-2x"></i>
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">
-                                            <a href="mailto:support@oleose.com">support@oleose.com</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                                <div class="media">
-                                    <a class="pull-left" href="#" >
-                                        <i class="fa fa-phone fa-2x"></i>
-                                    </a>
-                                    <div class="media-body">
-                                        <h4 class="media-heading">+1 234 567890</h4>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
