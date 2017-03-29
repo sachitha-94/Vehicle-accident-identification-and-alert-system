@@ -5,8 +5,18 @@
  */
 package com.ucsc.vaias.controller;
 
+import com.ucsc.vaias.connection.factory.DBResourceFactory;
+import com.ucsc.vaias.model.User;
+import com.ucsc.vaias.service.impl.UserServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLDataException;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,19 +38,48 @@ public class UserController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UserController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UserController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            
+            //request.getParameter("")
+            User user=new User();
+            user.setUID("1");
+            user.setNIC("122323");
+            user.setFIRST_NAME("sad");
+            user.setLAST_NAME("lklk");
+            user.setGENDER("male");
+            user.setTP_HOME(1212);
+            user.setTP_MOBILE(34242);
+            user.setADDRESS("kjsdjashdhad");
+            user.setLICENSE_NO("32982hasdh");
+            user.setBLOOD_GROUP("o+");
+            user.setEMAIL("asjhh");
+          
+            user.setOTHER("lsjdaskjd");
+            
+           /* SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
+            Date d=new Date();
+            d
+            String date = dateFormat.format(d);
+            
+              user.setBIRTH_DAY(2015/34/4);*/
+            
+            
+            DBResourceFactory bResourceFactory=new DBResourceFactory();
+            Connection connection = null;
+          
+            
+            UserServiceImpl userServiceImpl=new UserServiceImpl();
+            try {
+                 connection = bResourceFactory.getFactoryConnection().getConnection();
+                userServiceImpl.addUser(user, connection);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLDataException ex) {
+                Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         }
     }
 
