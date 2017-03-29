@@ -17,6 +17,7 @@ public class User {
     private String NIC;
     private String FIRST_NAME;
     private String LAST_NAME;
+    private String GENDER;
     private int TP_HOME;
     private int TP_MOBILE;
     private String ADDRESS;
@@ -29,11 +30,12 @@ public class User {
     public User() {
     }
 
-    public User(String UID, String NIC, String FIRST_NAME, String LAST_NAME, int TP_HOME, int TP_MOBILE, String ADDRESS, String LICENSE_NO, String BLOOD_GROUP, String EMAIL, Date BIRTH_DAY, String OTHER) {
+    public User(String UID, String NIC, String FIRST_NAME, String LAST_NAME, String GENDER, int TP_HOME, int TP_MOBILE, String ADDRESS, String LICENSE_NO, String BLOOD_GROUP, String EMAIL, Date BIRTH_DAY, String OTHER) {
         this.UID = UID;
         this.NIC = NIC;
         this.FIRST_NAME = FIRST_NAME;
         this.LAST_NAME = LAST_NAME;
+        this.GENDER = GENDER;
         this.TP_HOME = TP_HOME;
         this.TP_MOBILE = TP_MOBILE;
         this.ADDRESS = ADDRESS;
@@ -43,6 +45,7 @@ public class User {
         this.BIRTH_DAY = BIRTH_DAY;
         this.OTHER = OTHER;
     }
+
 
     public String getUID() {
         return UID;
@@ -75,6 +78,16 @@ public class User {
     public void setLAST_NAME(String LAST_NAME) {
         this.LAST_NAME = LAST_NAME;
     }
+
+    public String getGENDER() {
+        return GENDER;
+    }
+
+    public void setGENDER(String GENDER) {
+        this.GENDER = GENDER;
+    }
+    
+    
 
     public int getTP_HOME() {
         return TP_HOME;

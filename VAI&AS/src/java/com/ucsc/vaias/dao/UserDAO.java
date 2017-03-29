@@ -5,10 +5,16 @@
  */
 package com.ucsc.vaias.dao;
 
+import com.ucsc.vaias.model.User;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  *
  * @author sajja
  */
 public interface UserDAO {
+    
+    public  boolean addUser(User user ,Connection connection) throws ClassNotFoundException,SQLException;
     
 }

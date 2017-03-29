@@ -11,4 +11,5 @@ package com.ucsc.vaias.dao;
  */
 public interface AdminDAO {
     
+    
 }
