@@ -52,7 +52,7 @@ public final class support_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\r\n");
       out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />\r\n");
       out.write("    <link rel=\"shortcut icon\" href=\"favicon.png\">\r\n");
-      out.write("    \r\n");
+      out.write("            \r\n");
       out.write("    <!-- Bootstrap 3.3.2 -->\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"assets/css/bootstrap.min.css\">\r\n");
       out.write("    \r\n");
@@ -84,13 +84,16 @@ public final class support_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"col-md-12\">\r\n");
       out.write("                        <div class=\"row\">\r\n");
       out.write("                            <div class=\"col-md-8 col-sm-8 scrollpoint sp-effect1\">\r\n");
-      out.write("                                <form role=\"form\">\r\n");
+      out.write("                                <form action=\"../UserController\" method=\"post\" role=\"form\">\r\n");
       out.write("                                    <div class=\"form-group\">\r\n");
-      out.write("                                        <label> User_ID</label>\r\n");
+      out.write("                                        \r\n");
       out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"User ID\" name=\"uid\">\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div class=\"form-group\">\r\n");
       out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"NIC\" name=\"nic\">\r\n");
+      out.write("                                    </div>\r\n");
+      out.write("                                    <div class=\"form-group\">\r\n");
+      out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"Gender\" name=\"gender\">\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div class=\"form-group\">\r\n");
       out.write("                                        <input type=\"text\" class=\"form-control\" placeholder=\"First Name\" name=\"fname\">\r\n");

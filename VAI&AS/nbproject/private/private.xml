@@ -3,11 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/model/User.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/impl/UserDAOImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/impl/UserServiceImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/UserDAO.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/UserService.java</file>
+            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/connection/dbconnection/impl/DBResourceConnectionImpl.java</file>
+            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/impl/VehicleDAOImpl.java</file>
         </group>
     </open-files>
 </project-private>

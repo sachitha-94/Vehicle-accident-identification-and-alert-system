@@ -45,7 +45,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                <form role="form">
+                                <form action="VehicleController" method="post" role="form">
                                     <div class="form-group">
                                         
                                         <input type="text" class="form-control" placeholder="User ID" name="uid">

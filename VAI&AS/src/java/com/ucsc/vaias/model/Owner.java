@@ -10,15 +10,24 @@ package com.ucsc.vaias.model;
  * @author sajja
  */
 public class Owner {
+
+    private String VID;
     private String UID;
-    private String FID;
 
     public Owner() {
     }
 
-    public Owner(String UID, String FID) {
+    public Owner(String VID, String UID) {
+        this.VID = VID;
         this.UID = UID;
-        this.FID = FID;
+    }
+
+    public String getVID() {
+        return VID;
+    }
+
+    public void setVID(String VID) {
+        this.VID = VID;
     }
 
     public String getUID() {
@@ -28,15 +37,6 @@ public class Owner {
     public void setUID(String UID) {
         this.UID = UID;
     }
+    
 
-    public String getFID() {
-        return FID;
-    }
-
-    public void setFID(String FID) {
-        this.FID = FID;
-    }
-    
-    
-    
 }

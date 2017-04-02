@@ -5,10 +5,16 @@
  */
 package com.ucsc.vaias.service;
 
+import com.ucsc.vaias.model.Vehicle;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  *
  * @author sajja
  */
 public interface VehicleService {
+    
+    public boolean addVehicle(Vehicle vehicle,Connection connection) throws ClassNotFoundException,SQLException;
     
 }

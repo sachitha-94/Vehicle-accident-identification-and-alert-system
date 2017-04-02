@@ -73,7 +73,12 @@ public class UserController extends HttpServlet {
             UserServiceImpl userServiceImpl=new UserServiceImpl();
             try {
                  connection = bResourceFactory.getFactoryConnection().getConnection();
-                userServiceImpl.addUser(user, connection);
+                boolean addUser = userServiceImpl.addUser(user, connection);
+                if(addUser){
+                    System.out.println("sadsad kkkkkkkkkkkkkkkkkkkkkkkkk");
+                }else{
+                    System.out.println("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+                }
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLDataException ex) {
@@ -95,7 +100,11 @@ public class UserController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -109,7 +118,11 @@ public class UserController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

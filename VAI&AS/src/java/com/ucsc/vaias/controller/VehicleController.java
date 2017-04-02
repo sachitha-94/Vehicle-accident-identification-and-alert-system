@@ -5,8 +5,16 @@
  */
 package com.ucsc.vaias.controller;
 
+import com.ucsc.vaias.connection.factory.DBResourceFactory;
+import com.ucsc.vaias.model.Vehicle;
+import com.ucsc.vaias.service.VehicleService;
+import com.ucsc.vaias.service.impl.VehicleServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +39,21 @@ public class VehicleController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+            Vehicle vehicle=new  Vehicle();
+            vehicle.setVID("122");
+            vehicle.setREGISTER_NO("kjshd");
+            vehicle.setCHASSI_NO("kjs");
+            vehicle.setENGINE_NO("ajkshd");
+            vehicle.setVEHICLE_TYPE("ajsdh");
+            
+            DBResourceFactory resourceFactory =new DBResourceFactory();
+            Connection connection = resourceFactory.getFactoryConnection().getConnection();
+            
+            VehicleService vehicleService=new VehicleServiceImpl();
+            boolean addVehicle = vehicleService.addVehicle(vehicle, connection);
+            
+            
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -39,8 +62,17 @@ public class VehicleController extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet VehicleController at " + request.getContextPath() + "</h1>");
+            if (addVehicle) {
+                out.println("add");
+            } else {
+                  out.println("fale");
+            }
             out.println("</body>");
             out.println("</html>");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(VehicleController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(VehicleController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
