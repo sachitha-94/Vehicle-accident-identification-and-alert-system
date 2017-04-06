@@ -14,7 +14,13 @@ import java.sql.SQLException;
  * @author sajja
  */
 public interface UserDAO {
-    
-    public  boolean addUser(User user ,Connection connection) throws ClassNotFoundException,SQLException;
-    
+
+    public boolean addUser(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public boolean removeUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public boolean searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
 }

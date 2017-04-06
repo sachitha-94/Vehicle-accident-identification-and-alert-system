@@ -21,7 +21,7 @@ public class UserDAOImpl implements UserDAO{
     public boolean addUser(User user, Connection connection) throws ClassNotFoundException, SQLException {
        
        
-        PreparedStatement stm = connection.prepareStatement("inser into user valuse(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement stm = connection.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
         stm.setObject(1, user.getUID());
         stm.setObject(2,user.getNIC());
         stm.setObject(3, user.getFIRST_NAME());
@@ -42,6 +42,21 @@ public class UserDAOImpl implements UserDAO{
             
         }
         return false;
+    }
+
+    @Override
+    public boolean removeUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
