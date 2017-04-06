@@ -15,14 +15,14 @@ public class PoliceStation {
     private String PROVINCE;
     private String DIVITION;
     private String CITY;
-    private String LAT;
-    private String LON;
-    private String TP;
+    private float LAT;
+    private float LON;
+    private int TP;
 
     public PoliceStation() {
     }
 
-    public PoliceStation(String PID, String PROVINCE, String DIVITION, String CITY, String LAT, String LON, String TP) {
+    public PoliceStation(String PID, String PROVINCE, String DIVITION, String CITY, float LAT, float LON, int TP) {
         this.PID = PID;
         this.PROVINCE = PROVINCE;
         this.DIVITION = DIVITION;
@@ -64,29 +64,33 @@ public class PoliceStation {
         this.CITY = CITY;
     }
 
-    public String getLAT() {
+    public float getLAT() {
         return LAT;
     }
 
-    public void setLAT(String LAT) {
+    public void setLAT(float LAT) {
         this.LAT = LAT;
     }
 
-    public String getLON() {
+    public float getLON() {
         return LON;
     }
 
-    public void setLON(String LON) {
+    public void setLON(float LON) {
         this.LON = LON;
     }
 
-    public String getTP() {
+    public int getTP() {
         return TP;
     }
 
-    public void setTP(String TP) {
+    public void setTP(int TP) {
         this.TP = TP;
     }
+
+   
+
+ 
     
     
     

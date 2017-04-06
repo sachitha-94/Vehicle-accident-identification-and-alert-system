@@ -5,10 +5,22 @@
  */
 package com.ucsc.vaias.dao;
 
+import com.ucsc.vaias.model.PoliceStation;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  *
  * @author sajja
  */
 public interface PoliceStationDAO {
-    
+
+    public boolean addPoliceStation(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public boolean removePoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public boolean updatePoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public PoliceStation searchPoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException;
+
 }
