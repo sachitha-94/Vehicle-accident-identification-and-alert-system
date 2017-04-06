@@ -15,6 +15,7 @@ import java.sql.SQLException;
  */
 public interface DBResourceConnection extends ResourceConnection {
 
+    @Override
     public Connection getConnection() throws ClassNotFoundException, SQLException;
 
 }
