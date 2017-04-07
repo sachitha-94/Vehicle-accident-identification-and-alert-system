@@ -71,7 +71,7 @@ public class HospitalDAOImpl implements HospitalDAO {
 
     @Override
     public Hospital searchHospitalByHID(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM hospital WHERE HID=?";
+        String sql = "SELECT * FROM hospital WHERE HID='"+hospital.getHID()+"'";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
         Hospital hReturn = new Hospital();

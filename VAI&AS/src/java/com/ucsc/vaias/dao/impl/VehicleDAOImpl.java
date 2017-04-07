@@ -67,7 +67,7 @@ public class VehicleDAOImpl implements VehicleDAO {
 
     @Override
     public Vehicle searchVehicleByVID(Vehicle vehicle, Connection connection) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM vehicle WHERE VID=?";
+        String sql = "SELECT * FROM vehicle WHERE VID='"+vehicle.getVID()+"'";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
         Vehicle vehicleReturn = new Vehicle();

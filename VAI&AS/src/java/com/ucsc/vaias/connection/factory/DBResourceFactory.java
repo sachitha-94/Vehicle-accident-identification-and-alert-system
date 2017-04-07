@@ -13,10 +13,10 @@ import com.ucsc.vaias.connection.dbconnection.impl.DBResourceConnectionImpl;
  * @author sajja
  */
 public class DBResourceFactory {
-    
-    public DBResourceConnection getFactoryConnection(){
-    
-    return new DBResourceConnectionImpl();
+
+    public DBResourceConnection getFactoryConnection() {
+
+        return new DBResourceConnectionImpl();
     }
-    
+
 }

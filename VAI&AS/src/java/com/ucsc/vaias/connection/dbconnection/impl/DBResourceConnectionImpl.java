@@ -23,10 +23,8 @@ public class DBResourceConnectionImpl implements DBResourceConnection {
     @Override
     public Connection getConnection() throws ClassNotFoundException, SQLException {
 
-         Class.forName("com.mysql.jdbc.Driver");
-         Connection connection = DriverManager.getConnection(url, user, password);
-      
-       
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection connection = DriverManager.getConnection(url, user, password);
 
         return connection;
     }

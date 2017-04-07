@@ -21,6 +21,6 @@ public interface UserDAO {
 
     public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
 
-    public boolean searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
+    public User searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
 
 }

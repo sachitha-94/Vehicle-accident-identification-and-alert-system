@@ -68,7 +68,7 @@ public class PoliceStationDAOImpl implements PoliceStationDAO {
 
     @Override
     public PoliceStation searchPoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException {
-        String sql="SELECT * FROM police_station WHERE PID=?";
+        String sql="SELECT * FROM police_station WHERE PID='"+policeStation.getPID()+"'";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
         PoliceStation psReturn=new PoliceStation();
