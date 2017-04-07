@@ -10,10 +10,7 @@ import com.ucsc.vaias.dao.impl.UserDAOImpl;
 import com.ucsc.vaias.model.User;
 import com.ucsc.vaias.service.UserService;
 import java.sql.Connection;
-import java.sql.SQLDataException;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -22,16 +19,27 @@ import java.util.logging.Logger;
 public class UserServiceImpl implements UserService {
 
     @Override
-    public boolean addUser(User user, Connection connection) throws ClassNotFoundException, SQLDataException {
+    public boolean addUser(User user, Connection connection) throws ClassNotFoundException, SQLException {
         UserDAO udao = new UserDAOImpl();
-        boolean res = false;
-        try {
-            res = udao.addUser(user, connection);
+        return udao.addUser(user, connection);
+    }
 
-        } catch (SQLException ex) {
-            Logger.getLogger(UserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return res;
+    @Override
+    public boolean removeUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        UserDAO udao = new UserDAOImpl();
+        return udao.removeUserByUID(user, connection);
+    }
+
+    @Override
+    public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        UserDAO udao = new UserDAOImpl();
+        return udao.upDateUserByUID(user, connection);
+    }
+
+    @Override
+    public User searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        UserDAO udao = new UserDAOImpl();
+        return udao.searchUserByUID(user, connection);
     }
 
 }

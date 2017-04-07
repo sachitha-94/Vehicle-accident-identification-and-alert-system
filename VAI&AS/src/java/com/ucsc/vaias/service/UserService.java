@@ -8,13 +8,20 @@ package com.ucsc.vaias.service;
 import com.ucsc.vaias.model.User;
 import java.sql.Connection;
 import java.sql.SQLDataException;
+import java.sql.SQLException;
 
 /**
  *
  * @author sajja
  */
 public interface UserService {
-    
-    public boolean addUser(User user,Connection connection)throws ClassNotFoundException,SQLDataException;
-    
+
+    public boolean addUser(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public boolean removeUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
+    public User searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
+
 }
