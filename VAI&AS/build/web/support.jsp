@@ -45,49 +45,49 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                <form action="VehicleController" method="post" role="form">
+                                <form action="UserController" method="post" role="form">
                                     <div class="form-group">
                                         
-                                        <input type="text" class="form-control" placeholder="User ID" name="uid">
+                                        <input type="text" class="form-control" placeholder="User ID" name="UID">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="NIC" name="nic">
+                                        <input type="text" class="form-control" placeholder="NIC" name="NIC">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Gender" name="gender">
+                                        <input type="text" class="form-control" placeholder="Gender" name="GENDER">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="First Name" name="fname">
+                                        <input type="text" class="form-control" placeholder="First Name" name="FIRST_NAME">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Last Name" name="lname">
+                                        <input type="text" class="form-control" placeholder="Last Name" name="LAST_NAME">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="TP Home" name="tphome">
+                                        <input type="text" class="form-control" placeholder="TP Home" name="TP_HOME">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="TP Mobile" name="tpmobile">
+                                        <input type="text" class="form-control" placeholder="TP Mobile" name="TP_MOBILE">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="TP Home" name="tphome">
+                                        <input type="text" class="form-control" placeholder="TP Home" name="TP_HOME">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Address" name="tpmobile">
+                                        <input type="text" class="form-control" placeholder="Address" name="ADDRESS">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="License No" name="licenseno">
+                                        <input type="text" class="form-control" placeholder="License No" name="LICENSE_NO">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Blood Group" name="bloodgroup">
+                                        <input type="text" class="form-control" placeholder="Blood Group" name="BLOOD_GROUP">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email" name="email">
+                                        <input type="email" class="form-control" placeholder="Email" name="EMAIL">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Birth Day" name="birthday">
+                                        <input type="text" class="form-control" placeholder="Birth Day" name="BIRTH_DAY">
                                     </div>
                                     <div class="form-group">
-                                        <textarea cols="30" rows="10" class="form-control" placeholder="Other"></textarea>
+                                        <textarea cols="30" rows="10" class="form-control" placeholder="OTHER"></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                                 </form>

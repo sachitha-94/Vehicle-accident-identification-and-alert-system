@@ -69,9 +69,7 @@ public class VehicleController extends HttpServlet {
             }
             out.println("</body>");
             out.println("</html>");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VehicleController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(VehicleController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

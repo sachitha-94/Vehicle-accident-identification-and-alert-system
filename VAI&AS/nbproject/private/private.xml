@@ -3,31 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/impl/UserServiceImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/impl/VehicleServiceImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/UserDAO.java</file>
             <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/model/User.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/PoliceStationService.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/connection/dbconnection/impl/DBResourceConnectionImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/VehicleDAO.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/impl/PoliceStationDAOImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/VehicleService.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/model/PoliceStation.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/model/Hospital.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/impl/HospitalDAOImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/impl/UserDAOImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/model/Vehicle.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/OwnerService.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/HospitalDAO.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/impl/PoliceStationServiceImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/impl/VehicleDAOImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/AdminController.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/HospitalService.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/connection/dbconnection/DBResourceConnection.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/service/impl/HospitalServiceImpl.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/connection/factory/DBResourceFactory.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/connection/ResourceConnection.java</file>
-            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/PoliceStationDAO.java</file>
+            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/VehicleController.java</file>
+            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/UserController.java</file>
+            <file>file:/F:/gp%203/Vehical-accident-identification-and-alert-system/VAI&amp;AS/web/support.jsp</file>
         </group>
     </open-files>
 </project-private>

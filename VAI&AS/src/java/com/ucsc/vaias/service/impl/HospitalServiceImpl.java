@@ -18,27 +18,29 @@ import java.sql.SQLException;
  */
 public class HospitalServiceImpl implements HospitalService {
 
+    private HospitalDAO hdao = new HospitalDAOImpl();
+
     @Override
     public boolean addHospital(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException {
-        HospitalDAO hdao = new HospitalDAOImpl();
+
         return hdao.addHospital(hospital, connection);
     }
 
     @Override
     public boolean removeHospitalByHID(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException {
-        HospitalDAO hdao = new HospitalDAOImpl();
+
         return hdao.removeHospitalByHID(hospital, connection);
     }
 
     @Override
     public boolean updateHospitalByHID(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException {
-        HospitalDAO hdao = new HospitalDAOImpl();
+
         return hdao.updateHospitalByHID(hospital, connection);
     }
 
     @Override
     public Hospital searchHospitalByHID(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException {
-        HospitalDAO hdao = new HospitalDAOImpl();
+
         return hdao.searchHospitalByHID(hospital, connection);
     }
 

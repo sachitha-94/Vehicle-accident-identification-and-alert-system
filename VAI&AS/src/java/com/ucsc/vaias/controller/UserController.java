@@ -11,10 +11,9 @@ import com.ucsc.vaias.service.impl.UserServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -41,10 +40,25 @@ public class UserController extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-            //request.getParameter("")
-            User user=new User();
-            user.setUID("1");
+
+            String UID = request.getParameter("UID");
+            String NIC = request.getParameter("NIC");
+            String FIRST_NAME = request.getParameter("FIRST_NAME");
+            String LAST_NAME = request.getParameter("LAST_NAME");
+            String GENDER = request.getParameter("GENDER");
+            int TP_HOME = Integer.valueOf(request.getParameter("TP_HOME"));
+            int TP_MOBILE = Integer.valueOf(request.getParameter("TP_MOBILE"));
+            String ADDRESS = request.getParameter("ADDRESS");
+            String LICENSE_NO = request.getParameter("LICENSE_NO");
+            String BLOOD_GROUP = request.getParameter("BLOOD_GROUP");
+            String EMAIL = request.getParameter("EMAIL");
+            String date = request.getParameter("BIRTH_DAY");
+            Date BIRTH_DAY = Date.valueOf(date);
+           
+            String OTHER = request.getParameter("OTHER");
+
+            User user = new User(UID, NIC, FIRST_NAME, LAST_NAME, GENDER, TP_HOME, TP_MOBILE, ADDRESS, LICENSE_NO, BLOOD_GROUP, EMAIL, BIRTH_DAY, OTHER);
+            /*  user.setUID("1");
             user.setNIC("122323");
             user.setFIRST_NAME("sad");
             user.setLAST_NAME("lklk");
@@ -55,36 +69,26 @@ public class UserController extends HttpServlet {
             user.setLICENSE_NO("32982hasdh");
             user.setBLOOD_GROUP("o+");
             user.setEMAIL("asjhh");
-          
-            user.setOTHER("lsjdaskjd");
-            
-           /* SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
-            Date d=new Date();
-            d
-            String date = dateFormat.format(d);
-            
-              user.setBIRTH_DAY(2015/34/4);*/
-            
-            
-            DBResourceFactory bResourceFactory=new DBResourceFactory();
+
+            user.setOTHER("lsjdaskjd");*/
+
+
+            DBResourceFactory bResourceFactory = new DBResourceFactory();
             Connection connection = null;
-          
-            
-            UserServiceImpl userServiceImpl=new UserServiceImpl();
+
+            UserServiceImpl userServiceImpl = new UserServiceImpl();
             try {
-                 connection = bResourceFactory.getFactoryConnection().getConnection();
+                connection = bResourceFactory.getFactoryConnection().getConnection();
                 boolean addUser = userServiceImpl.addUser(user, connection);
-                if(addUser){
+                if (addUser) {
                     System.out.println("sadsad kkkkkkkkkkkkkkkkkkkkkkkkk");
-                }else{
+                } else {
                     System.out.println("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
                 }
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLDataException ex) {
+            } catch (ClassNotFoundException | SQLDataException ex) {
                 Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+
         }
     }
 

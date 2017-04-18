@@ -18,27 +18,29 @@ import java.sql.SQLException;
  */
 public class UserServiceImpl implements UserService {
 
+    private UserDAO udao = new UserDAOImpl();
+
     @Override
     public boolean addUser(User user, Connection connection) throws ClassNotFoundException, SQLException {
-        UserDAO udao = new UserDAOImpl();
+
         return udao.addUser(user, connection);
     }
 
     @Override
     public boolean removeUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
-        UserDAO udao = new UserDAOImpl();
+
         return udao.removeUserByUID(user, connection);
     }
 
     @Override
     public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
-        UserDAO udao = new UserDAOImpl();
+
         return udao.upDateUserByUID(user, connection);
     }
 
     @Override
     public User searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
-        UserDAO udao = new UserDAOImpl();
+
         return udao.searchUserByUID(user, connection);
     }
 

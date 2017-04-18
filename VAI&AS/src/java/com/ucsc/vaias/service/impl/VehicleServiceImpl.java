@@ -18,10 +18,11 @@ import java.sql.SQLException;
  */
 public class VehicleServiceImpl implements VehicleService {
 
+    private VehicleDAO vdao = new VehicleDAOImpl();
+
     @Override
     public boolean addVehicle(Vehicle vehicle, Connection connection) throws ClassNotFoundException, SQLException {
 
-        VehicleDAO vdao = new VehicleDAOImpl();
         return vdao.addVehicle(vehicle, connection);
 
     }
@@ -29,26 +30,25 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public boolean removeVehicleByVID(Vehicle vehicle, Connection connection) throws ClassNotFoundException, SQLException {
 
-        VehicleDAO vdao = new VehicleDAOImpl();
         return vdao.removeVehicleByVID(vehicle, connection);
     }
 
     @Override
     public boolean updateVehicleByVID(Vehicle vehicle, Connection connection) throws ClassNotFoundException, SQLException {
-        VehicleDAO vdao = new VehicleDAOImpl();
+
         return vdao.updateVehicleByVID(vehicle, connection);
 
     }
 
     @Override
     public Vehicle searchVehicleByVID(Vehicle vehicle, Connection connection) throws ClassNotFoundException, SQLException {
-        VehicleDAO vdao = new VehicleDAOImpl();
+
         return vdao.searchVehicleByVID(vehicle, connection);
     }
 
     @Override
     public Vehicle searchVehicleByREGISTER_NO(Vehicle vehicle, Connection connection) throws ClassNotFoundException, SQLException {
-        VehicleDAO vdao = new VehicleDAOImpl();
+
         return vdao.searchVehicleByREGISTER_NO(vehicle, connection);
     }
 

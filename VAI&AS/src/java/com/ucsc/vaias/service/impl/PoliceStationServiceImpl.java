@@ -18,27 +18,29 @@ import java.sql.SQLException;
  */
 public class PoliceStationServiceImpl implements PoliceStationService {
 
+    private PoliceStationDAO psdao = new PoliceStationDAOImpl();
+
     @Override
     public boolean addPoliceStation(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException {
-        PoliceStationDAO psdao = new PoliceStationDAOImpl();
+
         return psdao.addPoliceStation(policeStation, connection);
     }
 
     @Override
     public boolean removePoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException {
-        PoliceStationDAO psdao = new PoliceStationDAOImpl();
+
         return psdao.removePoliceStationByPID(policeStation, connection);
     }
 
     @Override
     public boolean updatePoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException {
-        PoliceStationDAO psdao = new PoliceStationDAOImpl();
+
         return psdao.updatePoliceStationByPID(policeStation, connection);
     }
 
     @Override
     public PoliceStation searchPoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException {
-        PoliceStationDAO psdao = new PoliceStationDAOImpl();
+
         return psdao.searchPoliceStationByPID(policeStation, connection);
     }
 
