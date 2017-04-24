@@ -86,7 +86,7 @@
                             </li>
                             <li><a class="getApp" id="profileButton" href="#getApp">Profile</a>
                             </li>
-                            <li><a href="support.jsp">support</a>
+                            <li><a href="support.jsp">Register</a>
                             </li>
                         </ul>
                     </div>

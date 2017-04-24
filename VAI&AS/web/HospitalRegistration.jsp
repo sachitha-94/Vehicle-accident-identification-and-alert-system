@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Oleose App Landing Page | Bootstrap Theme</title>
+        <title>Register Hospital</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <link rel="shortcut icon" href="favicon.png">
@@ -37,58 +37,40 @@
             <section id="support" class="doublediagonal">
                 <div class="container">
                     <div class="section-heading scrollpoint sp-effect3">
-                        <h1>Register</h1>
+                        <h1>Register Hospital</h1>
                         <div class="divider"></div>
-                        <p>For more info and support, contact us!</p>
+                        <p></p>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form action="UserController" method="post" role="form">
+                                    <form action="PoliceController" method="post" role="form">
                                         <div class="form-group">
-
-                                            <input type="text" class="form-control" placeholder="User ID" name="UID">
+                                            <input type="text" class="form-control" placeholder="Hospital ID" name="HID">
+                                        </div>
+                                         <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Hospital Name" name="HOSPITAL_NAME">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="NIC" name="NIC">
+                                            <input type="text" class="form-control" placeholder="Province" name="PROVINCE">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Gender" name="GENDER">
+                                            <input type="text" class="form-control" placeholder="Distict" name="DISTRICT">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name" name="FIRST_NAME">
+                                            <input type="text" class="form-control" placeholder="City" name="CITY">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name" name="LAST_NAME">
+                                            <input type="text" class="form-control" placeholder="Latitude" name="LAT">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="TP Home" name="TP_HOME">
+                                            <input type="text" class="form-control" placeholder="Longitude" name="LON">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="TP Mobile" name="TP_MOBILE">
+                                            <input type="text" class="form-control" placeholder="Telephone No" name="TP">
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="TP Home" name="TP_HOME">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Address" name="ADDRESS">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="License No" name="LICENSE_NO">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Blood Group" name="BLOOD_GROUP">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email" name="EMAIL">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="Date" class="form-control" placeholder="Birth Day" name="BIRTH_DAY">
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea cols="30" rows="10" class="form-control" placeholder="OTHER" name="OTHER"></textarea>
-                                        </div>
+                                             
                                         <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                                     </form>
                                 </div>
