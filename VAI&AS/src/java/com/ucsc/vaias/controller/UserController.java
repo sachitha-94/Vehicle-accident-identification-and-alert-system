@@ -56,8 +56,9 @@ public class UserController extends HttpServlet {
             Date BIRTH_DAY = Date.valueOf(date);
            
             String OTHER = request.getParameter("OTHER");
+            String PASSWORD = request.getParameter("PASSWORD");
 
-            User user = new User(UID, NIC, FIRST_NAME, LAST_NAME, GENDER, TP_HOME, TP_MOBILE, ADDRESS, LICENSE_NO, BLOOD_GROUP, EMAIL, BIRTH_DAY, OTHER);
+            User user = new User(UID, NIC, FIRST_NAME, LAST_NAME, GENDER, TP_HOME, TP_MOBILE, ADDRESS, LICENSE_NO, BLOOD_GROUP, EMAIL, BIRTH_DAY, OTHER,PASSWORD);
             /*  user.setUID("1");
             user.setNIC("122323");
             user.setFIRST_NAME("sad");
@@ -79,6 +80,7 @@ public class UserController extends HttpServlet {
             UserServiceImpl userServiceImpl = new UserServiceImpl();
             try {
                 connection = bResourceFactory.getFactoryConnection().getConnection();
+                if(request.gP)
                 boolean addUser = userServiceImpl.addUser(user, connection);
                 if (addUser) {
                     System.out.println("sadsad kkkkkkkkkkkkkkkkkkkkkkkkk");

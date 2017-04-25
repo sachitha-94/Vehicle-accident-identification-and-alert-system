@@ -87,7 +87,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="
                             </div>
                             
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
+                                    <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController?regidter" method="post" role="form">
                                         <div class="form-group ">
                                             <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                             <div class="col-sm-10">
