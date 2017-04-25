@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="container">
 	<section id="content">
-		<form action="AdminController">
+		<form action="AdminController?type=login">
 			<h1>Login</h1>
 			<div class="form-group">
                             <input type="text" placeholder="Username" required="" id="username"  class="form-control" name="EMAIL" />
