@@ -87,7 +87,7 @@ font-size: 16px;"> Last access : 26 April 2017 &nbsp; <a href="login.html" class
                             </div>
                             
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form action="PoliceController" method="post" role="form">
+                                    <form action="HospitalController" method="post" role="form">
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Hospital ID" name="HID">
                                         </div>

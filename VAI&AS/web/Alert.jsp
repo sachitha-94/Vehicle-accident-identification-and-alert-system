@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" id="alert">
   <div class="alert alert-danger">
     <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
   </div>

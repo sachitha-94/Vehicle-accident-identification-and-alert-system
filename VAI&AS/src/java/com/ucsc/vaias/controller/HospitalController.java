@@ -15,7 +15,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.application.HostServices;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -61,8 +60,10 @@ public class HospitalController extends HttpServlet {
                 boolean res_Add = hospitalService.addHospital(hospital, connection);
 
                 if (res_Add) {
-
+                    response.sendRedirect("Admin - hospital - register");
                 } else {
+
+                    response.sendRedirect("Admin - hospital - register");
                 }
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
