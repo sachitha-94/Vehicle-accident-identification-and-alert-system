@@ -26,12 +26,11 @@ public class User {
     private String EMAIL;
     private Date BIRTH_DAY;
     private String OTHER;
-    private String PASSWORD;
 
     public User() {
     }
 
-    public User(String UID, String NIC, String FIRST_NAME, String LAST_NAME, String GENDER, int TP_HOME, int TP_MOBILE, String ADDRESS, String LICENSE_NO, String BLOOD_GROUP, String EMAIL, Date BIRTH_DAY, String OTHER, String PASSWORD) {
+    public User(String UID, String NIC, String FIRST_NAME, String LAST_NAME, String GENDER, int TP_HOME, int TP_MOBILE, String ADDRESS, String LICENSE_NO, String BLOOD_GROUP, String EMAIL, Date BIRTH_DAY, String OTHER) {
         this.UID = UID;
         this.NIC = NIC;
         this.FIRST_NAME = FIRST_NAME;
@@ -45,7 +44,7 @@ public class User {
         this.EMAIL = EMAIL;
         this.BIRTH_DAY = BIRTH_DAY;
         this.OTHER = OTHER;
-        this.PASSWORD = PASSWORD;
+
     }
 
     public String getUID() {
@@ -150,14 +149,6 @@ public class User {
 
     public void setOTHER(String OTHER) {
         this.OTHER = OTHER;
-    }
-
-    public String getPASSWORD() {
-        return PASSWORD;
-    }
-
-    public void setPASSWORD(String PASSWORD) {
-        this.PASSWORD = PASSWORD;
     }
 
 }
