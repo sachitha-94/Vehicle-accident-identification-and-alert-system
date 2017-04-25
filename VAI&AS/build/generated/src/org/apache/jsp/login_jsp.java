@@ -70,7 +70,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("        <div class=\"wrapper\">\n");
+      out.write("        <div class=\"wrapper\" id=\"wrapper\" style=\"position: absolute; z-index: 10; margin-top: 20%; display: none;\">\n");
       out.write("\t\n");
       out.write("\t<section id=\"support\" class=\"doublediagonal\">\n");
       out.write("            <div class=\"container\">\n");
