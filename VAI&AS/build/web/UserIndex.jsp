@@ -74,10 +74,11 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                             <ul class="nav navbar-nav navbar-right">
-                                
-                                <li><a href="login.jsp">Login</a>
+                                <li><a href="UserIndex.jsp">Home</a>
                                 </li>
-                                <li><a href="support.jsp">Register</a>
+                                <li><a class="getApp" id="profileButton" href="#getApp">Profile</a>
+                                </li>
+                                <li><a href="index.jsp">Log Out</a>
                                 </li>
                             </ul>
                         </div>

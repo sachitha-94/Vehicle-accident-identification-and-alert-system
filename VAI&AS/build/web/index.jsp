@@ -74,17 +74,8 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="about.jsp">about</a>
-                                </li>
-                                <li><a href="features.html">features</a>
-                                </li>
-                                <li><a href="reviews.jsp">reviews</a>
-                                </li>
-                                <li><a href="screen.jsp">screens</a>
-                                </li>
-                                <li><a href="#demo">demo</a>
-                                </li>
-                                <li><a class="getApp" id="profileButton" href="#getApp">Profile</a>
+                                
+                                <li><a href="login.jsp">Login</a>
                                 </li>
                                 <li><a href="support.jsp">Register</a>
                                 </li>
