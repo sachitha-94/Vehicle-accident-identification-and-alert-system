@@ -80,7 +80,11 @@ public class UserController extends HttpServlet {
             UserServiceImpl userServiceImpl = new UserServiceImpl();
             try {
                 connection = bResourceFactory.getFactoryConnection().getConnection();
+<<<<<<< HEAD
                 //if(request.gP)
+=======
+                //if(request.gP){
+>>>>>>> origin/master
                 boolean addUser = userServiceImpl.addUser(user, connection);
                 if (addUser) {
                     System.out.println("sadsad kkkkkkkkkkkkkkkkkkkkkkkkk");
@@ -142,3 +146,4 @@ public class UserController extends HttpServlet {
     }// </editor-fold>
 
 }
+
