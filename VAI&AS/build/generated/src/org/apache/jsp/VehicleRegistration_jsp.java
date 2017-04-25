@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class PoliceStationRegistratoin_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class VehicleRegistration_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,7 +48,7 @@ public final class PoliceStationRegistratoin_jsp extends org.apache.jasper.runti
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta charset=\"UTF-8\">\r\n");
-      out.write("        <title>Register police station</title>\r\n");
+      out.write("        <title>Register Vehicle</title>\r\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">\r\n");
       out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />\r\n");
       out.write("        <link rel=\"shortcut icon\" href=\"favicon.png\">\r\n");
@@ -76,7 +76,7 @@ public final class PoliceStationRegistratoin_jsp extends org.apache.jasper.runti
       out.write("            <section id=\"support\" class=\"doublediagonal\">\r\n");
       out.write("                <div class=\"container\">\r\n");
       out.write("                    <div class=\"section-heading scrollpoint sp-effect3\">\r\n");
-      out.write("                        <h1>Register Police Station</h1>\r\n");
+      out.write("                        <h1>Register Vehicle</h1>\r\n");
       out.write("                        <div class=\"divider\"></div>\r\n");
       out.write("                        <p></p>\r\n");
       out.write("                    </div>\r\n");
@@ -86,26 +86,21 @@ public final class PoliceStationRegistratoin_jsp extends org.apache.jasper.runti
       out.write("                                <div class=\"col-md-8 col-sm-8 scrollpoint sp-effect1\">\r\n");
       out.write("                                    <form action=\"PoliceController\" method=\"post\" role=\"form\">\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Police Station ID\" name=\"PID\">\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"vehicle ID\" name=\"VID\">\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Province\" name=\"PROVINCE\">\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Register No\" name=\"REGISTER_NO\">\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Devision\" name=\"DEVISION\">\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Chassi No\" name=\"CHASSI_NO\">\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"City\" name=\"CITY\">\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Engine No\" name=\"ENGINE_NO\">\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Latitude\" name=\"LAT\">\r\n");
+      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Vehicle type\" name=\"VEHICLE_TYPE\">\r\n");
       out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Longitude\" name=\"LON\">\r\n");
-      out.write("                                        </div>\r\n");
-      out.write("                                        <div class=\"form-group\">\r\n");
-      out.write("                                            <input type=\"text\" class=\"form-control\" placeholder=\"Telephone No\" name=\"TP\">\r\n");
-      out.write("                                        </div>\r\n");
+      out.write("                                        \r\n");
       out.write("                                             \r\n");
       out.write("                                        <button type=\"submit\" class=\"btn btn-primary btn-lg\">Submit</button>\r\n");
       out.write("                                    </form>\r\n");
