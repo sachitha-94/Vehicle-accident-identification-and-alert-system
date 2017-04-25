@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Admin - users - search
-    Created on : Apr 25, 2017, 1:34:08 AM
+    Document   : Admin - hosptal - search
+    Created on : Apr 25, 2017, 8:38:12 PM
     Author     : Dilum
 --%>
 
@@ -9,7 +9,7 @@
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Users</title>
+    <title>Hospital</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Users</a> 
+                <a class="navbar-brand" href="Admin - hosptal - search.jsp">Hospital</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
@@ -43,21 +43,21 @@ font-size: 16px;"> Last access : 26 April 2017 &nbsp; <a href="login.html" class
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/administrator.png" class="user-image img-responsive"/>
+                    <img src="assets/img/hospital.png" class="user-image img-responsive"/>
 					</li>
 				
 					
                     <li>
-                        <a   href="Admin - users - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a   href="Admin - hospital - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                      <li>
-                         <a class="active-menu" href="Admin - users - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                         <a class="active-menu" href="Admin - hospital - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a  href="Admin - users - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a  href="Admin - hospital - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
 						   <li  >
-                                                       <a   href="Admin - users - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                                                       <a   href="Admin - hospital - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>	
                       	
                 </ul>
@@ -71,8 +71,8 @@ font-size: 16px;"> Last access : 26 April 2017 &nbsp; <a href="login.html" class
                 
                 
                 <div class="form-group">
-                                            <label>Search user</label>
-                                            <p class="help-block">find user and vehicle details</p>
+                                            <label>Search Hospital</label>
+                                            <p class="help-block">find hospital and hospital details</p>
                                             <input class="form-control" />
                                             
                                             

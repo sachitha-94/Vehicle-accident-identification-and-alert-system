@@ -22,7 +22,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public boolean addUser(User user, Connection connection) throws ClassNotFoundException, SQLException {
 
-        PreparedStatement stm = connection.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        PreparedStatement stm = connection.prepareStatement("INSERT INTO user VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)");
         stm.setObject(1, user.getUID());
         stm.setObject(2, user.getNIC());
         stm.setObject(3, user.getFIRST_NAME());
@@ -36,7 +36,6 @@ public class UserDAOImpl implements UserDAO {
         stm.setObject(11, user.getEMAIL());
         stm.setObject(12, user.getBIRTH_DAY());
         stm.setObject(13, user.getOTHER());
-        stm.setObject(14, user.getPASSWORD());
 
         int res = stm.executeUpdate();
         if (res > 0) {

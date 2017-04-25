@@ -44,12 +44,10 @@
     </head>
 
     <body>
-        <div><jsp:include page="login.jsp"/> </div>
-        
-        <div class="container" style="width: 100%;">
+        <div class="container" style="width: 100%">
             <div class="pre-loader">
-                <div class="load-con">
-                    <img src="assets/img/freeze/logo.png" class="animated fadeInDown" alt="">
+                <div class="load-con" >
+                    <img src="assets/img/freeze/logo.png" class="animated fadeInDown" >
                     <div class="spinner">
                         <div class="bounce1"></div>
                         <div class="bounce2"></div>
@@ -77,7 +75,7 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                 
-                                <li><a id="login" href="#">Login</a>
+                                <li><a href="login.jsp">Login</a>
                                 </li>
                                 <li><a href="support.jsp">Register</a>
                                 </li>
@@ -115,7 +113,7 @@
 
 
             </header>
-            
+
             <div id="viewprofile" style="display: none"><jsp:include page="profileview.jsp" /></div>
             <div class="wrapper">
                 <footer>
@@ -141,11 +139,10 @@
 
 
                 <script>
-                    $('#login').click(function () {
-                        $('#wrapper').toggle("slow");
-                        document.getElementById("map").style.opacity="0.5";
+                    $('#profileButton').click(function () {
+                        $('#viewprofile').toggle("slow");
                     });
-                        
+
                     $('#profileButton').click(function () {
                         $('#map').hide("slow");
                     });
@@ -157,10 +154,20 @@
                         $('#map').toggle("slow");
                     });
 
-                   
+                    //function displayMap() {
+                    //document.getElementById('viewprofile').style.display = "block";
+
+                    //}
+
+                    // $('#profileButton').click(function () {
+                    //$('#viewprofile').toggle("slow");
+                    //document.getElementById("container").style.opacity = "0.2";
+                    //displayMap();
+                    // });
+
                 </script>
             </div>
         </div>
     </body>
-    
+
 </html>

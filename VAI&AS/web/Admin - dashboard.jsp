@@ -53,7 +53,8 @@
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6" >
                         <div class="about-item scrollpoint sp-effect5">
-                            <i class="fa fa-hospital-o fa-2x"></i>
+                            <a href="Admin - hospital - 1.jsp">
+                            <i class="fa fa-hospital-o fa-2x"></i></a>
                             <h3>Hospital</h3>
                         </div>
                     </div>

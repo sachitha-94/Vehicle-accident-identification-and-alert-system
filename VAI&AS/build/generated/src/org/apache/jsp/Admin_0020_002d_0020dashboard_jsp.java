@@ -92,7 +92,8 @@ public final class Admin_0020_002d_0020dashboard_jsp extends org.apache.jasper.r
       out.write("                    </div>\r\n");
       out.write("                    <div class=\"col-md-3 col-sm-3 col-xs-6\" >\r\n");
       out.write("                        <div class=\"about-item scrollpoint sp-effect5\">\r\n");
-      out.write("                            <i class=\"fa fa-hospital-o fa-2x\"></i>\r\n");
+      out.write("                            <a href=\"Admin - hospital - 1.jsp\">\r\n");
+      out.write("                            <i class=\"fa fa-hospital-o fa-2x\"></i></a>\r\n");
       out.write("                            <h3>Hospital</h3>\r\n");
       out.write("                        </div>\r\n");
       out.write("                    </div>\r\n");

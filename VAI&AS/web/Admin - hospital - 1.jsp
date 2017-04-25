@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Admin - users - 1
-    Created on : Apr 25, 2017, 1:09:40 AM
+    Document   : Admin - hospital - 1
+    Created on : Apr 25, 2017, 7:29:17 PM
     Author     : Dilum
 --%>
 
@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Users</a> 
+                <a class="navbar-brand" href="Admin - hospital - 1.jsp">Hospital</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
@@ -43,21 +43,21 @@ font-size: 16px;"> Last access : 26 April 2017 &nbsp; <a href="login.html" class
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/administrator.png" class="user-image img-responsive"/>
+                    <img src="assets/img/hospital.png" class="user-image img-responsive"/>
 					</li>
 				
 					
                     <li>
-                        <a class="active-menu"  href="Admin - users - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a class="active-menu"  href="Admin - hospital - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                      <li>
-                         <a  href="Admin - users - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                         <a  href="Admin - hospital - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a  href="Admin - users - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a  href="Admin - hospital - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
 						   <li  >
-                                                       <a   href="Admin - users - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                                                       <a   href="Admin - hospital - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>	
                       	
                 </ul>
@@ -68,79 +68,65 @@ font-size: 16px;"> Last access : 26 April 2017 &nbsp; <a href="login.html" class
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">
-                             
-                 <!-- /. ROW  -->
-                  <hr />
-                
-                 <!-- /. ROW  -->
-                <hr />                
-                
-                 <!-- /. ROW  -->
-                
-                 <!-- /. ROW  -->
+                <div class="row">
+                 
                 <div class="row" >
                    
                     <div class="col-md-9 col-sm-12 col-xs-12">
                
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           User details
+                           Hospital Details
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>First Name</th>
-                                            <th>Last Name</th>
-                                            <th>Username</th>
-                                             <th>User No.</th>
+                                            <th>ID</th>
+                                            <th>Hospital name</th>
+                                            <th>District</th>
+                                            <th>City</th>
+                                             <th>TP</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>100090</td>
+                                            <td>Teaching Hospital Karapitiya</td>
+                                            <td>Galle</td>
+                                            <td>Karapitiya</td>
+                                            <td>94 912 32176</td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>100090</td>
+                                            <td>Teaching Hospital Kurunegala</td>
+                                            <td>Kurunegala</td>
+                                            <td>Kurunegala</td>
+                                            <td>94 372 22226</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>100090</td>
+                                            <td>Teaching Hospital Batticaloa</td>
+                                            <td>Batticaloa</td>
+                                            <td>Batticaloa</td>
+                                            <td>94 112 45612</td>
                                         </tr>
                                          <tr>
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                            <td>100090</td>
+                                            <td>4</td>
+                                            <td>Base Hospital Type B - Pottuvil</td>
+                                            <td>Pottuvil</td>
+                                            <td>Pottuvil</td>
+                                            <td>94 561 45678</td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>100090</td>
+                                            <td>5</td>
+                                            <td>Base Hospital Type B - Nikaweratiya</td>
+                                            <td>Nikaweratiya</td>
+                                            <td>Nikaweratiya</td>
+                                            <td>94 546 45678</td>
                                         </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>100090</td>
-                                        </tr>
+                                        
 
                                     </tbody>
                                 </table>
@@ -174,3 +160,4 @@ font-size: 16px;"> Last access : 26 April 2017 &nbsp; <a href="login.html" class
    
 </body>
 </html>
+
