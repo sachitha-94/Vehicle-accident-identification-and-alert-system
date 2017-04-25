@@ -83,11 +83,19 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("\r\n");
       out.write("    <body>\r\n");
+      out.write("        ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "login.jsp", out, false);
+      out.write(" \r\n");
+      out.write("        \r\n");
       out.write("        <div class=\"container\" style=\"width: 100%\">\r\n");
       out.write("            <div class=\"pre-loader\">\r\n");
-      out.write("                <div class=\"load-con\" >\r\n");
-      out.write("                    <img src=\"assets/img/freeze/logo.png\" class=\"animated fadeInDown\" >\r\n");
-      out.write("                    \r\n");
+      out.write("                <div class=\"load-con\">\r\n");
+      out.write("                    <img src=\"assets/img/freeze/logo.png\" class=\"animated fadeInDown\" alt=\"\">\r\n");
+      out.write("                    <div class=\"spinner\">\r\n");
+      out.write("                        <div class=\"bounce1\"></div>\r\n");
+      out.write("                        <div class=\"bounce2\"></div>\r\n");
+      out.write("                        <div class=\"bounce3\"></div>\r\n");
+      out.write("                    </div>\r\n");
       out.write("                </div>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
@@ -110,7 +118,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("                            <ul class=\"nav navbar-nav navbar-right\">\r\n");
       out.write("                                \r\n");
-      out.write("                                <li><a href=\"login.jsp\">Login</a>\r\n");
+      out.write("                                <li><a id=\"login\" href=\"#\">Login</a>\r\n");
       out.write("                                </li>\r\n");
       out.write("                                <li><a href=\"support.jsp\">Register</a>\r\n");
       out.write("                                </li>\r\n");
@@ -148,7 +156,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("            </header>\r\n");
-      out.write("\r\n");
+      out.write("            \r\n");
       out.write("            <div id=\"viewprofile\" style=\"display: none\">");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "profileview.jsp", out, false);
       out.write("</div>\r\n");
@@ -176,8 +184,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("                <script>\r\n");
-      out.write("                    $('#profileButton').click(function () {\r\n");
-      out.write("                        $('#viewprofile').toggle(\"slow\");\r\n");
+      out.write("                    $('#login').click(function () {\r\n");
+      out.write("                        $('#wrapper').toggle(\"slow\");\r\n");
       out.write("                    });\r\n");
       out.write("\r\n");
       out.write("                    $('#profileButton').click(function () {\r\n");
@@ -191,22 +199,12 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        $('#map').toggle(\"slow\");\r\n");
       out.write("                    });\r\n");
       out.write("\r\n");
-      out.write("                    //function displayMap() {\r\n");
-      out.write("                    //document.getElementById('viewprofile').style.display = \"block\";\r\n");
-      out.write("\r\n");
-      out.write("                    //}\r\n");
-      out.write("\r\n");
-      out.write("                    // $('#profileButton').click(function () {\r\n");
-      out.write("                    //$('#viewprofile').toggle(\"slow\");\r\n");
-      out.write("                    //document.getElementById(\"container\").style.opacity = \"0.2\";\r\n");
-      out.write("                    //displayMap();\r\n");
-      out.write("                    // });\r\n");
-      out.write("\r\n");
+      out.write("                   \r\n");
       out.write("                </script>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("    </body>\r\n");
-      out.write("\r\n");
+      out.write("    \r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

@@ -31,7 +31,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div class="wrapper">
+        <div class="wrapper" id="wrapper" style="position: absolute; z-index: 10; margin-top: 15%; margin-left: 5%;  display: none;">
 	
 	<section id="support" class="doublediagonal">
             <div class="container">
@@ -42,7 +42,7 @@
 		<form action="AdminController">
 			<h1>Login</h1>
 			<div class="form-group">
-                            <input type="text" placeholder="Username" required="" id="username"  class="form-control" name="EMAIL" />
+                            <input type="text" placeholder="Username" required="" id="username"  class="form-control"  name="EMAIL"/>
 			</div>
 			<div>
                             <input type="password" placeholder="Password" required="" id="password" class="form-control" name="PASSWORD" />
@@ -81,6 +81,7 @@
     <script>
         $(document).ready(function() {
             appMaster.preLoader();
+            
         });
     </script>
 

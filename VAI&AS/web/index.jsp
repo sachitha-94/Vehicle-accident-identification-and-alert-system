@@ -44,10 +44,12 @@
     </head>
 
     <body>
-        <div class="container" style="width: 100%">
+        <div><jsp:include page="login.jsp"/> </div>
+        
+        <div class="container" style="width: 100%;">
             <div class="pre-loader">
-                <div class="load-con" >
-                    <img src="assets/img/freeze/logo.png" class="animated fadeInDown" >
+                <div class="load-con">
+                    <img src="assets/img/freeze/logo.png" class="animated fadeInDown" alt="">
                     <div class="spinner">
                         <div class="bounce1"></div>
                         <div class="bounce2"></div>
@@ -75,7 +77,7 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                 
-                                <li><a href="login.jsp">Login</a>
+                                <li><a id="login" href="#">Login</a>
                                 </li>
                                 <li><a href="support.jsp">Register</a>
                                 </li>
@@ -98,7 +100,7 @@
                     function initMap() {
                         var uluru = {lat: 7.8731, lng: 80.7718};
                         var map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 4,
+                            zoom: 8,
                             center: uluru
                         });
                         var marker = new google.maps.Marker({
@@ -113,7 +115,7 @@
 
 
             </header>
-
+            
             <div id="viewprofile" style="display: none"><jsp:include page="profileview.jsp" /></div>
             <div class="wrapper">
                 <footer>
@@ -139,10 +141,11 @@
 
 
                 <script>
-                    $('#profileButton').click(function () {
-                        $('#viewprofile').toggle("slow");
+                    $('#login').click(function () {
+                        $('#wrapper').toggle("slow");
+                        document.getElementById("map").style.opacity="0.5";
                     });
-
+                        
                     $('#profileButton').click(function () {
                         $('#map').hide("slow");
                     });
@@ -154,20 +157,10 @@
                         $('#map').toggle("slow");
                     });
 
-                    //function displayMap() {
-                    //document.getElementById('viewprofile').style.display = "block";
-
-                    //}
-
-                    // $('#profileButton').click(function () {
-                    //$('#viewprofile').toggle("slow");
-                    //document.getElementById("container").style.opacity = "0.2";
-                    //displayMap();
-                    // });
-
+                   
                 </script>
             </div>
         </div>
     </body>
-
+    
 </html>

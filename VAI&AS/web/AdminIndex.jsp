@@ -113,7 +113,7 @@
 
 
             </header>
-
+              
             <div id="viewprofile" style="display: none"><jsp:include page="profileview.jsp" /></div>
             <div class="wrapper">
                 <footer>
