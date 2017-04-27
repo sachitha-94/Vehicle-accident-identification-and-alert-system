@@ -44,7 +44,7 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : 30 May 2016 &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;">  Last access : 26 April 2017 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -62,10 +62,10 @@ font-size: 16px;"> Last access : 30 May 2016 &nbsp; <a href="login.html" class="
                          <a  href="Admin - PoliceStation - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="Admin - PoliceStation - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a  href="Admin - PoliceStation - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
 		    <li  >
-                        <a   href="Admin - PoliceStation - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                        <a  class="active-menu" href="Admin - PoliceStation - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>	
                       	
                 </ul>
@@ -94,6 +94,7 @@ font-size: 16px;"> Last access : 30 May 2016 &nbsp; <a href="login.html" class="
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Police Station ID" name="PID">
                                         </div>
+                                        
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Province" name="PROVINCE">
                                         </div>

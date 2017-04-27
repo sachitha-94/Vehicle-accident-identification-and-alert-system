@@ -16,7 +16,6 @@ import java.sql.SQLDataException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.scene.control.Alert;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -66,7 +65,6 @@ public class UserController extends HttpServlet {
             UserServiceImpl userServiceImpl = new UserServiceImpl();
             try {
                 connection = bResourceFactory.getFactoryConnection().getConnection();
-                //if(request.gP){
                 boolean addUser = userServiceImpl.addUser(user, connection);
                 if (addUser) {
                     response.sendRedirect("Admin - users - register.jsp");
