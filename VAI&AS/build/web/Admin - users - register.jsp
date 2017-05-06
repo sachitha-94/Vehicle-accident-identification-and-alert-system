@@ -98,47 +98,48 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="nic">NIC Number:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="address" placeholder="Enter NIC Munber" name="NIC">
+                                                <input type="text" class="form-control" placeholder="Enter NIC Munber" name="NIC">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="fname">Gender:</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="fname" placeholder="Enter  Gender" name="GENDER">
-                                            </div>
+                                                <label class="control-label col-sm-2" >Gender:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="radio" class="" value="Male" name="Gender" placeholder="Enter  Gender">  <span>Male</span>
+                                                    <input type="radio" class=""  value="Female" name="Name" placeholder="Enter  Gender">  <span>Female</span>
+                                                </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="fname">First Name:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="fname" placeholder="Enter First Name" name="FIRST_NAME">
+                                                <input type="text" class="form-control"  placeholder="Enter First Name" name="FIRST_NAME">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">Last Name:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" name="LAST_NAME">
+                                                <input type="text" class="form-control"  placeholder="Enter Last Name" name="LAST_NAME">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">TP Home:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="lname" placeholder="Enter Home Telephone No" name="TP_HOME">
+                                                <input type="text" class="form-control"  placeholder="Enter Home Telephone No" name="TP_HOME">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">TP Mobile:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="lname" placeholder="Enter Mobile No" name="TP_MOBILE">
+                                                <input type="text" class="form-control"  placeholder="Enter Mobile No" name="TP_MOBILE">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Address:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="address" placeholder="Enter Address" name="ADDRESS">
+                                                <input type="text" class="form-control"  placeholder="Enter Address" name="ADDRESS">
                                             </div>
                                         </div>
 
@@ -146,36 +147,44 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="email">Email:</label>
                                             <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="EMAIL">
+                                                <input type="email" class="form-control"  placeholder="Enter email" name="EMAIL">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">License No:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="address" placeholder="Enter License No" name="LICENSE_NO">
+                                                <input type="text" class="form-control"  placeholder="Enter License No" name="LICENSE_NO">
                                             </div>
                                         </div>
-
 
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="blood_group">Blood Group:</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="blood_group" placeholder="Enter Blood Group" name="BLOOD_GROUP">
+                                                <label class="control-label col-sm-2" for="blood_group">Blood Group:</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" name="BLOOD_GROUP">
+                                                        <option value="O+" class="form-group">O+</option>
+                                                        <option value="O-" class="form-group">O-</option>
+                                                        <option value="A+" class="form-group">A+</option>
+                                                        <option value="A-" class="form-group">A-</option>
+                                                        <option value="B+" class="form-group">B+</option>
+                                                        <option value="B-" class="form-group">B-</option>
+                                                       
+                                                    </select>
+                                                    
+                                                </div>
                                             </div>
-                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="pwd">Birth Date:</label>
                                             <div class="col-sm-10"> 
-                                                <input type="date" class="form-control" id="pwd" placeholder="Enter BirthDay" name="BIRTH_DAY">
+                                                <input type="date" class="form-control"  placeholder="Enter BirthDay" name="BIRTH_DAY">
                                             </div>
                                         </div>
                                       
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="dl_no">Other:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="dl_no" placeholder="Other" name="OTHER">
+                                                <input type="text" class="form-control"  placeholder="Other" name="OTHER">
                                             </div>
                                         </div>
                                         

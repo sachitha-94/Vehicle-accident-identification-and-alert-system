@@ -106,7 +106,7 @@
                                             <div class="form-group ">
                                                 <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" id="user_id" placeholder="Enter User ID">
+                                                    <input type="text" class="form-control" name="UID" placeholder="Enter User ID">
                                                        
                                                 </div>
                                                  <button class="btn btn-primary"><i class="fa fa-edit " ></i> Search</button>
@@ -115,47 +115,48 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="nic">NIC Number:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="address" placeholder="Enter NIC Munber">
+                                                    <input type="text" class="form-control" name="NIC" placeholder="Enter NIC Munber">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="fname">Gender:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="fname" placeholder="Enter  Gender">
+                                                    <input type="radio" class="" value="Male" name="Gender" placeholder="Enter  Gender">  <span>Male</span>
+                                                    <input type="radio" class=""  value="Female" name="Name" placeholder="Enter  Gender">  <span>Female</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="fname">First Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+                                                    <input type="text" class="form-control" name="FIRST_NAME" placeholder="Enter First Name">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">Last Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+                                                    <input type="text" class="form-control"  name="LAST_NAME" placeholder="Enter Last Name">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">TP Home:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="lname" placeholder="Enter Home Telephone No">
+                                                    <input type="text" class="form-control" name="TP_HOME" placeholder="Enter Home Telephone No">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">TP Mobile:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="lname" placeholder="Enter Mobile No">
+                                                    <input type="text" class="form-control"  name="TP_MOBILE" placeholder="Enter Mobile No">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="address">Address:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="address" placeholder="Enter Address">
+                                                    <input type="text" class="form-control" name="ADDRESS" placeholder="Enter Address">
                                                 </div>
                                             </div>
 
@@ -163,29 +164,38 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="email">Email:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                                    <input type="email" class="form-control"  name="EMAIL" placeholder="Enter email">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="address">License No:</label>
+                                                <label class="control-label col-sm-2" >License No:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="address" placeholder="Enter License No">
+                                                    <input type="text" class="form-control" name="LICENSE_NO" placeholder="Enter License No">
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <label class="control-label col-sm-2" for="blood_group">Blood Group:</label>
+                                                <label class="control-label col-sm-2"  for="blood_group">Blood Group:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="blood_group" placeholder="Enter Blood Group">
+                                                    <select class="form-control" name="BLOOD_GROUP">
+                                                        <option value="O+" class="form-group">O+</option>
+                                                        <option value="O-" class="form-group">O-</option>
+                                                        <option value="A+" class="form-group">A+</option>
+                                                        <option value="A-" class="form-group">A-</option>
+                                                        <option value="B+" class="form-group">B+</option>
+                                                        <option value="B-" class="form-group">B-</option>
+                                                       
+                                                    </select>
+                                                    
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="pwd">Birth Date</label>
                                                 <div class="col-sm-10"> 
-                                                    <input type="date" class="form-control" id="pwd" placeholder="Enter BirthDay">
+                                                    <input type="date" class="form-control" name="BIRTH_DAY" placeholder="Enter BirthDay">
                                                 </div>
                                             </div>
 
@@ -193,7 +203,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="dl_no">Other:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" id="dl_no" placeholder="Other">
+                                                    <input type="text" class="form-control" name="OTHER" placeholder="Other">
                                                 </div>
                                             </div>
 
@@ -242,6 +252,6 @@
             </body>
         </html>
 
-        <h1>Hello World!</h1>
+     
     </body>
 </html>
