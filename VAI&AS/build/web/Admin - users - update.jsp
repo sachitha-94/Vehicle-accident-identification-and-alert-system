@@ -73,10 +73,10 @@
                                     <a  href="Admin - users - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                                 </li>
                                 <li>
-                                    <a class="active-menu" href="Admin - users - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                                    <a  href="Admin - users - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                                 </li>
                                 <li  >
-                                    <a   href="Admin - users - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                                    <a  class="active-menu" href="Admin - users - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                                 </li>	
 
                             </ul>

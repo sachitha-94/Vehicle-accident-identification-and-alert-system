@@ -5,8 +5,16 @@
  */
 package com.ucsc.vaias.controller;
 
+import com.ucsc.vaias.connection.factory.DBResourceFactory;
+import com.ucsc.vaias.model.Hospital;
+import com.ucsc.vaias.service.HospitalService;
+import com.ucsc.vaias.service.impl.HospitalServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,15 +40,35 @@ public class HospitalController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet HospitalController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet HospitalController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String HID = request.getParameter("HID");
+            String HOSPITAL_NAME = request.getParameter("HOSPITAL_NAME");
+            String PROVINCE = request.getParameter("PROVINCE");
+            String DISTRICT = request.getParameter("DISTRICT");
+            String CITY = request.getParameter("CITY");
+            float LAT = Float.valueOf(request.getParameter("LAT"));
+            float LON = Float.valueOf(request.getParameter("LON"));
+            int TP = Integer.valueOf(request.getParameter("TP"));
+
+            Hospital hospital = new Hospital(HID, HOSPITAL_NAME, PROVINCE, DISTRICT, CITY, LAT, LON, TP);
+
+            DBResourceFactory dBResourceFactory = new DBResourceFactory();
+            Connection connection = null;
+            try {
+                connection = dBResourceFactory.getFactoryConnection().getConnection();
+
+                HospitalService hospitalService = new HospitalServiceImpl();
+                boolean res_Add = hospitalService.addHospital(hospital, connection);
+
+                if (res_Add) {
+                    response.sendRedirect("Admin - hospital - register");
+                } else {
+
+                    response.sendRedirect("Admin - hospital - register");
+                }
+            } catch (ClassNotFoundException | SQLException ex) {
+                Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
     }
 

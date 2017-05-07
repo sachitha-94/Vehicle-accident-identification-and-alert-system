@@ -1,15 +1,17 @@
 <%-- 
-    Document   : Admin - hospital - register
-    Created on : Apr 25, 2017, 8:29:39 PM
-    Author     : Dilum
+    Document   : Admin - hospital - update.jsp
+    Created on : Apr 25, 2017, 10:01:21 PM
+    Author     : Shaii99
 --%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hospital</title>
+    <title>Update Hospital Details</title>
     
      <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -37,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Admin - hospital - register.jsp">Hospital</a> 
+                <a class="navbar-brand" href="index.html">Hospitals</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
@@ -49,7 +51,7 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/hospital.png" class="user-image img-responsive"/>
+                    <img src="assets/img/Hospital-icon.png" class="user-image img-responsive"/>
 					</li>
 				
 					
@@ -60,10 +62,10 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
                          <a  href="Admin - hospital - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="Admin - hospital - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a  href="Admin - hospital - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
-						   <li  >
-                                                       <a   href="Admin - hospital - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+		    <li  >
+                        <a  class="active-menu" href="Admin - hospital - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>	
                       	
                 </ul>
@@ -83,12 +85,13 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
                 
                         
                             <div class="panel-heading">
-                        <strong>  Register hospital </strong>  
+                        <strong>  Update Hospital Details </strong>  
                             </div>
                             
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form action="HospitalController" method="post" role="form">
-                                        <div class="form-group">
+                                    <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
+                                        
+                                                                                <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Hospital ID" name="HID">
                                         </div>
                                          <div class="form-group">
@@ -112,16 +115,14 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Telephone No" name="TP">
                                         </div>
-                                             
-                                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                        
+                                         <div class="form-group"> 
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default">Save Changes</button>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
-                            
-                           
-                       
-                    
-                
-                
         </div>
     </div>
                 
@@ -152,3 +153,5 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
    
 </body>
 </html>
+
+
