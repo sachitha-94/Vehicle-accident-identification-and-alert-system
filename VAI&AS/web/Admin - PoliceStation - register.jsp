@@ -22,13 +22,13 @@
 
         <link rel="stylesheet" href="assets/css/style2.css">
 
-            <!-- CUSTOM STYLES-->
-
-            <!-- GOOGLE FONTS-->
             <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+
 
     </head>
     <body>
+        
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -122,12 +122,12 @@
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">City:</label>
-                                             <div class="col-sm-10">
-                                            <select class="form-control" name="CITY">
-                                                <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="CITY">
+                                                    <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
 
-                                            </select>
-                                             </div>
+                                                </select>
+                                            </div>
                                         </div>
 
                                         <div class="form-group">
@@ -142,7 +142,9 @@
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" placeholder="Longitude" name="LON">
                                             </div>
-                                        </div>
+                                        </div
+
+                                       
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Telephone No:</label>
@@ -163,6 +165,7 @@
 
 
                 </div>
+
                 <!-- /. PAGE INNER  -->
             </div>
             <!-- /. PAGE WRAPPER  -->
@@ -182,7 +185,6 @@
         <script src="assets/js/custom.js"></script>
 
 
-
-
+     
     </body>
 </html>

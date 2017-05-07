@@ -1,0 +1,141 @@
+.hide_div{
+	width:100%;
+	display: none;
+}
+input{
+	box-shadow:0.2px 0.2px 1px 1px inset;
+	padding: 0.5% 0.5% 0.5% 0.5%;
+}
+.dropb{
+	cursor: pointer;
+	background-color: #71ADAF; 
+	padding:0.1% 1% 0 1%;
+	height: 2%;
+	color: white;
+	border: solid white 10px;
+}
+.dropb img{
+	height: 30px; 
+	width: 30px; 
+	float: right; 
+	margin-top: -5%;
+}
+.dropb:hover{
+	transform: translateY(2px);
+}
+
+label{
+	color: #021429;
+}
+input{
+	border-radius:5%;
+}
+textarea{
+	border-radius:1%;
+}
+.thead{
+	background-color: #042223;
+	color: white;
+}
+form tr{
+	background-color: white;
+}
+form .selected{
+	background-color: #6495ED;
+}
+form th, td {
+	text-align:center;
+    border: 1px solid black;
+	width:20%;
+}
+form th, td {
+    padding: 5px;
+    text-align: left;
+}
+.body form{
+	padding:1% 1% 1% 1%;
+	margin:4% 4% 4% 4%;
+	width:90%;
+	border-radius:1%;
+	border-style:dotted;
+	border-color:white;
+	background-color:#F2F4FA;
+}
+.form_content{
+	padding:2% 2% 2% 2%;
+}
+.form_content button{
+	width:97%;
+	height:10%;
+	border-radius: 20%;
+	margin:5px 5px 5px 5px;
+	border: none;
+	text-align: left;
+	font-size: 140%;
+	transition: all 0.5s;
+	cursor: pointer;
+	padding:8px;
+	padding-left:15px;
+	color:#c7a693;
+	background-color:#17202A;
+	border:none;
+}
+.form_content button:hover {
+	background-color:#5e0231;
+}
+
+.form_content button:active {
+	transform: translateY(4px);
+	background-color:#330033;
+	border:none;
+}
+.btn{
+	width:20%;
+	height:10%;
+	border-radius: 3px;
+	border:solid thin white;
+	margin:0;
+	text-align: center;
+	font-size: none;
+	transition: all 0.5s;
+	cursor: pointer;
+	padding: 0 1% 0 1%;
+	color:white;
+	background-color:#11112E;
+	box-shadow:1px 1px 10px 1px black inset;
+}
+.btn:hover{
+	background-color:#040414;
+}
+.btn:active {
+	transform: translateY(4px);
+	background-color:none;
+	border:none;
+	border:solid;
+}
+
+
+.locationdiv{
+	z-index:10;
+	display:none;
+	margin:5% 50%;
+	width:500px;
+	left:-250px;
+	background-color:black;
+	color:white;
+	position:fixed;
+	width: 37%;
+	min-height:82%;
+}
+#mapCanvas {
+  width: 495px;
+  height: 400px;
+  margin: 2px auto;
+}
+#infoPanel {
+  float: left;
+  margin-left: 10px;
+}
+#infoPanel div {
+  margin-bottom: 5px;
+}
