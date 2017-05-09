@@ -30,6 +30,7 @@
 
     </head>
     <body>
+        <div><jsp:include page="location.jsp"/> </div>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -101,53 +102,58 @@
                                     </div>
 
                                     <div class="form-group">
-                                            <label class="control-label col-sm-2" >Province:</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-control" name="PROVINCE">
-                                                    <option value="Southern" class="form-group">Southern</option>
+                                        <label class="control-label col-sm-2" >Province:</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="PROVINCE">
+                                                <option value="Southern" class="form-group">Southern</option>
 
-                                                </select>
+                                            </select>
 
-                                            </div>
                                         </div>
+                                    </div>
 
                                     <div class="form-group">
-                                            <label class="control-label col-sm-2" for="address">Devision:</label>
-                                            <div class="col-sm-10">
-                                                <select class="form-control" name="DEVISION">
-                                                    <option value="Baddegama" class="form-group">Baddegama</option>
+                                        <label class="control-label col-sm-2" for="address">Devision:</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="DEVISION">
+                                                <option value="Baddegama" class="form-group">Baddegama</option>
 
-                                                </select>
-                                            </div>
+                                            </select>
                                         </div>
+                                    </div>
 
                                     <div class="form-group">
-                                            <label class="control-label col-sm-2" for="address">City:</label>
-                                             <div class="col-sm-10">
+                                        <label class="control-label col-sm-2" for="address">City:</label>
+                                        <div class="col-sm-10">
                                             <select class="form-control" name="CITY">
                                                 <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
 
                                             </select>
-                                             </div>
                                         </div>
+                                    </div>
 
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="lname">Latitude</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" placeholder="Latitude" name="LAT">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="lname">Longitude</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" placeholder="Longitude" name="LON">
-                                        </div>
-                                    </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="lname">Telephone No</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" placeholder="Telephone No" name="TP">
                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="address">Latitude:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT">
+                                        </div>
+                                        <button type="button" class="btn btn-primary" id="mapAdd" >MAP</button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="address">Longitude:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON">
+                                        </div>
+
+
                                     </div>
 
                                     <div class="form-group"> 
@@ -182,6 +188,24 @@
         <!-- CUSTOM SCRIPTS -->
         <script src="assets/js/custom.js"></script>
 
+        <script>
+            $('#mapAdd').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "0.5";
+
+            });
+
+            $('#ok').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "1";
+
+            });
+
+            $('#cancel').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "1";
+            });
+        </script>
 
 
 

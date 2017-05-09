@@ -30,6 +30,7 @@
    
 </head>
 <body>
+    <div><jsp:include page="location.jsp"/> </div>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -90,38 +91,86 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
                             
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
                                     <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
-                                        
-                                                                                <div class="form-group">
+
+                                    <div class="form-group ">
+                                        <label class="control-label col-sm-2" for="user_id">Hospital  ID:</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" placeholder="Hospital ID" name="HID">
+
                                         </div>
-                                         <div class="form-group">
+                                        <button class="btn btn-primary"><i class="fa fa-edit " ></i> Search</button>
+                                    </div>
+                                        
+                                     <div class="form-group ">
+                                        <label class="control-label col-sm-2" for="user_id">Hospital  Name:</label>
+                                        <div class="col-sm-10">
                                             <input type="text" class="form-control" placeholder="Hospital Name" name="HOSPITAL_NAME">
+
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Province" name="PROVINCE">
+                                        
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" >Province:</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="PROVINCE">
+                                                <option value="Southern" class="form-group">Southern</option>
+
+                                            </select>
+
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Distict" name="DISTRICT">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="address">Devision:</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="DEVISION">
+                                                <option value="Baddegama" class="form-group">Baddegama</option>
+
+                                            </select>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City" name="CITY">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="address">City:</label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="CITY">
+                                                <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
+
+                                            </select>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Latitude" name="LAT">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Longitude" name="LON">
-                                        </div>
-                                        <div class="form-group">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="lname">Telephone No</label>
+                                        <div class="col-sm-10">
                                             <input type="text" class="form-control" placeholder="Telephone No" name="TP">
                                         </div>
-                                        
-                                         <div class="form-group"> 
-                                            <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-default">Save Changes</button>
-                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="address">Latitude:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT">
                                         </div>
-                                    </form>
+                                        <button type="button" class="btn btn-primary" id="mapAdd" >MAP</button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-2" for="address">Longitude:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON">
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="form-group"> 
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </form>
                                 </div>
         </div>
     </div>
@@ -148,7 +197,24 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
     
-   
+   <script>
+            $('#mapAdd').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "0.5";
+
+            });
+
+            $('#ok').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "1";
+
+            });
+
+            $('#cancel').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "1";
+            });
+        </script>
     
    
 </body>

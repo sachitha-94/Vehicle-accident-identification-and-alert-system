@@ -12,8 +12,8 @@
         <title>JSP Page</title>
         <style>
             #map_canvas {
-                width: 980px;
-                height: 500px;
+                width: 675px;
+                height: 375px;
             }
             #current {
                 padding-top: 25px;
@@ -21,36 +21,50 @@
         </style>
 
         <script>
-           
-            var map = new google.maps.Map(document.getElementById('map_canvas'), {
-
-                zoom: 1,
-                center: new google.maps.LatLng(35.137879, -82.836914),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-                
-            });
-            var myMarker = new google.maps.Marker({
-                position: new google.maps.LatLng(47.651968, 9.478485),
-                draggable: true
-            });
-
-            google.maps.event.addListener(myMarker, 'dragend', function (evt) {
-                document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
-            });
-
-            google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
-                document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
-            });
-
             map.setCenter(myMarker.position);
             myMarker.setMap(map);
+
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                    zoom: 10,
+                    center: new google.maps.LatLng(6.0535, 80.2210),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+                var myMarker = new google.maps.Marker({
+                    position: new google.maps.LatLng(6.0535, 80.2210),
+                    map: map,
+                    draggable: true
+                });
+                google.maps.event.addListener(myMarker, 'dragend', function (evt) {
+                    document.getElementById('current').innerHTML = '<p>Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
+                    document.getElementById("lat").value =  evt.latLng.lat().toFixed(3);
+                    document.getElementById("lon").value =  evt.latLng.lng().toFixed(3);
+                });
+                google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
+                    document.getElementById('current').innerHTML = '<p>Dragging marker...</p>';
+                });
+            }
         </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvCmJgjYVoD6SBxPeS6xs7HixXwKb1w1Q&callback=initMap">
+        </script>
+       
 
     </head>
-    <body onload="">
-        <section>
-            <div id='map_canvas'></div>
-            <div id="current">Nothing yet...</div>
-        </section>
+    <body >
+        <div id="mapcontainer" style="position: absolute; z-index: 20; display: none; border-style: solid; margin-left: 32%; margin-top: 10%; border-radius: 8px;">
+            <section >
+                <div id='map_canvas'></div>
+                <div style="background: wheat;"  id="current">
+                    Drag pointer
+                </div>
+                <div style="float:right;background: wheat; ">
+                    <button id="ok" class="btn-info">OK</button>
+                    <button id="cancel" class="btn-info">CANCEL</button>
+                </div>
+            </section>
+        </div>
+        
+       
     </body>
 </html>

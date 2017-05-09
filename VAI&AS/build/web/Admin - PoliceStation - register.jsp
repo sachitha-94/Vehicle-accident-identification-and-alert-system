@@ -28,7 +28,7 @@
 
     </head>
     <body>
-        
+        <div><jsp:include page="location.jsp"/> </div>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -92,7 +92,8 @@
 
 
 
-                                    <div class="form-group"> <div class="form-group">
+                                    <div class="form-group"> 
+                                        <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Police Station ID:</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" placeholder="Police Station ID" name="PID">
@@ -129,29 +130,33 @@
                                                 </select>
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-sm-2" for="address">Latitude:</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Latitude" name="LAT">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label col-sm-2" for="address">Longitude:</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Longitude" name="LON">
-                                            </div>
-                                        </div
-
-                                       
-
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Telephone No:</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" placeholder="Telephone No" name="TP">
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">Latitude:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT">
+                                            </div>
+                                            <button type="button" class="btn btn-primary" id="mapAdd" >MAP</button>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">Longitude:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON">
+                                            </div>
+
+
+                                        </div>
+
+
+
+
                                         <div class="col-sm-offset-2 col-sm-10">
                                             <button type="submit" class="btn btn-default">Add Police Station</button>
                                         </div>
@@ -184,7 +189,25 @@
         <!-- CUSTOM SCRIPTS -->
         <script src="assets/js/custom.js"></script>
 
+        <script>
+            $('#mapAdd').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "0.5";
 
-     
-    </body>
+            });
+
+            $('#ok').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "1";
+
+            });
+
+            $('#cancel').click(function () {
+                $('#mapcontainer').toggle("slow");
+                document.getElementById("wrapper").style.opacity = "1";
+            });
+        </script>
+
+    </body
+
 </html>
