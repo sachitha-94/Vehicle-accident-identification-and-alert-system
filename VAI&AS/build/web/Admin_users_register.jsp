@@ -25,7 +25,47 @@
   
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <script>
+function validateForm() {
+    var RegExp=/^[0-9]{9}[vV]$/
+    var nic = document.forms["register"]["NIC"].value;
+    if(!RegExp.test(nic)) {
+        alert("Invalid NIC");
+        return false;
+    }
+    var userid = document.forms["register"]["UID"].value;
+    var Reg2=/^[0-9]+$/
+    if(!Reg2.test(userid)) {
+        alert("Invalid user ID");
+        return false;
+    }
+    var firstname = document.forms["register"]["FIRST_NAME"].value;
+    var Reg3=/^[A-Za-z]+$/
+    if(!Reg3.test(firstname)) {
+        alert("Enter only alphabets for First name");
+        return false;
+    }
+    var lastname = document.forms["register"]["LAST_NAME"].value;
    
+    if(!Reg3.test(lastname)) {
+        alert("Enter only alphabets for last name");
+        return false;
+    }
+    var landline = document.forms["register"]["TP_HOME"].value;
+    var Reg4=/^[0-9]{10}$/
+    if(!Reg4.test(landline)) {
+        alert("Invalid user telephone number");
+        return false;
+    }
+    var mobile = document.forms["register"]["TP_MOBILE"].value;
+    
+    if(!Reg4.test(mobile)) {
+        alert("Invalid user mobile number");
+        return false;
+    }
+    
+}
+</script>
 </head>
 <body>
     <div id="wrapper">
@@ -42,7 +82,7 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a></div>
+font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" href="Admin_dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a></div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -54,16 +94,16 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
 				
 					
                     <li>
-                        <a   href="Admin - users - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a   href="Admin_users.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                      <li>
-                         <a  href="Admin - users - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                         <a  href="Admin_users_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="Admin - users - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a class="active-menu" href="Admin_users_register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
 		    <li  >
-                        <a   href="Admin - users - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                        <a   href="Admin_users_update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>	
                       	
                 </ul>
@@ -87,26 +127,26 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                             </div>
                             
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
+                                    <form  name="register" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" onsubmit="return validateForm()" method="post" role="form">
                                         <div class="form-group ">
                                             <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="user_id" placeholder="Enter User ID" name="UID">
+                                                <input type="text"  class="form-control" id="user_id" placeholder="Enter User ID" name="UID">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="nic">NIC Number:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Enter NIC Munber" name="NIC" required>
+                                                <input type="text" class="form-control" placeholder="Enter NIC Munber" name="NIC" required onkeypress="return isNumberKey(event)">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                                 <label class="control-label col-sm-2" >Gender:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="radio" class="" value="Male" name="Gender" placeholder="Enter  Gender" checked="">  <span>Male</span>
-                                                    <input type="radio" class=""  value="Female" name="Gender" placeholder="Enter  Gender">  <span>Female</span>
+                                                    <input type="radio" class="" value="Male" name="GENDER" placeholder="Enter  Gender" checked="">  <span>Male</span>
+                                                    <input type="radio" class=""  value="Female" name="GENDER" placeholder="Enter  Gender">  <span>Female</span>
                                                 </div>
                                         </div>
 
@@ -120,26 +160,26 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">Last Name:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"  placeholder="Enter Last Name" name="LAST_NAME">
+                                                <input type="text" class="form-control"  placeholder="Enter Last Name" name="LAST_NAME" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">TP Home:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"  placeholder="Enter Home Telephone No" name="TP_HOME">
+                                                <input type="text" class="form-control"  placeholder="Enter Home Telephone No" name="TP_HOME" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">TP Mobile:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"  placeholder="Enter Mobile No" name="TP_MOBILE">
+                                                <input type="text" class="form-control"  placeholder="Enter Mobile No" name="TP_MOBILE" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Address:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"  placeholder="Enter Address" name="ADDRESS">
+                                                <input type="text" class="form-control"  placeholder="Enter Address" name="ADDRESS" required>
                                             </div>
                                         </div>
 
@@ -154,7 +194,7 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">License No:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"  placeholder="Enter License No" name="LICENSE_NO">
+                                                <input type="text" class="form-control"  placeholder="Enter License No" name="LICENSE_NO" required>
                                             </div>
                                         </div>
 
@@ -177,7 +217,7 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="pwd">Birth Date:</label>
                                             <div class="col-sm-10"> 
-                                                <input type="date" class="form-control"  placeholder="Enter BirthDay" name="BIRTH_DAY">
+                                                <input type="date" class="form-control"  placeholder="Enter BirthDay" name="BIRTH_DAY" required>
                                             </div>
                                         </div>
                                       
@@ -190,7 +230,7 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         
                                          <div class="form-group"> 
                                             <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-default">Add User</button>
+                                                <button type="submit" class="btn btn-default" value="submit">Add User</button>
                                             </div>
                                         </div>
                                     </form>

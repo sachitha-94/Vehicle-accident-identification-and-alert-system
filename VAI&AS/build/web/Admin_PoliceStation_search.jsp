@@ -1,15 +1,16 @@
 <%-- 
-    Document   : Admin - hosptal - search
-    Created on : Apr 25, 2017, 8:38:12 PM
-    Author     : Dilum
+    Document   : Admin - police - search.jsp
+    Created on : Apr 25, 2017, 11:30:00 PM
+    Author     : Shaii99
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hospital</title>
+    <title>Search Police Stations</title>
 	<!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
@@ -31,33 +32,33 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="Admin - hosptal - search.jsp">Hospital</a> 
+                <a class="navbar-brand" href="index.html">Police Stations</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
+font-size: 16px;">  Last access : 26 April 2017 &nbsp; <a style="color: white;" href="Admin_dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/hospital.png" class="user-image img-responsive"/>
+                    <img src="assets/img/Police-icon.png" class="user-image img-responsive"/>
 					</li>
 				
 					
                     <li>
-                        <a   href="Admin - hospital - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a   href="Admin_PoliceStation.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                      <li>
-                         <a class="active-menu" href="Admin - hospital - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                         <a class="active-menu" href="Admin_PoliceStation_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a  href="Admin - hospital - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a  href="Admin_PoliceStation_register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
-						   <li  >
-                                                       <a   href="Admin - hospital - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                    <li>
+                        <a   href="Admin_PoliceStation_update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>	
                       	
                 </ul>
@@ -71,8 +72,8 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
                 
                 
                 <div class="form-group">
-                                            <label>Search Hospital</label>
-                                            <p class="help-block">find hospital and hospital details</p>
+                                            <label>Search Police Stations</label>
+                                            <p class="help-block">See the Police Station details</p>
                                             <input class="form-control" />
                                             
                                             
@@ -104,3 +105,4 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
    
 </body>
 </html>
+

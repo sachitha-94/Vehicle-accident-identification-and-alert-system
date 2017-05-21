@@ -1,17 +1,16 @@
 <%-- 
-    Document   : Admin - police - update.jsp
-    Created on : Apr 25, 2017, 11:34:40 PM
+    Document   : Admin - police - register.jsp
+    Created on : Apr 25, 2017, 11:42:45 PM
     Author     : Shaii99
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Update Police Details</title>
+        <title>Register Police Stations</title>
 
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLES-->
@@ -23,10 +22,9 @@
 
         <link rel="stylesheet" href="assets/css/style2.css">
 
-            <!-- CUSTOM STYLES-->
-
-            <!-- GOOGLE FONTS-->
             <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+
 
     </head>
     <body>
@@ -45,7 +43,7 @@
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
                      float: right;
-                     font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
+                     font-size: 16px;">  Last access : 27 April 2016 &nbsp; <a style="color: white;" href="Admin_dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
             </nav>   
             <!-- /. NAV TOP  -->
             <nav class="navbar-default navbar-side" role="navigation">
@@ -57,16 +55,16 @@
 
 
                         <li>
-                            <a   href="Admin - PoliceStation - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                            <a   href="Admin_PoliceStation.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a  href="Admin - PoliceStation - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                            <a  href="Admin_PoliceStation_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                         </li>
                         <li>
-                            <a class="active-menu" href="Admin - PoliceStation - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                            <a class="active-menu" href="Admin_PoliceStation_register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                         </li>
                         <li  >
-                            <a   href="Admin - PoliceStation - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                            <a   href="Admin_PoliceStation_update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                         </li>	
 
                     </ul>
@@ -86,79 +84,81 @@
 
 
                             <div class="panel-heading">
-                                <strong>  Update Police Station Details </strong>  
+                                <strong>  Register Police Stations </strong>  
                             </div>
 
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
                                 <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
 
-                                    <div class="form-group ">
-                                        <label class="control-label col-sm-2" for="user_id">Police Station ID:</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Police Station ID" name="PID">
 
-                                        </div>
-                                        <button class="btn btn-primary"><i class="fa fa-edit " ></i> Search</button>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" >Province:</label>
-                                        <div class="col-sm-10">
-                                            <select class="form-control" name="PROVINCE">
-                                                <option value="Southern" class="form-group">Southern</option>
-
-                                            </select>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="address">Devision:</label>
-                                        <div class="col-sm-10">
-                                            <select class="form-control" name="DEVISION">
-                                                <option value="Baddegama" class="form-group">Baddegama</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="address">City:</label>
-                                        <div class="col-sm-10">
-                                            <select class="form-control" name="CITY">
-                                                <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="lname">Telephone No</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" placeholder="Telephone No" name="TP">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="address">Latitude:</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT">
-                                        </div>
-                                        <button type="button" class="btn btn-primary" id="mapAdd" >MAP</button>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-sm-2" for="address">Longitude:</label>
-                                        <div class="col-sm-8">
-                                            <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON">
-                                        </div>
-
-
-                                    </div>
 
                                     <div class="form-group"> 
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">Police Station ID:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="Police Station ID" name="PID">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" >Province:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="PROVINCE">
+                                                    <option value="Southern" class="form-group">Southern</option>
+
+                                                </select>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">Devision:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="DEVISION">
+                                                    <option value="Baddegama" class="form-group">Baddegama</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">City:</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control" name="CITY">
+                                                    <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">Telephone No:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" placeholder="Telephone No" name="TP">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">Latitude:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT">
+                                            </div>
+                                            <button type="button" class="btn btn-primary" id="mapAdd" >MAP</button>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="address">Longitude:</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON">
+                                            </div>
+
+
+                                        </div>
+
+
+
+
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-default">Save Changes</button>
+                                            <button type="submit" class="btn btn-default">Add Police Station</button>
                                         </div>
                                     </div>
                                 </form>
@@ -170,6 +170,7 @@
 
 
                 </div>
+
                 <!-- /. PAGE INNER  -->
             </div>
             <!-- /. PAGE WRAPPER  -->
@@ -207,7 +208,6 @@
             });
         </script>
 
+    </body
 
-
-    </body>
 </html>

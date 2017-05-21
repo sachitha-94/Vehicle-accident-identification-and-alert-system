@@ -74,7 +74,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a class="getApp" href="Admin - dashboard.jsp">Admin Panel</a>
+                                <li><a class="getApp" href="Admin_dashboard.jsp">Admin Panel</a>
                                 </li>
                                
                                 <li><a href="index.jsp">Log Out</a>

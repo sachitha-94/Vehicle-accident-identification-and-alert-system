@@ -38,7 +38,7 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;">  26 April 2017 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
+font-size: 16px;">  26 April 2017 &nbsp; <a style="color: white;" href="Admin_dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -50,16 +50,16 @@ font-size: 16px;">  26 April 2017 &nbsp; <a style="color: white;" href="Admin - 
 				
 					
                     <li>
-                        <a class="active-menu"  href="Admin - PoliceStation - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a class="active-menu"  href="Admin_PoliceStation.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                      <li>
-                         <a  href="Admin - PoliceStation - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                         <a  href="Admin_PoliceStation_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a  href="Admin - PoliceStation - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a  href="Admin_PoliceStation_register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
                     <li>
-                            <a   href="Admin - PoliceStation - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                            <a   href="Admin_PoliceStation_update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>
                     
                       	

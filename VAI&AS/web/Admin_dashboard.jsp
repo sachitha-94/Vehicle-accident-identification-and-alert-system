@@ -45,21 +45,21 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="about-item scrollpoint sp-effect2">
-                            <a href="Admin - users - 1.jsp">
+                            <a href="Admin_users.jsp">
                             <i class="fa fa-users fa-2x "></i></a>
                             <h3>Users</h3>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6" >
                         <div class="about-item scrollpoint sp-effect5">
-                            <a href="Admin - hospital - 1.jsp">
+                            <a href="Admin_hospital.jsp">
                             <i class="fa fa-hospital-o fa-2x"></i>
                             <h3>Hospital</h3>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6" >
                         <div class="about-item scrollpoint sp-effect5">
-                            <a href="Admin - PoliceStation - 1.jsp">
+                            <a href="Admin_PoliceStation.jsp">
                             <i class="fa fa-car fa-2x"></i>
                             <h3>Police Stations</h3>
                         </div>

@@ -1,16 +1,15 @@
 <%-- 
-    Document   : Admin - police - register.jsp
-    Created on : Apr 25, 2017, 11:42:45 PM
-    Author     : Shaii99
+    Document   : Admin - hospital - register
+    Created on : Apr 25, 2017, 8:29:39 PM
+    Author     : Dilum
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Register Police Stations</title>
+        <title>Hospital</title>
 
         <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FONTAWESOME STYLES-->
@@ -22,9 +21,10 @@
 
         <link rel="stylesheet" href="assets/css/style2.css">
 
+            <!-- CUSTOM STYLES-->
+
+            <!-- GOOGLE FONTS-->
             <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
-
 
     </head>
     <body>
@@ -38,33 +38,33 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Police Stations</a> 
+                    <a class="navbar-brand" href="Admin - hospital - register.jsp">Hospital</a> 
                 </div>
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
                      float: right;
-                     font-size: 16px;">  Last access : 27 April 2016 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
+                     font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin_dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
             </nav>   
             <!-- /. NAV TOP  -->
             <nav class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
                         <li class="text-center">
-                            <img src="assets/img/Police-icon.png" class="user-image img-responsive"/>
+                            <img src="assets/img/hospital.png" class="user-image img-responsive"/>
                         </li>
 
 
                         <li>
-                            <a   href="Admin - PoliceStation - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                            <a   href="Admin_hospital.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a  href="Admin - PoliceStation - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                            <a  href="Admin_hospital_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                         </li>
                         <li>
-                            <a class="active-menu" href="Admin - PoliceStation - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                            <a class="active-menu" href="Admin_hospital_register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                         </li>
                         <li  >
-                            <a   href="Admin - PoliceStation - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                            <a   href="Admin_hospital_update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                         </li>	
 
                     </ul>
@@ -84,7 +84,7 @@
 
 
                             <div class="panel-heading">
-                                <strong>  Register Police Stations </strong>  
+                                <strong>  Register hospital </strong>  
                             </div>
 
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
@@ -93,10 +93,18 @@
 
 
                                     <div class="form-group"> 
+                                        <div class="form-group ">
+                                        <label class="control-label col-sm-2" for="user_id">Hospital ID:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" placeholder="Hospital ID" name="HID">
+
+                                        </div>
+                                        <button class="btn btn-primary"><i class="fa fa-edit " ></i> Search</button>
+                                    </div>
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="address">Police Station ID:</label>
+                                            <label class="control-label col-sm-2" for="address">Hospital Name:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Police Station ID" name="PID">
+                                                <input type="text" class="form-control" placeholder="Hospital Name" name="HOSPITAL_NAME">
                                             </div>
                                         </div>
 
@@ -112,10 +120,10 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="address">Devision:</label>
+                                            <label class="control-label col-sm-2" for="address">Distict:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="DEVISION">
-                                                    <option value="Baddegama" class="form-group">Baddegama</option>
+                                                <select class="form-control" name="DISTRICT">
+                                                    <option value="Galle" class="form-group">Galle</option>
 
                                                 </select>
                                             </div>
@@ -163,6 +171,12 @@
                                     </div>
                                 </form>
                             </div>
+
+
+
+
+
+
                         </div>
                     </div>
 
@@ -170,7 +184,6 @@
 
 
                 </div>
-
                 <!-- /. PAGE INNER  -->
             </div>
             <!-- /. PAGE WRAPPER  -->
@@ -188,7 +201,6 @@
         <script src="assets/js/morris/morris.js"></script>
         <!-- CUSTOM SCRIPTS -->
         <script src="assets/js/custom.js"></script>
-
         <script>
             $('#mapAdd').click(function () {
                 $('#mapcontainer').toggle("slow");
@@ -208,6 +220,7 @@
             });
         </script>
 
-    </body
 
+
+    </body>
 </html>

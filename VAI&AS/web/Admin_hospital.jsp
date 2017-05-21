@@ -36,7 +36,7 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
+font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin_dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -48,16 +48,16 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin - d
 				
 					
                     <li>
-                        <a class="active-menu"  href="Admin - hospital - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                        <a class="active-menu"  href="Admin_hospital.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                      <li>
-                         <a  href="Admin - hospital - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                         <a  href="Admin_hospital_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                     </li>
                     <li>
-                        <a  href="Admin - hospital - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                        <a  href="Admin_hospital_register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                     </li>
-						   <li  >
-                                                       <a   href="Admin - hospital - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+		    <li  >
+                        <a   href="Admin_hospital_update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                     </li>	
                       	
                 </ul>

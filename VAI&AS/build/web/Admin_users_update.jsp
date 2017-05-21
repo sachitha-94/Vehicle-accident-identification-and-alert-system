@@ -55,7 +55,7 @@
                         <div style="color: white;
                              padding: 15px 50px 5px 50px;
                              float: right;
-                             font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" href="Admin - dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
+                             font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" href="Admin_dashboard.jsp" class="btn btn-info square-btn-adjust">Admin Panel</a><a href="index.jsp" class="btn btn-info square-btn-adjust">Logout</a> </div>
                     </nav>   
                     <!-- /. NAV TOP  -->
                     <nav class="navbar-default navbar-side" role="navigation">
@@ -67,16 +67,16 @@
 
 
                                 <li>
-                                    <a   href="Admin - users - 1.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                                    <a   href="Admin_users.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                                 </li>
                                 <li>
-                                    <a  href="Admin - users - search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
+                                    <a  href="Admin_users_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
                                 </li>
                                 <li>
-                                    <a  href="Admin - users - register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
+                                    <a  href="Admin_users_register.jsp"><i class="fa fa-qrcode fa-3x"></i> Registration</a>
                                 </li>
                                 <li  >
-                                    <a  class="active-menu" href="Admin - users - update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
+                                    <a  class="active-menu" href="Admin_users_update.jsp"><i class="fa fa-bar-chart-o fa-3x"></i> Update</a>
                                 </li>	
 
                             </ul>
