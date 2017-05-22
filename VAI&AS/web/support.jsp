@@ -30,7 +30,47 @@
           
         </style>
 
-        
+        <script>
+function validateForm() {
+    var RegExp=/^[0-9]{9}[vV]$/
+    var nic = document.forms["register"]["NIC"].value;
+    if(!RegExp.test(nic)) {
+        alert("Invalid NIC");
+        return false;
+    }
+    var userid = document.forms["register"]["UID"].value;
+    var Reg2=/^[0-9]+$/
+    if(!Reg2.test(userid)) {
+        alert("Invalid user ID");
+        return false;
+    }
+    var firstname = document.forms["register"]["FIRST_NAME"].value;
+    var Reg3=/^[A-Za-z]+$/
+    if(!Reg3.test(firstname)) {
+        alert("Enter only alphabets for First name");
+        return false;
+    }
+    var lastname = document.forms["register"]["LAST_NAME"].value;
+   
+    if(!Reg3.test(lastname)) {
+        alert("Enter only alphabets for last name");
+        return false;
+    }
+    var landline = document.forms["register"]["TP_HOME"].value;
+    var Reg4=/^[0-9]{10}$/
+    if(!Reg4.test(landline)) {
+        alert("Invalid user telephone number");
+        return false;
+    }
+    var mobile = document.forms["register"]["TP_MOBILE"].value;
+    
+    if(!Reg4.test(mobile)) {
+        alert("Invalid user mobile number");
+        return false;
+    }
+    
+}
+</script>
     </head>
     <body>
 
@@ -49,58 +89,59 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
+                                    <form  name="register" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" onsubmit="return validateForm()" method="post" role="form">
                                         <div class="form-group ">
                                             <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="user_id" placeholder="Enter User ID">
+                                                <input type="text"  class="form-control" id="user_id" placeholder="Enter User ID" name="UID" required=""/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="nic">NIC Number:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="address" placeholder="Enter NIC Munber">
+                                                <input type="text"  class="form-control" placeholder="Enter NIC Munber" name="NIC" required="">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="fname">Gender:</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="fname" placeholder="Enter  Gender">
-                                            </div>
+                                                <label class="control-label col-sm-2" >Gender:</label>
+                                                <div class="col-sm-10">
+                                                    <input type="radio" class="" value="Male" name="GENDER" placeholder="Enter  Gender" checked="">  <span>Male</span>
+                                                    <input type="radio" class=""  value="Female" name="GENDER" placeholder="Enter  Gender">  <span>Female</span>
+                                                </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="fname">First Name:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+                                                <input type="text" class="form-control"  placeholder="Enter First Name" name="FIRST_NAME" required="">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">Last Name:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+                                                <input type="text" class="form-control"  placeholder="Enter Last Name" name="LAST_NAME" required="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">TP Home:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="lname" placeholder="Enter Home Telephone No">
+                                                <input type="text" class="form-control"  placeholder="Enter Home Telephone No" name="TP_HOME" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="lname">TP Mobile:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="lname" placeholder="Enter Mobile No">
+                                                <input type="text" class="form-control"  placeholder="Enter Mobile No" name="TP_MOBILE" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Address:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="address" placeholder="Enter Address">
+                                                <input type="text" class="form-control"  placeholder="Enter Address" name="ADDRESS" required>
                                             </div>
                                         </div>
 
@@ -108,43 +149,51 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="email">Email:</label>
                                             <div class="col-sm-10">
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                                                <input type="email" class="form-control"  placeholder="Enter email" name="EMAIL" required="">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">License No:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="address" placeholder="Enter License No">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label class="control-label col-sm-2" for="blood_group">Blood Group:</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="blood_group" placeholder="Enter Blood Group">
+                                                <input type="text" class="form-control"  placeholder="Enter License No" name="LICENSE_NO" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="pwd">Birth Date</label>
+                                                <label class="control-label col-sm-2" for="blood_group">Blood Group:</label>
+                                                <div class="col-sm-10">
+                                                    <select class="form-control" name="BLOOD_GROUP" required>
+                                                        <option value="" class="form-group"></option>
+                                                        <option value="O+" class="form-group">O+</option>
+                                                        <option value="O-" class="form-group">O-</option>
+                                                        <option value="A+" class="form-group">A+</option>
+                                                        <option value="A-" class="form-group">A-</option>
+                                                        <option value="B+" class="form-group">B+</option>
+                                                        <option value="B-" class="form-group">B-</option>
+                                                       
+                                                    </select>
+                                                    
+                                                </div>
+                                            </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">Birth Date:</label>
                                             <div class="col-sm-10"> 
-                                                <input type="date" class="form-control" id="pwd" placeholder="Enter BirthDay">
+                                                <input type="date" class="form-control"  placeholder="Enter BirthDay" name="BIRTH_DAY" required="">
                                             </div>
                                         </div>
-
-
+                                      
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="dl_no">Other:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="dl_no" placeholder="Other">
+                                                <input type="text" class="form-control"  placeholder="Other" name="OTHER" required="">
                                             </div>
                                         </div>
                                         
                                          <div class="form-group"> 
                                             <div class="col-sm-offset-2 col-sm-10">
-                                                <button type="submit" class="btn btn-default">Add User</button>
+                                                <button type="submit" class="btn btn-default" value="submit">Add User</button>
                                             </div>
                                         </div>
                                     </form>

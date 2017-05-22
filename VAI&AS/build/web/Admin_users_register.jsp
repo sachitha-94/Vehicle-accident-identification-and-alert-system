@@ -131,7 +131,7 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         <div class="form-group ">
                                             <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                             <div class="col-sm-10">
-                                                <input type="text"  class="form-control" id="user_id" placeholder="Enter User ID" name="UID">
+                                                <input type="text"  class="form-control" id="user_id" placeholder="Enter User ID" name="UID" required>
                                             </div>
                                         </div>
 
@@ -201,7 +201,8 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                         <div class="form-group">
                                                 <label class="control-label col-sm-2" for="blood_group">Blood Group:</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control" name="BLOOD_GROUP">
+                                                    <select class="form-control" name="BLOOD_GROUP" required>
+                                                        <option value="" class="form-group"></option>
                                                         <option value="O+" class="form-group">O+</option>
                                                         <option value="O-" class="form-group">O-</option>
                                                         <option value="A+" class="form-group">A+</option>
