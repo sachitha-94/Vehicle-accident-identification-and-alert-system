@@ -88,7 +88,7 @@
                             </div>
 
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
+                                <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="PoliceStationController" method="post" role="form">
 
 
 
