@@ -11,6 +11,7 @@ import com.ucsc.vaias.model.User;
 import com.ucsc.vaias.service.UserService;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -42,6 +43,10 @@ public class UserServiceImpl implements UserService {
     public User searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
 
         return udao.searchUserByUID(user, connection);
+    }
+    public ArrayList<User> selectAllUsers(Connection connection) throws ClassNotFoundException, SQLException {
+
+        return udao.selectAllUsers(connection);
     }
 
 }

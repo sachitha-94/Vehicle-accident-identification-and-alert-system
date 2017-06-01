@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -106,6 +107,34 @@ public class UserDAOImpl implements UserDAO {
             
         }
         return uReturn;
+    }
+
+    @Override
+    public ArrayList<User> selectAllUsers(Connection connection) throws ClassNotFoundException, SQLException {
+         String sql="SELECT * FROM user";
+        Statement stm = connection.createStatement();
+        ResultSet res = stm.executeQuery(sql);
+       // User uReturn=new User();
+        ArrayList<User> users = new ArrayList<User>();
+        
+        while (res.next()) {
+            User uReturn=new User();
+            uReturn.setUID(res.getString("UID"));
+            uReturn.setNIC(res.getString("NIC"));
+            uReturn.setFIRST_NAME(res.getString("FIRST_NAME"));
+            uReturn.setLAST_NAME(res.getString("LAST_NAME"));
+            uReturn.setGENDER(res.getString("GENDER"));
+            uReturn.setTP_HOME(res.getInt("TP_HOME"));
+            uReturn.setTP_MOBILE(res.getInt("TP_MOBILE"));
+            uReturn.setADDRESS(res.getString("ADDRESS"));
+            uReturn.setLICENSE_NO(res.getString("LICENSE_NO"));
+            uReturn.setBLOOD_GROUP(res.getString("BLOOD_GROUP"));
+            uReturn.setEMAIL(res.getString("EMAIL"));
+            uReturn.setBIRTH_DAY(res.getDate("BIRTH_DAY"));
+            uReturn.setOTHER(res.getString("OTHER"));
+            users.add(uReturn);
+        }
+        return users;
     }
 
 }

@@ -4,6 +4,8 @@
     Author     : Dilum
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.ucsc.vaias.model.User"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -22,6 +24,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </head>
     <body>
+        <jsp:include page="//UserController?type=sel" flush="true"/>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -104,48 +107,21 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
-                                                    <td>100090</td>
-                                                </tr>
+                                                <%
+                                                        ArrayList<User> list = (ArrayList<User>) request.getAttribute("list");
+                                                        for (User category : list) {
+                                                    %>
+                                                        <tr>
+                                                                     <td><% out.println(category.getUID()); %></td>
+                                                                     <td><% out.println(category.getNIC()); %></td>
+                                                                     <td><% out.println(category.getFIRST_NAME()); %></td>
+                                                                     <td><% out.println(category.getLAST_NAME()); %></td>
+                                                                     <td><% out.println(category.getTP_MOBILE()); %></td>
+                                                        </tr>
+                                                                    
+                                                    <%     }
+                                                            
+                                                                    %>
 
                                             </tbody>
                                         </table>

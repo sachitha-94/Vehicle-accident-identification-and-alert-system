@@ -9,6 +9,7 @@ import com.ucsc.vaias.model.User;
 import java.sql.Connection;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -23,5 +24,6 @@ public interface UserService {
     public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
 
     public User searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
-
+    
+    public ArrayList<User> selectAllUsers(Connection connection) throws ClassNotFoundException, SQLException;
 }
