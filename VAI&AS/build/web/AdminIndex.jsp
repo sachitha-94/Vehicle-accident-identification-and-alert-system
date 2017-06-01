@@ -44,6 +44,8 @@
     </head>
 
     <body>
+
+
         <div class="container" style="width: 100%">
             <div class="pre-loader">
                 <div class="load-con">
@@ -55,7 +57,7 @@
                     </div>
                 </div>
             </div>
-
+            <div id="viewprofile" style="display: none"><jsp:include page="profileview.jsp" /></div>
             <header>
 
                 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -76,7 +78,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a class="getApp" href="Admin_dashboard.jsp">Admin Panel</a>
                                 </li>
-                               
+
                                 <li><a href="index.jsp">Log Out</a>
                                 </li>
                             </ul>
@@ -94,27 +96,93 @@
 
 
                 <div id="map" style="height: 700px;width: 100%;"></div>
+
                 <script>
-                    function initMap() {
-                        var uluru = {lat: 7.8731, lng: 80.7718};
-                        var map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 8,
-                            center: uluru
+
+                    setInterval("loadMap();", 1000);
+
+                    var map;
+                    var marker;
+
+                    var prelat = 0;
+                    var prelon = 0;
+
+                    function loadMap() {
+
+                        jQuery.ajax({
+                            type: 'POST',
+                            url: "LoadMapController",
+                            dataType: 'json',
+                            success: function (data) {
+                                var lat = data.lat;
+                                var lon = data.lon;
+                                if ((prelat != lat) && (prelon != lon)) {
+                                    marker.setPosition(new google.maps.LatLng(lat, lon));
+                                    map.panTo(new google.maps.LatLng(lat, lon));
+
+                                    marker.addListener('click', function () {
+                                        $("#viewprofile").toggle("slow");
+                                        loadData();
+                                        document.getElementById("map").style.opacity = "0.5";
+                                    });
+
+                                    prelat = lat;
+                                    prelon = lon;
+                                }
+
+                            }
+
+
                         });
-                        var marker = new google.maps.Marker({
-                            position: uluru,
-                            map: map
-                        });
+
+
+
                     }
+
+
+
+
+                    function initMap() {
+                        var myLatLng = {lat: 0, lng: 0};
+                        var directionsDisplay = new google.maps.DirectionsRenderer;
+                        var directionsService = new google.maps.DirectionsService;
+
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            zoom: 8,
+                            center: myLatLng
+                        });
+                        directionsDisplay.setMap(map);
+
+                        marker = new google.maps.Marker({
+                            position: myLatLng,
+                            map: map,
+                            title: 'Hello World!'
+
+                        });
+                        directionsDisplay.setMap(map);
+                        
+
+
+
+
+                    }
+
+                    
+
+
+                    
+
                 </script>
                 <script async defer
-                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQNxuARLxgAq6oGgjEiHcMGCwRG7Eye2A&callback=initMap">
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIAiFOVdsKt6f2RK-lyvrQNy4D3QdAQd8&callback=initMap">
                 </script>
 
 
             </header>
-              
-            <div id="viewprofile" style="display: none"><jsp:include page="profileview.jsp" /></div>
+
+
+
+
             <div class="wrapper">
                 <footer>
                     <div class="container">
@@ -139,31 +207,14 @@
 
 
                 <script>
-                    $('#profileButton').click(function () {
-                        $('#viewprofile').toggle("slow");
-                    });
-
-                    $('#profileButton').click(function () {
-                        $('#map').hide("slow");
-                    });
 
                     $('#close').click(function () {
                         $('#viewprofile').hide("slow");
+                        document.getElementById("map").style.opacity = "1";
+
                     });
-                    $('#close').click(function () {
-                        $('#map').toggle("slow");
-                    });
 
-                    //function displayMap() {
-                    //document.getElementById('viewprofile').style.display = "block";
 
-                    //}
-
-                    // $('#profileButton').click(function () {
-                    //$('#viewprofile').toggle("slow");
-                    //document.getElementById("container").style.opacity = "0.2";
-                    //displayMap();
-                    // });
 
                 </script>
             </div>

@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class UserIndex_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -83,11 +83,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("\r\n");
       out.write("    <body>\r\n");
-      out.write("        <div>");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "login.jsp", out, false);
-      out.write(" </div>\r\n");
-      out.write("        \r\n");
-      out.write("        <div class=\"container\" style=\"width: 100%;\">\r\n");
+      out.write("        <div class=\"container\" style=\"width: 100%\">\r\n");
       out.write("            <div class=\"pre-loader\">\r\n");
       out.write("                <div class=\"load-con\">\r\n");
       out.write("                    <img src=\"assets/img/freeze/logo.png\" class=\"animated fadeInDown\" alt=\"\">\r\n");
@@ -117,10 +113,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">\r\n");
       out.write("\r\n");
       out.write("                            <ul class=\"nav navbar-nav navbar-right\">\r\n");
-      out.write("                                \r\n");
-      out.write("                                <li><a id=\"login\" href=\"#\">Login</a>\r\n");
+      out.write("                                <li><a href=\"UserIndex.jsp\">Home</a>\r\n");
       out.write("                                </li>\r\n");
-      out.write("                                <li><a href=\"support.jsp\">Register</a>\r\n");
+      out.write("                                <li><a class=\"getApp\" id=\"profileButton\" href=\"#getApp\">Profile</a>\r\n");
+      out.write("                                </li>\r\n");
+      out.write("                                <li><a href=\"index.jsp\">Log Out</a>\r\n");
       out.write("                                </li>\r\n");
       out.write("                            </ul>\r\n");
       out.write("                        </div>\r\n");
@@ -141,7 +138,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    function initMap() {\r\n");
       out.write("                        var uluru = {lat: 7.8731, lng: 80.7718};\r\n");
       out.write("                        var map = new google.maps.Map(document.getElementById('map'), {\r\n");
-      out.write("                            zoom: 8,\r\n");
+      out.write("                            zoom: 4,\r\n");
       out.write("                            center: uluru\r\n");
       out.write("                        });\r\n");
       out.write("                        var marker = new google.maps.Marker({\r\n");
@@ -156,7 +153,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("            </header>\r\n");
-      out.write("            \r\n");
+      out.write("\r\n");
       out.write("            <div id=\"viewprofile\" style=\"display: none\">");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "profileview.jsp", out, false);
       out.write("</div>\r\n");
@@ -184,11 +181,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("                <script>\r\n");
-      out.write("                    $('#login').click(function () {\r\n");
-      out.write("                        $('#wrapper').toggle(\"slow\");\r\n");
-      out.write("                        document.getElementById(\"map\").style.opacity=\"0.5\";\r\n");
+      out.write("                    $('#profileButton').click(function () {\r\n");
+      out.write("                        $('#viewprofile').toggle(\"slow\");\r\n");
       out.write("                    });\r\n");
-      out.write("                        \r\n");
+      out.write("\r\n");
       out.write("                    $('#profileButton').click(function () {\r\n");
       out.write("                        $('#map').hide(\"slow\");\r\n");
       out.write("                    });\r\n");
@@ -200,12 +196,22 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        $('#map').toggle(\"slow\");\r\n");
       out.write("                    });\r\n");
       out.write("\r\n");
-      out.write("                   \r\n");
+      out.write("                    //function displayMap() {\r\n");
+      out.write("                    //document.getElementById('viewprofile').style.display = \"block\";\r\n");
+      out.write("\r\n");
+      out.write("                    //}\r\n");
+      out.write("\r\n");
+      out.write("                    // $('#profileButton').click(function () {\r\n");
+      out.write("                    //$('#viewprofile').toggle(\"slow\");\r\n");
+      out.write("                    //document.getElementById(\"container\").style.opacity = \"0.2\";\r\n");
+      out.write("                    //displayMap();\r\n");
+      out.write("                    // });\r\n");
+      out.write("\r\n");
       out.write("                </script>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("    </body>\r\n");
-      out.write("    \r\n");
+      out.write("\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

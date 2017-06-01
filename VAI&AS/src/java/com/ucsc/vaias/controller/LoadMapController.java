@@ -6,31 +6,34 @@
 package com.ucsc.vaias.controller;
 
 import com.ucsc.vaias.connection.factory.DBResourceFactory;
-import com.ucsc.vaias.dao.impl.UserDAOImpl;
 import com.ucsc.vaias.model.PostAccident;
 import com.ucsc.vaias.model.User;
 import com.ucsc.vaias.service.PostAccidentService;
 import com.ucsc.vaias.service.impl.PostAccidentServiceImpl;
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
  *
- * @author sajja
- * 
- * 
+ * @author Ganusha
  */
-
-@WebServlet(name = "PostAccidentController", urlPatterns = {"/PostAccidentController"})
-public class PostAccidentController extends HttpServlet {
+@WebServlet(name = "LoadMapController", urlPatterns = {"/LoadMapController"})
+public class LoadMapController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,43 +47,7 @@ public class PostAccidentController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            DBResourceFactory dBResourceFactory = new DBResourceFactory();
-            Connection connection = null;
 
-            PostAccident postAccident = new PostAccident();
-            //set kaanna database 1n ganna annima row 1;
-
-           
-           //postAccident.getUID()
-
-            try {
-                connection = dBResourceFactory.getFactoryConnection().getConnection();
-                
-                PostAccidentService accidentService=new PostAccidentServiceImpl();
-                PostAccident searchLastRow = accidentService.SearchLastRow(connection);
-                User user = new User();
-                user.setUID(searchLastRow.getUID());
-                
-                UserDAOImpl userDAOImpl = new UserDAOImpl();
-                User postAccidentUser = userDAOImpl.searchUserByUID(user, connection);
-                //request.setAttribute("user", postAccidentUser);
-
-                JSONObject jsono=new JSONObject(postAccidentUser);
-                //System.out.println(jsono);
-                response.setContentType("json");
-                out.print(jsono);
-                //String name=postAccidentUser.getFIRST_NAME();
-                //out.print(postAccident.getUID());
-
-                
-                // rd = request.getRequestDispatcher("./profileview.jsp");
-                //rd.forward(request, response);
-
-            } catch (Exception e) {
-            }
-
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -109,8 +76,54 @@ public class PostAccidentController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
 
+        //writing data to json
+        response.setContentType("json;charset=utf-8");
+
+        JSONObject json = new JSONObject();
+        PostAccident location = new PostAccident();
+        DBResourceFactory dBResourceFactory = new DBResourceFactory();
+
+        Connection connection = null;
+
+        try {
+            connection = dBResourceFactory.getFactoryConnection().getConnection();
+            PostAccidentService accidentService = new PostAccidentServiceImpl();
+            PostAccident searchLastRow = accidentService.SearchLastRow(connection);
+         
+            
+            if (searchLastRow!=null) {
+                
+                
+             
+
+            json.put("lat", searchLastRow.getLAT());
+            json.put("lon", searchLastRow.getLON());
+            
+            }else{
+            
+                
+            
+            }
+           
+            //out.print(searchLastRow.getLON());
+            
+            //System.out.println(searchLastRow.getLAT());
+
+            //json.put("lat", 7.8731);
+            //json.put("lon", 80.7718);
+        } catch (JSONException ex) {
+            Logger.getLogger(LoadMapController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoadMapController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoadMapController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        response.setContentType("json");
+        PrintWriter out = response.getWriter();
+        out.print(json);
+        out.flush();
     }
 
     /**

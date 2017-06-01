@@ -5,12 +5,24 @@
  */
 package com.ucsc.vaias.service.impl;
 
+import com.ucsc.vaias.dao.PostAccidentDAO;
+import com.ucsc.vaias.dao.impl.PostAccidentDAOImpl;
+import com.ucsc.vaias.model.PostAccident;
 import com.ucsc.vaias.service.PostAccidentService;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  *
  * @author sajja
  */
 public class PostAccidentServiceImpl implements PostAccidentService{
+    
+    private PostAccidentDAO postAccidentDAO=new PostAccidentDAOImpl();
+
+    @Override
+    public PostAccident SearchLastRow(Connection connection) throws ClassNotFoundException, SQLException {
+        return postAccidentDAO.SearchLastRow(connection);
+    }
     
 }

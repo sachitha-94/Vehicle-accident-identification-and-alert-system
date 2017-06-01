@@ -5,10 +5,16 @@
  */
 package com.ucsc.vaias.service;
 
+import com.ucsc.vaias.model.PostAccident;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 /**
  *
  * @author sajja
  */
 public interface PostAccidentService {
+    
+    public PostAccident SearchLastRow(Connection connection)throws ClassNotFoundException,SQLException;
     
 }

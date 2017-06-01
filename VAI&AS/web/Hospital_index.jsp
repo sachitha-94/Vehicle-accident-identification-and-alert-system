@@ -44,6 +44,15 @@
     </head>
 
     <body>
+        <div id="floating-panel">
+            <b>Mode of Travel: </b>
+            <select id="mode">
+                <option value="DRIVING">Driving</option>
+                <option value="WALKING">Walking</option>
+                <option value="BICYCLING">Bicycling</option>
+                <option value="TRANSIT">Transit</option>
+            </select>
+        </div>
 
 
         <div class="container" style="width: 100%">
@@ -160,17 +169,40 @@
 
                         });
                         directionsDisplay.setMap(map);
-                        
+                        calculateAndDisplayRoute(directionsService, directionsDisplay);
+                        alert("hariyo");
+                        document.getElementById('mode').addEventListener('change', function () {
+
+                            calculateAndDisplayRoute(directionsService, directionsDisplay);
+
+                        });
 
 
 
 
                     }
 
-                    
 
 
-                    
+
+                    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+
+                        var selectedMode = document.getElementById('mode').value;
+                        directionsService.route({
+                            origin: {lat: 10.77, lng: 10.447}, // Haight.
+                            destination: {lat: 10.768, lng: 10.511}, // Ocean Beach.
+                            // Note that Javascript allows us to access the constant
+                            // using square brackets and a string value as its
+                            // "property."
+                            travelMode: google.maps.TravelMode[selectedMode]
+                        }, function (response, status) {
+                            if (status == 'OK') {
+                                directionsDisplay.setDirections(response);
+                            } else {
+                                window.alert('Directions request failed due to ' + status);
+                            }
+                        });
+                    }
 
                 </script>
                 <script async defer

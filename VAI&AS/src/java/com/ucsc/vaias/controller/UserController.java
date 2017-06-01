@@ -67,7 +67,7 @@ public class UserController extends HttpServlet {
                 connection = bResourceFactory.getFactoryConnection().getConnection();
                 boolean addUser = userServiceImpl.addUser(user, connection);
                 if (addUser) {
-                    response.sendRedirect("Admin - users - register.jsp");
+                    response.sendRedirect("Admin_users_register.jsp");
                     out.println("<script>alert('added');</script>");
                 } else {
                      response.sendRedirect("Admin - PoliceStation - register");
