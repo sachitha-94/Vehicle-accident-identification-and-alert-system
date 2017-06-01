@@ -119,6 +119,7 @@
                                 if ((prelat != lat) && (prelon != lon)) {
                                     marker.setPosition(new google.maps.LatLng(lat, lon));
                                     map.panTo(new google.maps.LatLng(lat, lon));
+                                    
 
                                     marker.addListener('click', function () {
                                         $("#viewprofile").toggle("slow");
@@ -128,11 +129,16 @@
 
                                     prelat = lat;
                                     prelon = lon;
+                                    
+                                   
+
+                                    
+                                    
                                 }
 
                             }
 
-
+                               
                         });
 
 
@@ -160,17 +166,17 @@
 
                         });
                         directionsDisplay.setMap(map);
-                        
+
 
 
 
 
                     }
 
-                    
 
 
-                    
+
+
 
                 </script>
                 <script async defer
@@ -179,6 +185,8 @@
 
 
             </header>
+
+            
 
 
 
