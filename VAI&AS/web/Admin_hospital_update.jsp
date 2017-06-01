@@ -52,7 +52,7 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin_das
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="assets/img/Hospital-icon.png" class="user-image img-responsive"/>
+                    <img src="assets/img/hospital.png" class="user-image img-responsive"/>
 					</li>
 				
 					
@@ -90,7 +90,7 @@ font-size: 16px;"> 26 April 2017 &nbsp; <a style="color: white;" href="Admin_das
                             </div>
                             
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
+                                    <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="HospitalController" method="post" role="form">
 
                                     <div class="form-group ">
                                         <label class="control-label col-sm-2" for="user_id">Hospital  ID:</label>

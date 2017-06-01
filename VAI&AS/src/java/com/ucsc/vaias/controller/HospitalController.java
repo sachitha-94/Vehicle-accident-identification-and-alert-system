@@ -60,10 +60,11 @@ public class HospitalController extends HttpServlet {
                 boolean res_Add = hospitalService.addHospital(hospital, connection);
 
                 if (res_Add) {
-                    response.sendRedirect("Admin - hospital - register");
+                    response.sendRedirect(request.getHeader("referer"));
+                    out.println("<script>alert('added');</script>");
                 } else {
 
-                    response.sendRedirect("Admin - hospital - register");
+                    response.sendRedirect(request.getHeader("referer"));
                 }
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);

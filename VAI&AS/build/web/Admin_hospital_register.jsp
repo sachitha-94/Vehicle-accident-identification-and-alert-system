@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : Admin - hospital - register
     Created on : Apr 25, 2017, 8:29:39 PM
@@ -88,7 +89,7 @@
                             </div>
 
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" method="post" role="form">
+                                <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="HospitalController" method="post" role="form">
 
 
 
@@ -166,7 +167,7 @@
 
 
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-default">Add Police Station</button>
+                                            <button type="submit" class="btn btn-default">Add Hospital</button>
                                         </div>
                                     </div>
                                 </form>
