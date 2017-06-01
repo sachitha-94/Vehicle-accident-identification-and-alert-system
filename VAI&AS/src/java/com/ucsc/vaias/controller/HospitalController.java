@@ -13,12 +13,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import netscape.javascript.JSObject;
+import org.json.JSONObject;
 
 /**
  *
@@ -37,40 +42,111 @@ public class HospitalController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String type = request.getParameter("type");
+        DBResourceFactory dBResourceFactory = new DBResourceFactory();
+        Connection connection = null;
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            String HID = request.getParameter("HID");
-            String HOSPITAL_NAME = request.getParameter("HOSPITAL_NAME");
-            String PROVINCE = request.getParameter("PROVINCE");
-            String DISTRICT = request.getParameter("DISTRICT");
-            String CITY = request.getParameter("CITY");
-            float LAT = Float.valueOf(request.getParameter("LAT"));
-            float LON = Float.valueOf(request.getParameter("LON"));
-            int TP = Integer.valueOf(request.getParameter("TP"));
 
-            Hospital hospital = new Hospital(HID, HOSPITAL_NAME, PROVINCE, DISTRICT, CITY, LAT, LON, TP);
+        PrintWriter out = response.getWriter();
+        //out.flush();
+        try {
 
-            DBResourceFactory dBResourceFactory = new DBResourceFactory();
-            Connection connection = null;
+            //TODO output your page here. You may use following sample code. 
             try {
                 connection = dBResourceFactory.getFactoryConnection().getConnection();
+                if (type.equals("reg")) {
+                    String HID = request.getParameter("HID");
+                    String HOSPITAL_NAME = request.getParameter("HOSPITAL_NAME");
+                    String PROVINCE = request.getParameter("PROVINCE");
+                    String DISTRICT = request.getParameter("DISTRICT");
+                    String CITY = request.getParameter("CITY");
+                    float LAT = Float.valueOf(request.getParameter("LAT"));
+                    float LON = Float.valueOf(request.getParameter("LON"));
+                    int TP = Integer.valueOf(request.getParameter("TP"));
 
-                HospitalService hospitalService = new HospitalServiceImpl();
-                boolean res_Add = hospitalService.addHospital(hospital, connection);
+                    System.out.println(type);
 
-                if (res_Add) {
-                    response.sendRedirect(request.getHeader("referer"));
-                    out.println("<script>alert('added');</script>");
-                } else {
+                    Hospital hospital = new Hospital(HID, HOSPITAL_NAME, PROVINCE, DISTRICT, CITY, LAT, LON, TP);
 
-                    response.sendRedirect(request.getHeader("referer"));
+                    HospitalService hospitalService = new HospitalServiceImpl();
+                    boolean res_Add = hospitalService.addHospital(hospital, connection);
+
+                    if (res_Add) {
+                        response.sendRedirect("Admin_hospital_register.jsp");
+                    } else {
+
+                        response.sendRedirect("Admin_hospital_register.jsp");
+                    }
                 }
+
             } catch (ClassNotFoundException | SQLException ex) {
                 Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
+            if(type.equals("sel")){
+                try {
+                    
+                    //request.getRequestDispatcher("/Admin_hospital.jsp").forward(request, response);
+                    connection = dBResourceFactory.getFactoryConnection().getConnection();
+                    HospitalService hospitalService = new HospitalServiceImpl();
+                    ArrayList<Hospital> res_Select = hospitalService.selectAllHospital(connection);
+
+                    for (Hospital hospital1 : res_Select) {
+                        System.out.println("dgsgfdrbffffffffff " + hospital1.getHID());
+                        System.out.println("dgsgfdrbffffffffff " + hospital1.getHOSPITAL_NAME());
+                        System.out.println("dgsgfdrbffffffffff " + hospital1.getDISTRICT());
+                        System.out.println("dgsgfdrbffffffffff " + hospital1.getCITY());
+                        System.out.println("dgsgfdrbffffffffff " + hospital1.getTP());
+
+                    }
+                    //if (hospital != null) {
+//                    JSONObject jSONObject = new JSONObject(hospitalService.selectAllHospital(connection));
+//                    jSONObject.put("list", res_Select);
+//                    //System.out.println(jSONObject);
+//                    response.setContentType("json");
+//                    out.print(jSONObject.toString());
+                   if (!res_Select.isEmpty()) {
+                   request.setAttribute("list",res_Select);
+                   getServletContext().getRequestDispatcher("/Admin_hospital.jsp").forward(request,response);
+                    
+                    
+                    out.flush();
+                    out.close();
+                    return;
+                   }
+                    
+                   
+                   
+                        if (response.isCommitted()) {
+                           
+                            System.out.println("yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees");
+                            
+                        }
+                        if (!response.isCommitted()) {
+                           
+                            System.out.println("noooooooooooooooooooooooooooooooooooooooooooooooooooooo");
+                            
+                        }
+//                        if (response.isCommitted()) {
+//
+//                            System.out.println("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwfffffffffffffffffffff");
+//                        }
+                    // }
+
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+
+        } catch (Exception e) {
+
+            System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy" + e);
         }
+        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

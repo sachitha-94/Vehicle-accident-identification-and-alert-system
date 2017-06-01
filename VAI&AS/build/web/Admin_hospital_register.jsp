@@ -1,4 +1,3 @@
-
 <%-- 
     Document   : Admin - hospital - register
     Created on : Apr 25, 2017, 8:29:39 PM
@@ -26,7 +25,63 @@
 
             <!-- GOOGLE FONTS-->
             <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+            <script type="text/javascript">                                      
+                function populate(s1,s2){
+                    var s1= document.getElementById(s1);
+                    var s2= document.getElementById(s2);
+                    s2.innerHTML = "";
+                    if(s1.value == "Western"){
+                        var optionArray =["|","Colombo|Colombo","Gampaha|Gampaha","Kalutara|Kalutara" ];
+                    }else if(s1.value == "Southern"){
+                        var optionArray =["|","Galle|Galle","Matara|Matara","Hambanthota|Hambanthota" ];
+                    }else if(s1.value == "Uva"){
+                        var optionArray =["|","Badulla|Badulla","Monaragala|Monaragala" ];
+                    }else if(s1.value == "Central"){
+                        var optionArray =["|","Kandy|Kandy","Nuwara Eliya|Nuwara Eliya","Matale|Matale" ];
+                    }else if(s1.value == "Northern"){
+                        var optionArray =["|","Mullaitivu|Mullaitivu","vavuniya|Vavuniya","Mannar|Mannar","Kilinochchi|Kilinochchi","Jaffna|Jaffna" ];
+                    }else if(s1.value == "North Western"){
+                        var optionArray =["|","Kurunegala|Kurunegala","Puttalam|Puttalam"];
+                    }else if(s1.value == "North Central"){
+                        var optionArray =["|","Polonnaruwa|Polonnaruwa","Anuradhapura|Anuradhapura"];
+                    }else if(s1.value == "Sabaragamuwa"){
+                        var optionArray =["|","Kegalle|Kegalle","Ratnapura|Ratnapura"];
+                    }else if(s1.value == "Eastern"){
+                        var optionArray =["|","Ampara|Ampara","Batticaloa|Batticaloa","Trincomalee|Trincomalee" ];
+                    }
+                    for(var option in optionArray){
+                        var pair = optionArray[option].split("|");
+                        var newOption = document.createElement("option");
+                        newOption.value = pair[0];
+                        newOption.innerHTML = pair[1];
+                        s2.options.add(newOption);
+                    }
+                }
+    
+    </script>
+    <script>
+    function validateForm(){    
+        var tp = document.forms["register"]["TP"].value;
+        var Reg1=/^[0-9]{10}$/;
+        if(!Reg1.test(tp)) {
+            alert("Invalid user telephone number");
+        return false;
+    }
+        var lat = document.forms["register"]["LAT"].value;
+        var Reg2= /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}$/;
+        if(!Reg2.test(lat)) {
+            alert("Invalid latitude");
+        return false;
+    }
+        var lon = document.forms["register"]["LON"].value;
+        var Reg3= /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}$/;
+        if(!Reg3.test(lon)) {
+            alert("Invalid longitude");
+        return false;
+        
+    }
+}
+    </script>            
     </head>
     <body>
         <div><jsp:include page="location.jsp"/> </div>
@@ -39,7 +94,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="Admin - hospital - register.jsp">Hospital</a> 
+                    <a class="navbar-brand" href="Admin_hospital.jsp">Hospitals</a> 
                 </div>
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
@@ -89,7 +144,7 @@
                             </div>
 
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="HospitalController" method="post" role="form">
+                                <form name="register" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="HospitalController?type=reg" onsubmit="return validateForm()" method="post" role="form">
 
 
 
@@ -97,7 +152,7 @@
                                         <div class="form-group ">
                                         <label class="control-label col-sm-2" for="user_id">Hospital ID:</label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" placeholder="Hospital ID" name="HID">
+                                            <input type="text" class="form-control" placeholder="Hospital ID" name="HID" required>
 
                                         </div>
                                         <button class="btn btn-primary"><i class="fa fa-edit " ></i> Search</button>
@@ -105,15 +160,26 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Hospital Name:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Hospital Name" name="HOSPITAL_NAME">
+                                                <input type="text" class="form-control" placeholder="Hospital Name" name="HOSPITAL_NAME" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
+                                            
                                             <label class="control-label col-sm-2" >Province:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="PROVINCE">
+                                                
+                                                <select class="form-control" name="PROVINCE" id="province" onchange="populate(this.id,'district')" required>
+                                                    <option value="" class="form-group"></option>
+                                                    <option value="Western" class="form-group">Western</option>
                                                     <option value="Southern" class="form-group">Southern</option>
+                                                    <option value="Uva" class="form-group">Uva</option>
+                                                    <option value="Central" class="form-group">Central</option>
+                                                    <option value="Northern" class="form-group">North</option>
+                                                    <option value="North Western" class="form-group">North Western</option>
+                                                    <option value="North Central" class="form-group">North Central</option>
+                                                    <option value="Sabaragamuwa" class="form-group">Sabaragamuwa</option>
+                                                    <option value="Eastern" class="form-group">Eastern</option>
 
                                                 </select>
 
@@ -121,19 +187,20 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-sm-2" for="address">Distict:</label>
+                                            <label class="control-label col-sm-2" for="address">District:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="DISTRICT">
-                                                    <option value="Galle" class="form-group">Galle</option>
+                                                <select class="form-control" name="DISTRICT" id="district" required>
+                                                   
 
                                                 </select>
+    
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">City:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="CITY">
+                                                <select class="form-control" name="CITY" required>
                                                     <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
 
                                                 </select>
@@ -142,14 +209,14 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Telephone No:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Telephone No" name="TP">
+                                                <input type="text" class="form-control" placeholder="Telephone No" name="TP" required>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Latitude:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT">
+                                                <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT" required>
                                             </div>
                                             <button type="button" class="btn btn-primary" id="mapAdd" >MAP</button>
                                         </div>
@@ -157,7 +224,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Longitude:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON">
+                                                <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON" required>
                                             </div>
 
 
@@ -167,7 +234,7 @@
 
 
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-default">Add Hospital</button>
+                                            <button type="submit" class="btn btn-default">Add Police Station</button>
                                         </div>
                                     </div>
                                 </form>
@@ -220,7 +287,9 @@
                 document.getElementById("wrapper").style.opacity = "1";
             });
         </script>
-
+        
+        
+  
 
 
     </body>

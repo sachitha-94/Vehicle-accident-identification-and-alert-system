@@ -11,6 +11,7 @@ import com.ucsc.vaias.model.Hospital;
 import com.ucsc.vaias.service.HospitalService;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -43,5 +44,11 @@ public class HospitalServiceImpl implements HospitalService {
 
         return hdao.searchHospitalByHID(hospital, connection);
     }
+    @Override
+    public ArrayList<Hospital> selectAllHospital(Connection connection) throws ClassNotFoundException, SQLException {
+
+        return hdao.selectAllHospital(connection);
+    }
+
 
 }

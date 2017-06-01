@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -71,7 +72,7 @@ public class HospitalDAOImpl implements HospitalDAO {
 
     @Override
     public Hospital searchHospitalByHID(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM hospital WHERE HID='"+hospital.getHID()+"'";
+        String sql = "SELECT * FROM hospital WHERE HID='" + hospital.getHID() + "'";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
         Hospital hReturn = new Hospital();
@@ -87,6 +88,32 @@ public class HospitalDAOImpl implements HospitalDAO {
 
         }
         return hReturn;
+
+    }
+
+    @Override
+    public ArrayList<Hospital> selectAllHospital(Connection connection) throws ClassNotFoundException, SQLException {
+        String sql = "SELECT * FROM hospital";
+        Statement stm = connection.createStatement();
+        ResultSet res = stm.executeQuery(sql);
+
+        ArrayList<Hospital> hospitals = new ArrayList<Hospital>();
+        while (res.next()) {
+
+            Hospital hReturn = new Hospital();
+
+            hReturn.setHID(res.getString("HID"));
+            hReturn.setHOSPITAL_NAME(res.getString("HOSPITAL_NAME"));
+            hReturn.setPROVINCE(res.getString("PROVINCE"));
+            hReturn.setDISTRICT(res.getString("DISTRICT"));
+            hReturn.setCITY(res.getString("CITY"));
+            hReturn.setLAT(res.getFloat("LAT"));
+            hReturn.setLON(res.getFloat("LON"));
+            hReturn.setTP(res.getInt("TP"));
+
+            hospitals.add(hReturn);
+        }
+        return hospitals;
 
     }
 
