@@ -80,7 +80,7 @@ public class PoliceStationDAOImpl implements PoliceStationDAO {
             psReturn.setCITY(res.getString("CITY"));
             psReturn.setLAT(res.getFloat("LAT"));
             psReturn.setLON(res.getFloat("LON"));
-            psReturn.setTP(res.getInt("TP"));
+            psReturn.setTP(res.getString("TP"));
             
         }
         return psReturn;
@@ -103,7 +103,7 @@ public class PoliceStationDAOImpl implements PoliceStationDAO {
             pReturn.setCITY(res.getString("CITY"));
             pReturn.setLAT(res.getFloat("LAT"));
             pReturn.setLON(res.getFloat("LON"));
-            pReturn.setTP(res.getInt("TP"));
+            pReturn.setTP(res.getString("TP"));
 
             policeStation.add(pReturn);
         }

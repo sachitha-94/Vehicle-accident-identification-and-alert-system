@@ -62,7 +62,7 @@ public class HospitalController extends HttpServlet {
                     String CITY = request.getParameter("CITY");
                     float LAT = Float.valueOf(request.getParameter("LAT"));
                     float LON = Float.valueOf(request.getParameter("LON"));
-                    int TP = Integer.valueOf(request.getParameter("TP"));
+                    String TP = request.getParameter("TP");
 
                     System.out.println(type);
 

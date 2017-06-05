@@ -61,7 +61,7 @@ public class PoliceStationController extends HttpServlet {
             
             float LAT = Float.valueOf(request.getParameter("LAT"));
             float LON = Float.valueOf(request.getParameter("LON"));
-            int TP = Integer.valueOf(request.getParameter("TP"));
+            String TP = request.getParameter("TP");
             
             PoliceStation police =  new PoliceStation(PID, PROVINCE, DIVISION, CITY, LAT, LON, TP);
             
