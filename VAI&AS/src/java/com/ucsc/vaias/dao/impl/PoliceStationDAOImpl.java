@@ -6,12 +6,14 @@
 package com.ucsc.vaias.dao.impl;
 
 import com.ucsc.vaias.dao.PoliceStationDAO;
+import com.ucsc.vaias.model.Hospital;
 import com.ucsc.vaias.model.PoliceStation;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  *
@@ -82,6 +84,30 @@ public class PoliceStationDAOImpl implements PoliceStationDAO {
             
         }
         return psReturn;
+    }
+
+    @Override
+    public ArrayList<PoliceStation> selectAllPoliceStations(Connection connection) throws ClassNotFoundException, SQLException {
+        String sql = "SELECT * FROM police_station";
+        Statement stm = connection.createStatement();
+        ResultSet res = stm.executeQuery(sql);
+
+        ArrayList<PoliceStation> policeStation = new ArrayList<PoliceStation>();
+        while (res.next()) {
+
+            PoliceStation pReturn = new PoliceStation();
+
+            pReturn.setPID(res.getString("PID"));
+            pReturn.setPROVINCE(res.getString("PROVINCE"));
+            pReturn.setDIVITION(res.getString("DIVITION"));
+            pReturn.setCITY(res.getString("CITY"));
+            pReturn.setLAT(res.getFloat("LAT"));
+            pReturn.setLON(res.getFloat("LON"));
+            pReturn.setTP(res.getInt("TP"));
+
+            policeStation.add(pReturn);
+        }
+        return policeStation;
     }
 
 }

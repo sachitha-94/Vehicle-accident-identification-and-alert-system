@@ -96,8 +96,8 @@ public class UserDAOImpl implements UserDAO {
             uReturn.setFIRST_NAME(res.getString("FIRST_NAME"));
             uReturn.setLAST_NAME(res.getString("LAST_NAME"));
             uReturn.setGENDER(res.getString("GENDER"));
-            uReturn.setTP_HOME(res.getInt("TP_HOME"));
-            uReturn.setTP_MOBILE(res.getInt("TP_MOBILE"));
+            uReturn.setTP_HOME(res.getString("TP_HOME"));
+            uReturn.setTP_MOBILE(res.getString("TP_MOBILE"));
             uReturn.setADDRESS(res.getString("ADDRESS"));
             uReturn.setLICENSE_NO(res.getString("LICENSE_NO"));
             uReturn.setBLOOD_GROUP(res.getString("BLOOD_GROUP"));
@@ -111,7 +111,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public ArrayList<User> selectAllUsers(Connection connection) throws ClassNotFoundException, SQLException {
-         String sql="SELECT * FROM user";
+         String sql="SELECT * FROM user ORDER BY FIRST_NAME,LAST_NAME ASC;" ;
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
        // User uReturn=new User();
@@ -124,8 +124,8 @@ public class UserDAOImpl implements UserDAO {
             uReturn.setFIRST_NAME(res.getString("FIRST_NAME"));
             uReturn.setLAST_NAME(res.getString("LAST_NAME"));
             uReturn.setGENDER(res.getString("GENDER"));
-            uReturn.setTP_HOME(res.getInt("TP_HOME"));
-            uReturn.setTP_MOBILE(res.getInt("TP_MOBILE"));
+            uReturn.setTP_HOME(res.getString("TP_HOME"));
+            uReturn.setTP_MOBILE(res.getString("TP_MOBILE"));
             uReturn.setADDRESS(res.getString("ADDRESS"));
             uReturn.setLICENSE_NO(res.getString("LICENSE_NO"));
             uReturn.setBLOOD_GROUP(res.getString("BLOOD_GROUP"));

@@ -4,6 +4,8 @@
     Author     : Shaii99
 --%>
 
+<%@page import="com.ucsc.vaias.model.PoliceStation"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -24,6 +26,8 @@
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 </head>
 <body>
+    
+    <jsp:include page="//PoliceStationController?type=sel" flush="true"/>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -99,42 +103,29 @@ font-size: 16px;">  26 April 2017 &nbsp; <a style="color: white;" href="Admin_da
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Police Station</th>
-                                            <th>Address</th>
-                                            <th>Contact No</th>
-                                             <th>Reg No</th>
+                                            <th>PID</th>
+                                            <th>Province</th>
+                                            <th>Divition</th>
+                                            <th>City</th>
+                                             <th>Contact No</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Base Police Station, Kandy</td>
-                                            <td>Maligawa Rd, Kandy</td>
-                                            <td>0810987654</td>
-                                            <td>gov1234</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Police Station, Galle</td>
-                                            <td>Fort Rd, Galle</td>
-                                            <td>1234567890</td>
-                                            <td>gov2345</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Police Station, Ambalangoda</td>
-                                            <td>Railway Rd, Polwaththa</td>
-                                            <td>098123456</td>
-                                            <td>gov4567</td>
-                                        </tr>
-                                        <td>4</td>
-                                            <td>Police Station, Kandy</td>
-                                            <td>Maligawa Rd, Kandy</td>
-                                            <td>0810987654</td>
-                                            <td>gov1234</td>
-                                        </tr>
-                                        
+                                        <%
+                                                        ArrayList<PoliceStation> list = (ArrayList<PoliceStation>) request.getAttribute("list");
+                                                        for (PoliceStation category : list) {
+                                                    %>
+                                                        <tr>
+                                                                     <td><% out.println(category.getPID()); %></td>
+                                                                     <td><% out.println(category.getPROVINCE()); %></td>
+                                                                     <td><% out.println(category.getDIVITION()); %></td>
+                                                                     <td><% out.println(category.getCITY()); %></td>
+                                                                     <td style="text-align: center"><% out.println(category.getTP()); %></td>
+                                                        </tr>
+                                                                    
+                                                    <%     }
+                                                            
+                                                                    %>
                                         
                                          
                                         

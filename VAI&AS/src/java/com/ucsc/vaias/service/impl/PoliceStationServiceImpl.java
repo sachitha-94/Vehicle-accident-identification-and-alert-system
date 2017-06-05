@@ -11,6 +11,7 @@ import com.ucsc.vaias.model.PoliceStation;
 import com.ucsc.vaias.service.PoliceStationService;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -42,6 +43,11 @@ public class PoliceStationServiceImpl implements PoliceStationService {
     public PoliceStation searchPoliceStationByPID(PoliceStation policeStation, Connection connection) throws ClassNotFoundException, SQLException {
 
         return psdao.searchPoliceStationByPID(policeStation, connection);
+    }
+
+    @Override
+    public ArrayList<PoliceStation> selectAllPoliceStations(Connection connection) throws ClassNotFoundException, SQLException {
+        return psdao.selectAllPoliceStations(connection);
     }
 
 }

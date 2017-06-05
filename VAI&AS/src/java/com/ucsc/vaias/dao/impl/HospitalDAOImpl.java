@@ -93,7 +93,7 @@ public class HospitalDAOImpl implements HospitalDAO {
 
     @Override
     public ArrayList<Hospital> selectAllHospital(Connection connection) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM hospital";
+        String sql = "SELECT * FROM hospital ORDER BY DISTRICT,CITY";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
 

@@ -34,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Users</a> 
+                    <a class="navbar-brand" href="Admin_users.jsp">Users</a> 
                 </div>
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
@@ -86,24 +86,28 @@
                     <!-- /. ROW  -->
 
                     <!-- /. ROW  -->
-                    <div class="row" >
+                    <div class="row" style="width: 135%">
 
-                        <div class="col-md-9 col-sm-12 col-xs-12">
+                        <div class="col-md-9 col-sm-12 col-xs-12" >
 
-                            <div class="panel panel-default">
+                            <div class="panel panel-default" >
                                 <div class="panel-heading">
                                   User details
                                 </div>
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover">
+                                <div class="panel-body" style="width: 100%">
+                                    <div class="table-responsive" >
+                                        <table class="table table-striped table-bordered table-hover" >
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
+                                                    <th >User ID</th>
+                                                    <th>NIC</th>
                                                     <th>First Name</th>
                                                     <th>Last Name</th>
-                                                    <th>Username</th>
-                                                    <th>User No.</th>
+                                                    <th>Mobile no</th>
+                                                    <th>Gender</th>
+                                                    <th>Address</th>
+                                                    <th>Home Tp</th>
+                                                    <th>Blood type</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -117,6 +121,10 @@
                                                                      <td><% out.println(category.getFIRST_NAME()); %></td>
                                                                      <td><% out.println(category.getLAST_NAME()); %></td>
                                                                      <td><% out.println(category.getTP_MOBILE()); %></td>
+                                                                     <td><% out.println(category.getGENDER()); %></td>
+                                                                     <td><% out.println(category.getADDRESS()); %></td>
+                                                                     <td><% out.println(category.getTP_HOME()); %></td>
+                                                                     <td><% out.println(category.getBLOOD_GROUP()); %></td>
                                                         </tr>
                                                                     
                                                     <%     }

@@ -77,7 +77,7 @@ function validateForm() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Users</a> 
+                <a class="navbar-brand" href="Admin_users.jsp">Users</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
@@ -209,7 +209,8 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                                         <option value="A-" class="form-group">A-</option>
                                                         <option value="B+" class="form-group">B+</option>
                                                         <option value="B-" class="form-group">B-</option>
-                                                       
+                                                        <option value="AB+" class="form-group">AB+</option>
+                                                        <option value="AB-" class="form-group">AB-</option>
                                                     </select>
                                                     
                                                 </div>

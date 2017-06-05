@@ -55,8 +55,8 @@ public class UserController extends HttpServlet {
                 String FIRST_NAME = request.getParameter("FIRST_NAME");
                 String LAST_NAME = request.getParameter("LAST_NAME");
                 String GENDER = request.getParameter("GENDER");
-                int TP_HOME = Integer.valueOf(request.getParameter("TP_HOME"));
-                int TP_MOBILE = Integer.valueOf(request.getParameter("TP_MOBILE"));
+                String TP_HOME = request.getParameter("TP_HOME");
+                String TP_MOBILE = request.getParameter("TP_MOBILE");
                 String ADDRESS = request.getParameter("ADDRESS");
                 String LICENSE_NO = request.getParameter("LICENSE_NO");
                 String BLOOD_GROUP = request.getParameter("BLOOD_GROUP");

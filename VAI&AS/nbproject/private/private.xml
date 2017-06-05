@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/nikn.jsp</file>
-            <file>file:/D:/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/login.jsp</file>
-            <file>file:/D:/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/index.jsp</file>
-            <file>file:/D:/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/profileview.jsp</file>
-            <file>file:/D:/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/AdminIndex.jsp</file>
-            <file>file:/D:/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/PostAccidentController.java</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/HospitalController.java</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/PoliceStationController.java</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_hospital_register.jsp</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_PoliceStation_register.jsp</file>
         </group>
     </open-files>
 </project-private>
