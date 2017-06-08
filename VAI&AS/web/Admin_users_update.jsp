@@ -4,6 +4,8 @@
     Author     : Dilum
 --%>
 
+<%@page import="java.awt.Button"%>
+<%@page import="com.ucsc.vaias.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,7 +40,44 @@
 
                     <!-- GOOGLE FONTS-->
                     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+            <script>
+function validateForm() {
+    var RegExp=/^[0-9]{9}[vV]$/
+    var nic = document.forms["update"]["NIC"].value;
+    if(!RegExp.test(nic)) {
+        alert("Invalid NIC");
+        return false;
+    }
+    
+    var firstname = document.forms["update"]["FIRST_NAME"].value;
+    var Reg3=/^[A-Za-z]+$/
+    if(!Reg3.test(firstname)) {
+        alert("Enter only alphabets for First name");
+        return false;
+    }
+    var lastname = document.forms["update"]["LAST_NAME"].value;
+   
+    if(!Reg3.test(lastname)) {
+        alert("Enter only alphabets for last name");
+        return false;
+    }
+    var landline = document.forms["update"]["TP_HOME"].value;
+    var Reg4=/^[0-9]{10}$/
+    if(!Reg4.test(landline)) {
+        alert("Invalid user telephone number");
+        return false;
+    }
+    var mobile = document.forms["update"]["TP_MOBILE"].value;
+    
+    if(!Reg4.test(mobile)) {
+        alert("Invalid user mobile number");
+        return false;
+    }
+    
+   
+    
+}
+</script>
             </head>
             <body>
                 <div id="wrapper">
@@ -100,63 +139,66 @@
                                     </div>
 
                                    
-
+                                     <% User user=(User)request.getAttribute("sellist");%>
                                     <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                        <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController?regidter" method="post" role="form">
+                                        <form name="update" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="" method="post"  role="form" >
                                             <div class="form-group ">
                                                 <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="UID" placeholder="Enter User ID">
+                                                    <input type="text" class="form-control" name="UID" placeholder="Enter User ID to Search">
+                                                       
                                                        
                                                 </div>
-                                                 <button class="btn btn-primary"><i class="fa fa-edit " ></i> Search</button>
+                                                <input type="hidden" name="upUID" value=<% try{ out.println(user.getUID());}catch(Exception e){out.println(e);} %> />
+                                                <input type="submit" onclick="form.action='UserController?type=selbyID';"  class="btn btn-primary" class="fa fa-edit " value="search">
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="nic">NIC Number:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="NIC" placeholder="Enter NIC Munber">
+                                                    <input type="text" class="form-control" name="NIC" placeholder="Enter NIC Munber" value=<% try{ out.println(user.getNIC());}catch(Exception e){out.println(e);} %>; required="">
+              
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="fname">Gender:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="radio" class="" value="Male" name="Gender" placeholder="Enter  Gender">  <span>Male</span>
-                                                    <input type="radio" class=""  value="Female" name="Name" placeholder="Enter  Gender">  <span>Female</span>
+                                                    <input type="radio" class="" value="Male" name="GENDER" placeholder="Enter  Gender" checked="" >  <span>Male</span>
+                                                    <input type="radio" class=""  value="Female" name="GENDER" placeholder="Enter  Gender">  <span>Female</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="fname">First Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="FIRST_NAME" placeholder="Enter First Name">
+                                                    <input type="text" class="form-control" name="FIRST_NAME" placeholder="Enter First Name" required="" value=<% try{ out.println(user.getFIRST_NAME());}catch(Exception e){out.println(e);} %>>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">Last Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control"  name="LAST_NAME" placeholder="Enter Last Name">
+                                                    <input type="text" class="form-control"  name="LAST_NAME" placeholder="Enter Last Name" required="" value=<% try{ out.println(user.getLAST_NAME());}catch(Exception e){out.println(e);} %>>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">TP Home:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="TP_HOME" placeholder="Enter Home Telephone No">
+                                                    <input type="text" class="form-control" name="TP_HOME" placeholder="Enter Home Telephone No" required="" value=<% try{ out.println(user.getTP_HOME());}catch(Exception e){out.println(e);} %>>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">TP Mobile:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control"  name="TP_MOBILE" placeholder="Enter Mobile No">
+                                                    <input type="text" class="form-control"  name="TP_MOBILE" placeholder="Enter Mobile No" required="" value=<% try{ out.println(user.getTP_MOBILE());}catch(Exception e){out.println(e);} %>>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="address">Address:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="ADDRESS" placeholder="Enter Address">
+                                                    <input type="text" class="form-control" name="ADDRESS" placeholder="Enter Address" required="" value=<% try{ out.println(user.getADDRESS());}catch(Exception e){out.println(e);} %>>
                                                 </div>
                                             </div>
 
@@ -164,14 +206,14 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="email">Email:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control"  name="EMAIL" placeholder="Enter email">
+                                                    <input type="email" class="form-control"  name="EMAIL" placeholder="Enter email" required value=<% try{ out.println(user.getEMAIL());}catch(Exception e){out.println("Name@gmail.com");} %>>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >License No:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="LICENSE_NO" placeholder="Enter License No">
+                                                    <input type="text" class="form-control" name="LICENSE_NO" placeholder="Enter License No" required value=<% try{ out.println(user.getLICENSE_NO());}catch(Exception e){out.println(e);} %>>
                                                 </div>
                                             </div>
 
@@ -179,14 +221,15 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2"  for="blood_group">Blood Group:</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control" name="BLOOD_GROUP">
+                                                    <select class="form-control" name="BLOOD_GROUP" required value=<% try{user.getBLOOD_GROUP(); }catch(Exception e){out.println(e);} %>>
                                                         <option value="O+" class="form-group">O+</option>
                                                         <option value="O-" class="form-group">O-</option>
                                                         <option value="A+" class="form-group">A+</option>
                                                         <option value="A-" class="form-group">A-</option>
                                                         <option value="B+" class="form-group">B+</option>
                                                         <option value="B-" class="form-group">B-</option>
-                                                       
+                                                        <option value="B-" class="form-group">AB+</option>
+                                                        <option value="B-" class="form-group">AB-</option>
                                                     </select>
                                                     
                                                 </div>
@@ -195,7 +238,7 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="pwd">Birth Date</label>
                                                 <div class="col-sm-10"> 
-                                                    <input type="date" class="form-control" name="BIRTH_DAY" placeholder="Enter BirthDay">
+                                                    <input type="date" class="form-control" name="BIRTH_DAY" placeholder="Enter BirthDay" value=<% try{ out.println(user.getBIRTH_DAY());}catch(Exception e){out.println(e);} %>; >
                                                 </div>
                                             </div>
 
@@ -203,13 +246,13 @@
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="dl_no">Other:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="OTHER" placeholder="Other">
+                                                    <input type="text" class="form-control" name="OTHER" placeholder="Other" required value=<% try{ out.println(user.getOTHER());}catch(Exception e){out.println(e);} %>>
                                                 </div>
                                             </div>
 
                                             <div class="form-group"> 
                                                 <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-default">Update User</button>
+                                                    <input type="submit" class="btn btn-default" onclick="form.action='UserController?type=update';return validateForm()" value="UPDATE USER" >
                                                     <button type="submit" class="btn btn-default">Remove</button>
                                                 </div>
                                             </div>

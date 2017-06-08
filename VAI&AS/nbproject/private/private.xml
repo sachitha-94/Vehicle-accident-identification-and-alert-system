@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/HospitalController.java</file>
-            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/PoliceStationController.java</file>
-            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_hospital_register.jsp</file>
-            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_PoliceStation_register.jsp</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_users_update.jsp</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_users_register.jsp</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/UserController.java</file>
         </group>
     </open-files>
 </project-private>

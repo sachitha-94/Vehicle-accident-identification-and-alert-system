@@ -60,7 +60,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
-        PreparedStatement stm = connection.prepareStatement("UPDATE user set NIC=?, FIRST_NAME=?, LAST_NAME=?, GENDER=?, TP_HOME=?, TP_MOBILE=?, ADDRESS=?, LICENSE_NO=?, BLOOD_GROUP=?, EMAIL=?, BIRTH_DAY=?, OTHER=? WHERE UID=?,");
+        PreparedStatement stm = connection.prepareStatement("UPDATE user SET NIC=?, FIRST_NAME=?, LAST_NAME=?, GENDER=?, TP_HOME=?, TP_MOBILE=?, ADDRESS=?, LICENSE_NO=?, BLOOD_GROUP=?, EMAIL=?, BIRTH_DAY=?, OTHER=? WHERE UID=? ");
 
         stm.setObject(1, user.getNIC());
         stm.setObject(2, user.getFIRST_NAME());

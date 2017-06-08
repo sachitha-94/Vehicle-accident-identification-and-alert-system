@@ -136,6 +136,70 @@ public class UserController extends HttpServlet {
                 }
 
             }
+            if (type.equals("selbyID")) {
+                try {
+
+                    connection = bResourceFactory.getFactoryConnection().getConnection();
+                    UserService userService = new UserServiceImpl();
+                    User user = new User();
+                    String UID = request.getParameter("UID");
+                    user.setUID(UID);
+
+                    User res_Select = userService.searchUserByUID(user, connection);
+                    System.out.println(res_Select.getADDRESS());
+                    request.setAttribute("sellist", res_Select);
+                    getServletContext().getRequestDispatcher("/Admin_users_update.jsp").forward(request, response);
+
+                    out.flush();
+                    out.close();
+                    return;
+
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+            
+            if (type.equals("update")) {
+                
+                
+                String UID = request.getParameter("upUID");
+                System.out.println(UID);
+                String NIC = request.getParameter("NIC");
+                String FIRST_NAME = request.getParameter("FIRST_NAME");
+                String LAST_NAME = request.getParameter("LAST_NAME");
+                String GENDER = request.getParameter("GENDER");
+                String TP_HOME = request.getParameter("TP_HOME");
+                String TP_MOBILE = request.getParameter("TP_MOBILE");
+                String ADDRESS = request.getParameter("ADDRESS");
+                String LICENSE_NO = request.getParameter("LICENSE_NO");
+                String BLOOD_GROUP = request.getParameter("BLOOD_GROUP");
+                String EMAIL = request.getParameter("EMAIL");
+                String date = request.getParameter("BIRTH_DAY");
+                Date BIRTH_DAY = Date.valueOf(date);
+
+                String OTHER = request.getParameter("OTHER");
+
+                User user = new User(UID, NIC, FIRST_NAME, LAST_NAME, GENDER, TP_HOME, TP_MOBILE, ADDRESS, LICENSE_NO, BLOOD_GROUP, EMAIL, BIRTH_DAY, OTHER);
+
+                
+
+                UserService userServiceImpl = new UserServiceImpl();
+                try {
+                    connection = bResourceFactory.getFactoryConnection().getConnection();
+                    boolean updateUser = userServiceImpl.upDateUserByUID(user, connection);
+                    if (updateUser) {
+                        response.sendRedirect("Admin_users_update.jsp");
+                        out.println("<script>alert('added');</script>");
+                    } else {
+                        response.sendRedirect(request.getHeader("referer"));
+                    }
+                } catch (ClassNotFoundException | SQLDataException ex) {
+                    Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
 
         }catch (Exception e) {
 

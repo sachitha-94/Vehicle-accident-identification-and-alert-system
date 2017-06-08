@@ -51,7 +51,7 @@
 
 
                         <li>
-                            <a class="active-menu"  href="Admin_users_register.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                            <a class="active-menu"  href="Admin_users.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                         </li>
                         <li>
                             <a  href="Admin_users_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
