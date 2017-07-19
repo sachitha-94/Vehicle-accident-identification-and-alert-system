@@ -12,7 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 /**
  *
@@ -60,7 +59,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean upDateUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException {
-        PreparedStatement stm = connection.prepareStatement("UPDATE user SET NIC=?, FIRST_NAME=?, LAST_NAME=?, GENDER=?, TP_HOME=?, TP_MOBILE=?, ADDRESS=?, LICENSE_NO=?, BLOOD_GROUP=?, EMAIL=?, BIRTH_DAY=?, OTHER=? WHERE UID=? ");
+        PreparedStatement stm = connection.prepareStatement("UPDATE user set NIC=?, FIRST_NAME=?, LAST_NAME=?, GENDER=?, TP_HOME=?, TP_MOBILE=?, ADDRESS=?, LICENSE_NO=?, BLOOD_GROUP=?, EMAIL=?, BIRTH_DAY=?, OTHER=? WHERE UID=?,");
 
         stm.setObject(1, user.getNIC());
         stm.setObject(2, user.getFIRST_NAME());
@@ -96,8 +95,8 @@ public class UserDAOImpl implements UserDAO {
             uReturn.setFIRST_NAME(res.getString("FIRST_NAME"));
             uReturn.setLAST_NAME(res.getString("LAST_NAME"));
             uReturn.setGENDER(res.getString("GENDER"));
-            uReturn.setTP_HOME(res.getString("TP_HOME"));
-            uReturn.setTP_MOBILE(res.getString("TP_MOBILE"));
+            uReturn.setTP_HOME(res.getInt("TP_HOME"));
+            uReturn.setTP_MOBILE(res.getInt("TP_MOBILE"));
             uReturn.setADDRESS(res.getString("ADDRESS"));
             uReturn.setLICENSE_NO(res.getString("LICENSE_NO"));
             uReturn.setBLOOD_GROUP(res.getString("BLOOD_GROUP"));
@@ -107,34 +106,6 @@ public class UserDAOImpl implements UserDAO {
             
         }
         return uReturn;
-    }
-
-    @Override
-    public ArrayList<User> selectAllUsers(Connection connection) throws ClassNotFoundException, SQLException {
-         String sql="SELECT * FROM user ORDER BY FIRST_NAME,LAST_NAME ASC;" ;
-        Statement stm = connection.createStatement();
-        ResultSet res = stm.executeQuery(sql);
-       // User uReturn=new User();
-        ArrayList<User> users = new ArrayList<User>();
-        
-        while (res.next()) {
-            User uReturn=new User();
-            uReturn.setUID(res.getString("UID"));
-            uReturn.setNIC(res.getString("NIC"));
-            uReturn.setFIRST_NAME(res.getString("FIRST_NAME"));
-            uReturn.setLAST_NAME(res.getString("LAST_NAME"));
-            uReturn.setGENDER(res.getString("GENDER"));
-            uReturn.setTP_HOME(res.getString("TP_HOME"));
-            uReturn.setTP_MOBILE(res.getString("TP_MOBILE"));
-            uReturn.setADDRESS(res.getString("ADDRESS"));
-            uReturn.setLICENSE_NO(res.getString("LICENSE_NO"));
-            uReturn.setBLOOD_GROUP(res.getString("BLOOD_GROUP"));
-            uReturn.setEMAIL(res.getString("EMAIL"));
-            uReturn.setBIRTH_DAY(res.getDate("BIRTH_DAY"));
-            uReturn.setOTHER(res.getString("OTHER"));
-            users.add(uReturn);
-        }
-        return users;
     }
 
 }
