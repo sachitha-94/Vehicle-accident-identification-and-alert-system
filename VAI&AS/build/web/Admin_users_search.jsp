@@ -7,6 +7,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+ </script>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Admin</title>
@@ -20,6 +22,20 @@
         <link href="assets/css/custom.css" rel="stylesheet" />
         <!-- GOOGLE FONTS-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+        
+        <script type="text/javascript">
+        function showData(value){ 
+            $.ajax({
+                url : "UserController?type=search"+value,
+                type : "POST",
+                async : false,
+                success : function(data) {
+//Do something with the data here
+                }
+            });
+        }
+        </script>
+        
     </head>
     <body>
         <div id="wrapper">
@@ -72,8 +88,8 @@
 
                     <div class="form-group">
                         <label>Search user</label>
-                        <p class="help-block">find user and vehicle details</p>
-                        <input class="form-control" />
+                        <p class="help-block">find user details</p>
+                        <input class="form-control" type="text" name="name" id="name" onkeyup="showData(this.value);" />
 
 
                     </div>

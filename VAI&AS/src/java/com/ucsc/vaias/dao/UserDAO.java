@@ -25,4 +25,6 @@ public interface UserDAO {
     public User searchUserByUID(User user, Connection connection) throws ClassNotFoundException, SQLException;
     
     public ArrayList<User> selectAllUsers(Connection connection) throws ClassNotFoundException, SQLException;
+    
+    public ArrayList<User> searchUsers(User user, Connection connection) throws ClassNotFoundException, SQLException;
 }

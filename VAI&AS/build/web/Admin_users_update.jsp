@@ -141,7 +141,7 @@ function validateForm() {
                                    
                                      <% User user=(User)request.getAttribute("sellist");%>
                                     <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                        <form name="update" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="" method="post"  role="form" >
+                                        <form name="sel" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="" method="post"  role="form" >
                                             <div class="form-group ">
                                                 <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                                 <div class="col-sm-8">
@@ -149,56 +149,54 @@ function validateForm() {
                                                        
                                                        
                                                 </div>
-                                                <input type="hidden" name="upUID" value=<% try{ out.println(user.getUID());}catch(Exception e){out.println(e);} %> />
                                                 <input type="submit" onclick="form.action='UserController?type=selbyID';"  class="btn btn-primary" class="fa fa-edit " value="search">
+                                                 </form>
+                                        
+                                                
                                             </div>
-
+                                            <form name="update" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="" method="post"  role="form" >
+                                                <input type="hidden" name="upUID" value=<% try{ out.println(user.getUID());}catch(Exception e){out.println(e);} %> />
+                                                <input type="hidden" name="GENDER" value=<% try{ out.println(user.getGENDER());}catch(Exception e){out.println(e);} %> />
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="nic">NIC Number:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="NIC" placeholder="Enter NIC Munber" value=<% try{ out.println(user.getNIC());}catch(Exception e){out.println(e);} %>; required="">
+                                                    <input type="text" class="form-control" name="NIC" required value=<% try{ out.println(user.getNIC());}catch(Exception e){out.println("");} %> >
               
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label class="control-label col-sm-2" for="fname">Gender:</label>
-                                                <div class="col-sm-10">
-                                                    <input type="radio" class="" value="Male" name="GENDER" placeholder="Enter  Gender" checked="" >  <span>Male</span>
-                                                    <input type="radio" class=""  value="Female" name="GENDER" placeholder="Enter  Gender">  <span>Female</span>
-                                                </div>
-                                            </div>
+                                            
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="fname">First Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="FIRST_NAME" placeholder="Enter First Name" required="" value=<% try{ out.println(user.getFIRST_NAME());}catch(Exception e){out.println(e);} %>>
+                                                    <input type="text" class="form-control" name="FIRST_NAME"  required="" value=<% try{ out.println(user.getFIRST_NAME());}catch(Exception e){out.println("");} %>>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">Last Name:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control"  name="LAST_NAME" placeholder="Enter Last Name" required="" value=<% try{ out.println(user.getLAST_NAME());}catch(Exception e){out.println(e);} %>>
+                                                    <input type="text" class="form-control"  name="LAST_NAME"  required="" value=<% try{ out.println(user.getLAST_NAME());}catch(Exception e){out.println("");} %>>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">TP Home:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="TP_HOME" placeholder="Enter Home Telephone No" required="" value=<% try{ out.println(user.getTP_HOME());}catch(Exception e){out.println(e);} %>>
+                                                    <input type="text" class="form-control" name="TP_HOME"  required="" value=<% try{ out.println(user.getTP_HOME());}catch(Exception e){out.println("");} %>>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="lname">TP Mobile:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control"  name="TP_MOBILE" placeholder="Enter Mobile No" required="" value=<% try{ out.println(user.getTP_MOBILE());}catch(Exception e){out.println(e);} %>>
+                                                    <input type="text" class="form-control"  name="TP_MOBILE"  required="" value=<% try{ out.println(user.getTP_MOBILE());}catch(Exception e){out.println("");} %>>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="address">Address:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="ADDRESS" placeholder="Enter Address" required="" value=<% try{ out.println(user.getADDRESS());}catch(Exception e){out.println(e);} %>>
+                                                    <input type="text" class="form-control" name="ADDRESS"  required="" value=<% try{ out.println(user.getADDRESS());}catch(Exception e){out.println("");} %>>
                                                 </div>
                                             </div>
 
@@ -206,14 +204,14 @@ function validateForm() {
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="email">Email:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="email" class="form-control"  name="EMAIL" placeholder="Enter email" required value=<% try{ out.println(user.getEMAIL());}catch(Exception e){out.println("Name@gmail.com");} %>>
+                                                    <input type="email" class="form-control"  name="EMAIL"  required value=<% try{ if(!user.getEMAIL().isEmpty()){out.println(user.getEMAIL());}else{out.println("name@gmail.com");}}catch(Exception e){out.println("");} %>>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" >License No:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="LICENSE_NO" placeholder="Enter License No" required value=<% try{ out.println(user.getLICENSE_NO());}catch(Exception e){out.println(e);} %>>
+                                                    <input type="text" class="form-control" name="LICENSE_NO"  required value=<% try{ out.println(user.getLICENSE_NO());}catch(Exception e){out.println("");} %>>
                                                 </div>
                                             </div>
 
@@ -221,15 +219,16 @@ function validateForm() {
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2"  for="blood_group">Blood Group:</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control" name="BLOOD_GROUP" required value=<% try{user.getBLOOD_GROUP(); }catch(Exception e){out.println(e);} %>>
+                                                    <select class="form-control" name="BLOOD_GROUP" required>
+                                                        <option value=<% try{ out.println(user.getBLOOD_GROUP());}catch(Exception e){out.println(e);} %> class="form-group"><% try{ out.println(user.getBLOOD_GROUP());}catch(Exception e){out.println("");} %></option>
                                                         <option value="O+" class="form-group">O+</option>
                                                         <option value="O-" class="form-group">O-</option>
                                                         <option value="A+" class="form-group">A+</option>
                                                         <option value="A-" class="form-group">A-</option>
                                                         <option value="B+" class="form-group">B+</option>
                                                         <option value="B-" class="form-group">B-</option>
-                                                        <option value="B-" class="form-group">AB+</option>
-                                                        <option value="B-" class="form-group">AB-</option>
+                                                        <option value="AB+" class="form-group">AB+</option>
+                                                        <option value="AB-" class="form-group">AB-</option>
                                                     </select>
                                                     
                                                 </div>
@@ -238,7 +237,7 @@ function validateForm() {
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="pwd">Birth Date</label>
                                                 <div class="col-sm-10"> 
-                                                    <input type="date" class="form-control" name="BIRTH_DAY" placeholder="Enter BirthDay" value=<% try{ out.println(user.getBIRTH_DAY());}catch(Exception e){out.println(e);} %>; >
+                                                    <input type="date" class="form-control" name="BIRTH_DAY"  value=<% try{ out.println(user.getBIRTH_DAY());}catch(Exception e){out.println("");} %>; >
                                                 </div>
                                             </div>
 
@@ -246,14 +245,14 @@ function validateForm() {
                                             <div class="form-group">
                                                 <label class="control-label col-sm-2" for="dl_no">Other:</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control" name="OTHER" placeholder="Other" required value=<% try{ out.println(user.getOTHER());}catch(Exception e){out.println(e);} %>>
+                                                    <textarea class="form-control" name="OTHER"  >  <%try{ out.print(user.getOTHER());}catch(Exception e){out.println("");} %></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group"> 
                                                 <div class="col-sm-offset-2 col-sm-10">
                                                     <input type="submit" class="btn btn-default" onclick="form.action='UserController?type=update';return validateForm()" value="UPDATE USER" >
-                                                    <button type="submit" class="btn btn-default">Remove</button>
+                                                    <input type="submit" class="btn btn-default" onclick="form.action='UserController?type=delete';" value="DELETE USER" >
                                                 </div>
                                             </div>
                                         </form>

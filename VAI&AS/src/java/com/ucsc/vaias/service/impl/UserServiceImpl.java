@@ -48,5 +48,13 @@ public class UserServiceImpl implements UserService {
 
         return udao.selectAllUsers(connection);
     }
+    
+    
+
+    @Override
+    public ArrayList<User> searchUsers(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }

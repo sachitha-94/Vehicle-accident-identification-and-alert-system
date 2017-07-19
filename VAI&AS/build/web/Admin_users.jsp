@@ -111,7 +111,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <%
+                                                <%     
                                                         ArrayList<User> list = (ArrayList<User>) request.getAttribute("list");
                                                         for (User category : list) {
                                                     %>

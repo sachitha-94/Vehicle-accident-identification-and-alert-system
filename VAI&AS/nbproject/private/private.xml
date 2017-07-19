@@ -5,6 +5,9 @@
         <group>
             <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_users_update.jsp</file>
             <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/web/Admin_users_register.jsp</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/connection/dbconnection/impl/DBResourceConnectionImpl.java</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/model/User.java</file>
+            <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/dao/impl/UserDAOImpl.java</file>
             <file>file:/C:/Users/Ishan/Desktop/project/Vehicle-accident-identification-and-alert-system/VAI&amp;AS/src/java/com/ucsc/vaias/controller/UserController.java</file>
         </group>
     </open-files>

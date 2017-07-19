@@ -137,4 +137,20 @@ public class UserDAOImpl implements UserDAO {
         return users;
     }
 
+    @Override
+    public ArrayList<User> searchUsers(User user, Connection connection) throws ClassNotFoundException, SQLException {
+        
+        String sql="SELECT FIRST_NAME FROM user WHERE FIRST_NAME like '"+user.getFIRST_NAME()+"%'" ;
+        Statement stm = connection.createStatement();
+        ResultSet res = stm.executeQuery(sql);
+    
+        ArrayList<User> users = new ArrayList<User>();
+        while (res.next()) {
+            User uReturn=new User();
+            uReturn.setFIRST_NAME(res.getString("FIRST_NAME"));
+            users.add(uReturn);
+        }
+        return users;
+    }
+
 }

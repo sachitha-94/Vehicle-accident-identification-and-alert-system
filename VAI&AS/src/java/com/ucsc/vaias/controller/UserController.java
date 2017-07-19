@@ -109,6 +109,8 @@ public class UserController extends HttpServlet {
                     out.flush();
                     out.close();
                     return;
+                   }else{
+                   response.sendRedirect(request.getHeader("referer"));
                    }
                     
                    
@@ -147,9 +149,10 @@ public class UserController extends HttpServlet {
 
                     User res_Select = userService.searchUserByUID(user, connection);
                     System.out.println(res_Select.getADDRESS());
+                    System.out.println("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"+res_Select.getOTHER());
                     request.setAttribute("sellist", res_Select);
                     getServletContext().getRequestDispatcher("/Admin_users_update.jsp").forward(request, response);
-
+                    
                     out.flush();
                     out.close();
                     return;
@@ -161,7 +164,18 @@ public class UserController extends HttpServlet {
                 }
 
             }
-            
+            if (type.equals("search")) {
+                try{
+                connection = bResourceFactory.getFactoryConnection().getConnection();
+                UserService userService = new UserServiceImpl();
+                User user = new User();
+                String name = request.getParameter("name");
+                user.setFIRST_NAME(name);
+                ArrayList<User> res_Select = userService.searchUsers(user, connection);
+                }catch(Exception e){
+                    
+                }
+            }
             if (type.equals("update")) {
                 
                 
@@ -181,7 +195,7 @@ public class UserController extends HttpServlet {
                 Date BIRTH_DAY = Date.valueOf(date);
 
                 String OTHER = request.getParameter("OTHER");
-
+                //String OTHER ="ees efwefew";
                 User user = new User(UID, NIC, FIRST_NAME, LAST_NAME, GENDER, TP_HOME, TP_MOBILE, ADDRESS, LICENSE_NO, BLOOD_GROUP, EMAIL, BIRTH_DAY, OTHER);
 
                 
@@ -199,6 +213,35 @@ public class UserController extends HttpServlet {
                 } catch (ClassNotFoundException | SQLDataException ex) {
                     Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
                 }
+            }
+             if (type.equals("delete")) {
+                try {
+
+                    connection = bResourceFactory.getFactoryConnection().getConnection();
+                    UserService userService = new UserServiceImpl();
+                    User user = new User();
+                    String UID = request.getParameter("upUID");
+                    user.setUID(UID);
+
+                    boolean deleteUser = userService.removeUserByUID(user, connection);
+                    if (deleteUser) {
+                        response.sendRedirect("Admin_users_update.jsp");
+                        out.println("<script>alert('added');</script>");
+                    } else {
+                        response.sendRedirect(request.getHeader("referer"));
+                    }
+                    
+                    
+                    
+                    
+                    
+
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
 
         }catch (Exception e) {
