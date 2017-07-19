@@ -30,7 +30,7 @@ public final class location_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,11 +41,31 @@ public final class location_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
+<<<<<<< HEAD
+      out.write("  <head>\r\n");
+      out.write("    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\">\r\n");
+      out.write("    <meta charset=\"utf-8\">\r\n");
+      out.write("    <title>Simple markers</title>\r\n");
+      out.write("    <style>\r\n");
+      out.write("      /* Always set the map height explicitly to define the size of the div\r\n");
+      out.write("       * element that contains the map. */\r\n");
+      out.write("      #map {\r\n");
+      out.write("        height: 100%;\r\n");
+      out.write("      }\r\n");
+      out.write("      /* Optional: Makes the sample page fill the window. */\r\n");
+      out.write("      html, body {\r\n");
+      out.write("        height: 100%;\r\n");
+      out.write("        margin: 0;\r\n");
+      out.write("        padding: 0;\r\n");
+      out.write("      }\r\n");
+      out.write("    </style>\r\n");
+      out.write("  </head>\r\n");
+      out.write("  <body>\r\n");
+      out.write("    <div id=\"map\"></div>\r\n");
+      out.write("    <script>\r\n");
+=======
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>JSP Page</title>\r\n");
@@ -58,11 +78,30 @@ public final class location_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                padding-top: 25px;\r\n");
       out.write("            }\r\n");
       out.write("        </style>\r\n");
+>>>>>>> origin/master
       out.write("\r\n");
-      out.write("        <script>\r\n");
-      out.write("            map.setCenter(myMarker.position);\r\n");
-      out.write("            myMarker.setMap(map);\r\n");
+      out.write("      function initMap() {\r\n");
+      out.write("        var myLatLng = {lat: -25.363, lng: 131.044};\r\n");
+      out.write("     \r\n");
       out.write("\r\n");
+<<<<<<< HEAD
+      out.write("        var map = new google.maps.Map(document.getElementById('map'), {\r\n");
+      out.write("          zoom: 4,\r\n");
+      out.write("          center: myLatLng\r\n");
+      out.write("        });\r\n");
+      out.write("\r\n");
+      out.write("        var marker = new google.maps.Marker({\r\n");
+      out.write("          position: myLatLng1,\r\n");
+      out.write("          map: map,\r\n");
+      out.write("          title: 'Hello World!'\r\n");
+      out.write("        });\r\n");
+      out.write("      }\r\n");
+      out.write("    </script>\r\n");
+      out.write("    <script async defer\r\n");
+      out.write("    src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBQNxuARLxgAq6oGgjEiHcMGCwRG7Eye2A&callback=initMap\">\r\n");
+      out.write("    </script>\r\n");
+      out.write("  </body>\r\n");
+=======
       out.write("            function initMap() {\r\n");
       out.write("                var map = new google.maps.Map(document.getElementById('map_canvas'), {\r\n");
       out.write("                    zoom: 10,\r\n");
@@ -106,6 +145,7 @@ public final class location_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        \r\n");
       out.write("       \r\n");
       out.write("    </body>\r\n");
+>>>>>>> origin/master
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

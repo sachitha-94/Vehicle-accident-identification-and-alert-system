@@ -83,11 +83,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("\r\n");
       out.write("    <body>\r\n");
-      out.write("        <div>");
+      out.write("        ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "login.jsp", out, false);
-      out.write(" </div>\r\n");
+      out.write(" \r\n");
       out.write("        \r\n");
-      out.write("        <div class=\"container\" style=\"width: 100%;\">\r\n");
+      out.write("        <div class=\"container\" style=\"width: 100%\">\r\n");
       out.write("            <div class=\"pre-loader\">\r\n");
       out.write("                <div class=\"load-con\">\r\n");
       out.write("                    <img src=\"assets/img/freeze/logo.png\" class=\"animated fadeInDown\" alt=\"\">\r\n");
@@ -141,7 +141,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    function initMap() {\r\n");
       out.write("                        var uluru = {lat: 7.8731, lng: 80.7718};\r\n");
       out.write("                        var map = new google.maps.Map(document.getElementById('map'), {\r\n");
-      out.write("                            zoom: 8,\r\n");
+      out.write("                            zoom: 4,\r\n");
       out.write("                            center: uluru\r\n");
       out.write("                        });\r\n");
       out.write("                        var marker = new google.maps.Marker({\r\n");
@@ -186,9 +186,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <script>\r\n");
       out.write("                    $('#login').click(function () {\r\n");
       out.write("                        $('#wrapper').toggle(\"slow\");\r\n");
-      out.write("                        document.getElementById(\"map\").style.opacity=\"0.5\";\r\n");
       out.write("                    });\r\n");
-      out.write("                        \r\n");
+      out.write("\r\n");
       out.write("                    $('#profileButton').click(function () {\r\n");
       out.write("                        $('#map').hide(\"slow\");\r\n");
       out.write("                    });\r\n");

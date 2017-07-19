@@ -23,63 +23,8 @@
         <link rel="stylesheet" href="assets/css/style2.css">
 
             <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-<script type="text/javascript">                                      
-                function populate(s1,s2){
-                    var s1= document.getElementById(s1);
-                    var s2= document.getElementById(s2);
-                    s2.innerHTML = "";
-                    if(s1.value == "Western"){
-                        var optionArray =["|","Colombo|Colombo","Gampaha|Gampaha","Kalutara|Kalutara" ];
-                    }else if(s1.value == "Southern"){
-                        var optionArray =["|","Galle|Galle","Matara|Matara","Hambanthota|Hambanthota" ];
-                    }else if(s1.value == "Uva"){
-                        var optionArray =["|","Badulla|Badulla","Monaragala|Monaragala" ];
-                    }else if(s1.value == "Central"){
-                        var optionArray =["|","Kandy|Kandy","Nuwara Eliya|Nuwara Eliya","Matale|Matale" ];
-                    }else if(s1.value == "Northern"){
-                        var optionArray =["|","Mullaitivu|Mullaitivu","vavuniya|Vavuniya","Mannar|Mannar","Kilinochchi|Kilinochchi","Jaffna|Jaffna" ];
-                    }else if(s1.value == "North Western"){
-                        var optionArray =["|","Kurunegala|Kurunegala","Puttalam|Puttalam"];
-                    }else if(s1.value == "North Central"){
-                        var optionArray =["|","Polonnaruwa|Polonnaruwa","Anuradhapura|Anuradhapura"];
-                    }else if(s1.value == "Sabaragamuwa"){
-                        var optionArray =["|","Kegalle|Kegalle","Ratnapura|Ratnapura"];
-                    }else if(s1.value == "Eastern"){
-                        var optionArray =["|","Ampara|Ampara","Batticaloa|Batticaloa","Trincomalee|Trincomalee" ];
-                    }
-                    for(var option in optionArray){
-                        var pair = optionArray[option].split("|");
-                        var newOption = document.createElement("option");
-                        newOption.value = pair[0];
-                        newOption.innerHTML = pair[1];
-                        s2.options.add(newOption);
-                    }
-                }
-    
-    </script>
-    <script>
-    function validateForm(){    
-        var tp = document.forms["registerpolice"]["TP"].value;
-        var Reg1=/^[0-9]{10}$/;
-        if(!Reg1.test(tp)) {
-            alert("Invalid user telephone number");
-        return false;
-    }
-        var lat = document.forms["registerpolice"]["LAT"].value;
-        var Reg2= /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}$/;
-        if(!Reg2.test(lat)) {
-            alert("Invalid latitude");
-        return false;
-    }
-        var lon = document.forms["registerpolice"]["LON"].value;
-        var Reg3= /^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}$/;
-        if(!Reg3.test(lon)) {
-            alert("Invalid longitude");
-        return false;
-        
-    }
-}
-    </script> 
+
+
 
     </head>
     <body>
@@ -143,7 +88,7 @@
                             </div>
 
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                <form name="registerpolice" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="PoliceStationController?type=reg" onsubmit="return validateForm()" method="post" role="form">
+                                <form  style="margin-left: 15%; width: 90%;"class="form-horizontal" action="PoliceStationController" method="post" role="form">
 
 
 
@@ -151,24 +96,15 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Police Station ID:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Police Station ID" name="PID" required>
+                                                <input type="text" class="form-control" placeholder="Police Station ID" name="PID">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" >Province:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="PROVINCE" id="province" onchange="populate(this.id,'district')" required>
-                                                    <option value="" class="form-group"></option>
-                                                    <option value="Western" class="form-group">Western</option>
+                                                <select class="form-control" name="PROVINCE">
                                                     <option value="Southern" class="form-group">Southern</option>
-                                                    <option value="Uva" class="form-group">Uva</option>
-                                                    <option value="Central" class="form-group">Central</option>
-                                                    <option value="Northern" class="form-group">North</option>
-                                                    <option value="North Western" class="form-group">North Western</option>
-                                                    <option value="North Central" class="form-group">North Central</option>
-                                                    <option value="Sabaragamuwa" class="form-group">Sabaragamuwa</option>
-                                                    <option value="Eastern" class="form-group">Eastern</option>
 
                                                 </select>
 
@@ -178,8 +114,8 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Devision:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="DEVISION" id="district" required>
-                                                   
+                                                <select class="form-control" name="DEVISION">
+                                                    <option value="Baddegama" class="form-group">Baddegama</option>
 
                                                 </select>
                                             </div>
@@ -188,7 +124,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">City:</label>
                                             <div class="col-sm-10">
-                                                <select class="form-control" name="CITY" required>
+                                                <select class="form-control" name="CITY">
                                                     <option value="Yakkalamulla" class="form-group">Yakkalamulla</option>
 
                                                 </select>
@@ -197,14 +133,14 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Telephone No:</label>
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="Telephone No" name="TP" required>
+                                                <input type="text" class="form-control" placeholder="Telephone No" name="TP">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Latitude:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT" required>
+                                                <input type="text" id="lat"class="form-control" placeholder="Latitude" name="LAT">
                                             </div>
                                             <button type="button" class="btn btn-primary" id="mapAdd" >MAP</button>
                                         </div>
@@ -212,7 +148,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-sm-2" for="address">Longitude:</label>
                                             <div class="col-sm-8">
-                                                <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON" required>
+                                                <input type="text" id="lon" class="form-control" placeholder="Longitude" name="LON">
                                             </div>
 
 

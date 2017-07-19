@@ -23,6 +23,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import netscape.javascript.JSObject;
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -62,7 +64,7 @@ public class HospitalController extends HttpServlet {
                     String CITY = request.getParameter("CITY");
                     float LAT = Float.valueOf(request.getParameter("LAT"));
                     float LON = Float.valueOf(request.getParameter("LON"));
-                    String TP = request.getParameter("TP");
+                    int TP = Integer.valueOf(request.getParameter("TP"));
 
                     System.out.println(type);
 
@@ -83,55 +85,22 @@ public class HospitalController extends HttpServlet {
                 Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-            if(type.equals("sel")){
+            if (type.equals("sel")) {
                 try {
-                    
+
                     //request.getRequestDispatcher("/Admin_hospital.jsp").forward(request, response);
                     connection = dBResourceFactory.getFactoryConnection().getConnection();
                     HospitalService hospitalService = new HospitalServiceImpl();
                     ArrayList<Hospital> res_Select = hospitalService.selectAllHospital(connection);
 
-                    for (Hospital hospital1 : res_Select) {
-                        System.out.println("dgsgfdrbffffffffff " + hospital1.getHID());
-                        System.out.println("dgsgfdrbffffffffff " + hospital1.getHOSPITAL_NAME());
-                        System.out.println("dgsgfdrbffffffffff " + hospital1.getDISTRICT());
-                        System.out.println("dgsgfdrbffffffffff " + hospital1.getCITY());
-                        System.out.println("dgsgfdrbffffffffff " + hospital1.getTP());
+                    if (!res_Select.isEmpty()) {
+                        request.setAttribute("list", res_Select);
+                        getServletContext().getRequestDispatcher("/Admin_hospital.jsp").forward(request, response);
 
+                        out.flush();
+                        out.close();
+                        return;
                     }
-                    //if (hospital != null) {
-//                    JSONObject jSONObject = new JSONObject(hospitalService.selectAllHospital(connection));
-//                    jSONObject.put("list", res_Select);
-//                    //System.out.println(jSONObject);
-//                    response.setContentType("json");
-//                    out.print(jSONObject.toString());
-                   if (!res_Select.isEmpty()) {
-                   request.setAttribute("list",res_Select);
-                   getServletContext().getRequestDispatcher("/Admin_hospital.jsp").forward(request,response);
-                    
-                    
-                    out.flush();
-                    out.close();
-                    return;
-                   }
-                    
-                   
-                   
-                        if (response.isCommitted()) {
-                           
-                            System.out.println("yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeees");
-                            
-                        }
-                        if (!response.isCommitted()) {
-                           
-                            System.out.println("noooooooooooooooooooooooooooooooooooooooooooooooooooooo");
-                            
-                        }
-//                        if (response.isCommitted()) {
-//
-//                            System.out.println("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwfffffffffffffffffffff");
-//                        }
-                    // }
 
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
@@ -143,9 +112,7 @@ public class HospitalController extends HttpServlet {
 
         } catch (Exception e) {
 
-            System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy" + e);
         }
-        
 
     }
 
@@ -175,7 +142,39 @@ public class HospitalController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            DBResourceFactory dBResourceFactory = new DBResourceFactory();
+            Connection connection = null;
+            connection = dBResourceFactory.getFactoryConnection().getConnection();
+            HospitalService hospitalService = new HospitalServiceImpl();
+            ArrayList<Hospital> res_Select = hospitalService.selectAllHospital(connection);
+            JSONArray jsono = new JSONArray();
+            PrintWriter out = response.getWriter();
+
+            if (!res_Select.isEmpty()) {
+                int i = 0;
+                for (Hospital h : res_Select) {
+                    jsono.put(i, h.getLAT());
+                    ++i;
+                    jsono.put(i, h.getLON());
+                    i++;
+                }
+                response.setContentType("json");
+                out.print(jsono);
+
+                out.flush();
+                out.close();
+                return;
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     /**

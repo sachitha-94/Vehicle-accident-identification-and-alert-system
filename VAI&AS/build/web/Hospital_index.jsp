@@ -4,6 +4,10 @@
     Author     : Ganusha
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="org.codehaus.jackson.map.ObjectMapper"%>
+<%@page import="com.ucsc.vaias.model.Hospital"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="en" class="no-js">
@@ -44,9 +48,17 @@
     </head>
 
     <body>
+
+
+
+
+
+
+
+
         <div id="floating-panel">
-            <b>Mode of Travel: </b>
-            <select id="mode">
+            
+            <select style="visibility: hidden;"  id="mode">
                 <option value="DRIVING">Driving</option>
                 <option value="WALKING">Walking</option>
                 <option value="BICYCLING">Bicycling</option>
@@ -85,6 +97,7 @@
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                             <ul class="nav navbar-nav navbar-right">
+                                <li><a class="" href="AdminIndex.jsp">Home</a></li>
                                 <li><a class="getApp" href="Admin_dashboard.jsp">Admin Panel</a>
                                 </li>
 
@@ -126,8 +139,8 @@
                                 var lat = data.lat;
                                 var lon = data.lon;
                                 if ((prelat != lat) && (prelon != lon)) {
-                                    marker.setPosition(new google.maps.LatLng(lat, lon));
-                                    map.panTo(new google.maps.LatLng(lat, lon));
+                                    //marker.setPosition(new google.maps.LatLng(lat, lon));
+                                    // map.panTo(new google.maps.LatLng(lat, lon));
 
                                     marker.addListener('click', function () {
                                         $("#viewprofile").toggle("slow");
@@ -170,11 +183,11 @@
 
                         });
                         directionsDisplay.setMap(map);
-                        calculateAndDisplayRoute(directionsService, directionsDisplay);
-                        alert("hariyo");
+                        //calculateAndDisplayRoute(directionsService, directionsDisplay);
+
                         document.getElementById('mode').addEventListener('change', function () {
 
-                            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                            //calculateAndDisplayRoute(directionsService, directionsDisplay);
 
                         });
 
@@ -186,12 +199,11 @@
 
 
 
-                    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-
+                    function calculateAndDisplayRoute(directionsService, directionsDisplay, minlat, minlon, lat, lon) {
                         var selectedMode = document.getElementById('mode').value;
                         directionsService.route({
-                            origin: {lat: 10.77, lng: 10.447}, // Haight.
-                            destination: {lat: 10.768, lng: 10.511}, // Ocean Beach.
+                            origin: {lat: minlat, lng: minlon}, // Haight.
+                            destination: {lat: lat, lng: lon}, // Ocean Beach.
                             // Note that Javascript allows us to access the constant
                             // using square brackets and a string value as its
                             // "property."
@@ -225,7 +237,7 @@
                             ;
                     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
                     var d = R * c; // Distance in 
-                    alert(d);
+                  
                     return d;
                 }
 
@@ -235,11 +247,60 @@
 
 
                 function passLatLon(lat, lon) {
-                    getDistanceFromLatLonInKm(lat, lon, 10.5, 11.5);
+
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: "HospitalController",
+                        dataType: 'json',
+                        success: function (data) {
+                            var mindistance = 10000;
+                            var minlat = 0;
+                            var minlon = 0;
+
+                            for (var i = 0; i < 20; i++) {
+
+                                if (data[i] != undefined) {
+                                    var distance = getDistanceFromLatLonInKm(lat, lon, data[i], data[i + 1]);
+                                    
+                                    if (mindistance > distance) {
+                                        mindistance = distance;
+                                        minlat = data[i];
+                                        minlon = data[++i];
+                                    } else {
+                                        i++;
+                                    }
+
+
+
+                                }
+                            }
+
+                            //minlat = 6.8625;
+                            //minlon = 79.8855;
+                            //lat=6.8817;
+                            //lon=79.8787;
+                            var directionsDisplay = new google.maps.DirectionsRenderer;
+                            var directionsService = new google.maps.DirectionsService;
+                            directionsDisplay.setMap(map);
+                            calculateAndDisplayRoute(directionsService, directionsDisplay, minlat, minlon, lat, lon);
+
+                            document.getElementById('mode').addEventListener('change', function () {
+
+                                calculateAndDisplayRoute(directionsService, directionsDisplay, minlat, minlon, lat, lon);
+
+                            });
+
+
+                        }
+                    });
+
+
+
+
                 }
+
+
             </script>
-
-
 
             <div class="wrapper">
                 <footer>

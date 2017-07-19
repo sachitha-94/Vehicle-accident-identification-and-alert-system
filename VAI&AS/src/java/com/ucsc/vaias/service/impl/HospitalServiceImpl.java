@@ -50,5 +50,12 @@ public class HospitalServiceImpl implements HospitalService {
         return hdao.selectAllHospital(connection);
     }
 
+    @Override
+    public ArrayList getHospitalLocation(Connection connection) throws ClassNotFoundException, SQLException {
+         
+        return hdao.getHospitalLocation(connection);
+    }
 
+
+    
 }

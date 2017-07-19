@@ -84,7 +84,7 @@ public class HospitalDAOImpl implements HospitalDAO {
             hReturn.setCITY(res.getString("CITY"));
             hReturn.setLAT(res.getFloat("LAT"));
             hReturn.setLON(res.getFloat("LON"));
-            hReturn.setTP(res.getString("TP"));
+            hReturn.setTP(res.getInt("TP"));
 
         }
         return hReturn;
@@ -93,7 +93,7 @@ public class HospitalDAOImpl implements HospitalDAO {
 
     @Override
     public ArrayList<Hospital> selectAllHospital(Connection connection) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM hospital ORDER BY DISTRICT,CITY";
+        String sql = "SELECT * FROM hospital";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
 
@@ -109,12 +109,40 @@ public class HospitalDAOImpl implements HospitalDAO {
             hReturn.setCITY(res.getString("CITY"));
             hReturn.setLAT(res.getFloat("LAT"));
             hReturn.setLON(res.getFloat("LON"));
-            hReturn.setTP(res.getString("TP"));
+            hReturn.setTP(res.getInt("TP"));
 
             hospitals.add(hReturn);
         }
         return hospitals;
 
     }
+
+    @Override
+    public ArrayList getHospitalLocation(Connection connection) throws ClassNotFoundException, SQLException {
+        String sql = "SELECT LON FROM hospital";
+        Statement stm = connection.createStatement();
+        ResultSet res = stm.executeQuery(sql);
+
+        ArrayList<Hospital> hospitals = new ArrayList<Hospital>();
+        while (res.next()) {
+
+            Hospital hReturn = new Hospital();
+
+            hReturn.setHID(res.getString("HID"));
+            hReturn.setHOSPITAL_NAME(res.getString("HOSPITAL_NAME"));
+            hReturn.setPROVINCE(res.getString("PROVINCE"));
+            hReturn.setDISTRICT(res.getString("DISTRICT"));
+            hReturn.setCITY(res.getString("CITY"));
+            hReturn.setLAT(res.getFloat("LAT"));
+            hReturn.setLON(res.getFloat("LON"));
+            hReturn.setTP(res.getInt("TP"));
+
+            hospitals.add(hReturn);
+        }
+        return hospitals;
+
+    }
+    
+  
 
 }

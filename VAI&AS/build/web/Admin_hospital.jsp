@@ -97,7 +97,7 @@
                                                         <th>Hospital name</th>
                                                         <th>District</th>
                                                         <th>City</th>
-                                                        <th style=" text-align: center">TP</th>
+                                                        <th>TP</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -110,7 +110,7 @@
                                                                      <td><% out.println(category.getHOSPITAL_NAME()); %></td>
                                                                      <td><% out.println(category.getDISTRICT()); %></td>
                                                                      <td><% out.println(category.getCITY()); %></td>
-                                                                     <td style="text-align: center"><% out.println(category.getTP()); %></td>
+                                                                     <td><% out.println(category.getTP()); %></td>
                                                         </tr>
                                                                     
                                                     <%     }

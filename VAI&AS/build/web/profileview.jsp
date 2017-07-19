@@ -93,7 +93,7 @@
                                         </tbody>
                                     </table>
 
-                                    <a href="#" class="btn btn-primary">Police Station</a>
+                                    <a href="Police_index.jsp" class="btn btn-primary">Police Station</a>
                                     <a href="Hospital_index.jsp" class="btn btn-primary">Hospital</a>
                                 </div>
                             </div>
