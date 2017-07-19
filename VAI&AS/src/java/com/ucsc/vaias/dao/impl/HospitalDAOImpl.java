@@ -84,7 +84,7 @@ public class HospitalDAOImpl implements HospitalDAO {
             hReturn.setCITY(res.getString("CITY"));
             hReturn.setLAT(res.getFloat("LAT"));
             hReturn.setLON(res.getFloat("LON"));
-            hReturn.setTP(res.getInt("TP"));
+            hReturn.setTP(res.getString("TP"));
 
         }
         return hReturn;
@@ -93,7 +93,7 @@ public class HospitalDAOImpl implements HospitalDAO {
 
     @Override
     public ArrayList<Hospital> selectAllHospital(Connection connection) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM hospital";
+        String sql = "SELECT * FROM hospital ORDER BY DISTRICT,CITY";
         Statement stm = connection.createStatement();
         ResultSet res = stm.executeQuery(sql);
 
@@ -109,7 +109,7 @@ public class HospitalDAOImpl implements HospitalDAO {
             hReturn.setCITY(res.getString("CITY"));
             hReturn.setLAT(res.getFloat("LAT"));
             hReturn.setLON(res.getFloat("LON"));
-            hReturn.setTP(res.getInt("TP"));
+            hReturn.setTP(res.getString("TP"));
 
             hospitals.add(hReturn);
         }

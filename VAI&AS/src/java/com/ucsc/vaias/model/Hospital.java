@@ -18,12 +18,12 @@ public class Hospital {
     private String CITY;
     private float LAT;
     private float LON;
-    private int TP;
+    private String TP;
 
     public Hospital() {
     }
 
-    public Hospital(String HID, String HOSPITAL_NAME, String PROVINCE, String DISTRICT, String CITY, float LAT, float LON, int TP) {
+    public Hospital(String HID, String HOSPITAL_NAME, String PROVINCE, String DISTRICT, String CITY, float LAT, float LON, String TP) {
         this.HID = HID;
         this.HOSPITAL_NAME = HOSPITAL_NAME;
         this.PROVINCE = PROVINCE;
@@ -90,11 +90,11 @@ public class Hospital {
         this.LON = LON;
     }
 
-    public int getTP() {
+    public String getTP() {
         return TP;
     }
 
-    public void setTP(int TP) {
+    public void setTP(String TP) {
         this.TP = TP;
     }
     

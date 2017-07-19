@@ -17,12 +17,12 @@ public class PoliceStation {
     private String CITY;
     private float LAT;
     private float LON;
-    private int TP;
+    private String TP;
 
     public PoliceStation() {
     }
 
-    public PoliceStation(String PID, String PROVINCE, String DIVITION, String CITY, float LAT, float LON, int TP) {
+    public PoliceStation(String PID, String PROVINCE, String DIVITION, String CITY, float LAT, float LON, String TP) {
         this.PID = PID;
         this.PROVINCE = PROVINCE;
         this.DIVITION = DIVITION;
@@ -80,11 +80,11 @@ public class PoliceStation {
         this.LON = LON;
     }
 
-    public int getTP() {
+    public String getTP() {
         return TP;
     }
 
-    public void setTP(int TP) {
+    public void setTP(String TP) {
         this.TP = TP;
     }
 

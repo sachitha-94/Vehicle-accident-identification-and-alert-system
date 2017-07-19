@@ -77,7 +77,7 @@ function validateForm() {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Users</a> 
+                <a class="navbar-brand" href="Admin_users.jsp">Users</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
@@ -127,7 +127,7 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                             </div>
                             
                                 <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
-                                    <form  name="register" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController" onsubmit="return validateForm()" method="post" role="form">
+                                    <form  name="register" style="margin-left: 15%; width: 90%;"class="form-horizontal" action="UserController?type=reg" onsubmit="return validateForm()" method="post" role="form">
                                         <div class="form-group ">
                                             <label class="control-label col-sm-2" for="user_id">User ID:</label>
                                             <div class="col-sm-10">
@@ -209,7 +209,8 @@ font-size: 16px;"> Last access : 27 April 2016 &nbsp; <a style="color: white;" h
                                                         <option value="A-" class="form-group">A-</option>
                                                         <option value="B+" class="form-group">B+</option>
                                                         <option value="B-" class="form-group">B-</option>
-                                                       
+                                                        <option value="AB+" class="form-group">AB+</option>
+                                                        <option value="AB-" class="form-group">AB-</option>
                                                     </select>
                                                     
                                                 </div>

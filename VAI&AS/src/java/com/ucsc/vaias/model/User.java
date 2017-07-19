@@ -18,8 +18,8 @@ public class User {
     private String FIRST_NAME;
     private String LAST_NAME;
     private String GENDER;
-    private int TP_HOME;
-    private int TP_MOBILE;
+    private String TP_HOME;
+    private String TP_MOBILE;
     private String ADDRESS;
     private String LICENSE_NO;
     private String BLOOD_GROUP;
@@ -30,7 +30,7 @@ public class User {
     public User() {
     }
 
-    public User(String UID, String NIC, String FIRST_NAME, String LAST_NAME, String GENDER, int TP_HOME, int TP_MOBILE, String ADDRESS, String LICENSE_NO, String BLOOD_GROUP, String EMAIL, Date BIRTH_DAY, String OTHER) {
+    public User(String UID, String NIC, String FIRST_NAME, String LAST_NAME, String GENDER, String TP_HOME, String TP_MOBILE, String ADDRESS, String LICENSE_NO, String BLOOD_GROUP, String EMAIL, Date BIRTH_DAY, String OTHER) {
         this.UID = UID;
         this.NIC = NIC;
         this.FIRST_NAME = FIRST_NAME;
@@ -87,19 +87,19 @@ public class User {
         this.GENDER = GENDER;
     }
 
-    public int getTP_HOME() {
+    public String getTP_HOME() {
         return TP_HOME;
     }
 
-    public void setTP_HOME(int TP_HOME) {
+    public void setTP_HOME(String TP_HOME) {
         this.TP_HOME = TP_HOME;
     }
 
-    public int getTP_MOBILE() {
+    public String getTP_MOBILE() {
         return TP_MOBILE;
     }
 
-    public void setTP_MOBILE(int TP_MOBILE) {
+    public void setTP_MOBILE(String TP_MOBILE) {
         this.TP_MOBILE = TP_MOBILE;
     }
 

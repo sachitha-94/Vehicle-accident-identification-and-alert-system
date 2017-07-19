@@ -234,7 +234,7 @@
 
 
                                         <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-default">Add Police Station</button>
+                                            <button type="submit" class="btn btn-default">Add Hospital</button>
                                         </div>
                                     </div>
                                 </form>

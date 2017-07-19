@@ -4,6 +4,8 @@
     Author     : Dilum
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.ucsc.vaias.model.User"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -22,6 +24,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </head>
     <body>
+        <jsp:include page="//UserController?type=sel" flush="true"/>
         <div id="wrapper">
             <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
                 <div class="navbar-header">
@@ -31,7 +34,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">Users</a> 
+                    <a class="navbar-brand" href="Admin_users.jsp">Users</a> 
                 </div>
                 <div style="color: white;
                      padding: 15px 50px 5px 50px;
@@ -48,7 +51,7 @@
 
 
                         <li>
-                            <a class="active-menu"  href="Admin_users_register.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                            <a class="active-menu"  href="Admin_users.jsp"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                         </li>
                         <li>
                             <a  href="Admin_users_search.jsp"><i class="fa fa-desktop fa-3x"></i> Search</a>
@@ -83,69 +86,50 @@
                     <!-- /. ROW  -->
 
                     <!-- /. ROW  -->
-                    <div class="row" >
+                    <div class="row" style="width: 135%">
 
-                        <div class="col-md-9 col-sm-12 col-xs-12">
+                        <div class="col-md-9 col-sm-12 col-xs-12" >
 
-                            <div class="panel panel-default">
+                            <div class="panel panel-default" >
                                 <div class="panel-heading">
                                   User details
                                 </div>
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover">
+                                <div class="panel-body" style="width: 100%">
+                                    <div class="table-responsive" >
+                                        <table class="table table-striped table-bordered table-hover" >
                                             <thead>
                                                 <tr>
-                                                    <th>#</th>
+                                                    <th >User ID</th>
+                                                    <th>NIC</th>
                                                     <th>First Name</th>
                                                     <th>Last Name</th>
-                                                    <th>Username</th>
-                                                    <th>User No.</th>
+                                                    <th>Mobile no</th>
+                                                    <th>Gender</th>
+                                                    <th>Address</th>
+                                                    <th>Home Tp</th>
+                                                    <th>Blood type</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                    <td>100090</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>3</td>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>@twitter</td>
-                                                    <td>100090</td>
-                                                </tr>
+                                                <%
+                                                        ArrayList<User> list = (ArrayList<User>) request.getAttribute("list");
+                                                        for (User category : list) {
+                                                    %>
+                                                        <tr>
+                                                                     <td><% out.println(category.getUID()); %></td>
+                                                                     <td><% out.println(category.getNIC()); %></td>
+                                                                     <td><% out.println(category.getFIRST_NAME()); %></td>
+                                                                     <td><% out.println(category.getLAST_NAME()); %></td>
+                                                                     <td><% out.println(category.getTP_MOBILE()); %></td>
+                                                                     <td><% out.println(category.getGENDER()); %></td>
+                                                                     <td><% out.println(category.getADDRESS()); %></td>
+                                                                     <td><% out.println(category.getTP_HOME()); %></td>
+                                                                     <td><% out.println(category.getBLOOD_GROUP()); %></td>
+                                                        </tr>
+                                                                    
+                                                    <%     }
+                                                            
+                                                                    %>
 
                                             </tbody>
                                         </table>
