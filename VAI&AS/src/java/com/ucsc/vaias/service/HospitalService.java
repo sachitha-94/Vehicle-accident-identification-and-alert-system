@@ -26,4 +26,6 @@ public interface HospitalService {
     
     public ArrayList<Hospital> selectAllHospital(Connection connection) throws ClassNotFoundException, SQLException;
     
+    public ArrayList getHospitalLocation(Connection connection) throws ClassNotFoundException,SQLException;
+    
 }

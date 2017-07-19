@@ -23,6 +23,8 @@ public interface HospitalDAO {
     public boolean updateHospitalByHID(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException;
 
     public Hospital searchHospitalByHID(Hospital hospital, Connection connection) throws ClassNotFoundException, SQLException;
+    
+    public ArrayList getHospitalLocation(Connection connection) throws ClassNotFoundException,SQLException;
 
     public ArrayList<Hospital> selectAllHospital(Connection connection) throws ClassNotFoundException, SQLException;
 }

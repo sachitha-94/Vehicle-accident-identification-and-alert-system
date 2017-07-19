@@ -154,7 +154,7 @@
                         var directionsService = new google.maps.DirectionsService;
 
                         map = new google.maps.Map(document.getElementById('map'), {
-                            zoom: 8,
+                            zoom: 12,
                             center: myLatLng
                         });
                         directionsDisplay.setMap(map);
