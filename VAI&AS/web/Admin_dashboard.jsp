@@ -66,6 +66,7 @@
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6" >
                         <div class="about-item scrollpoint sp-effect1">
+				<a href="Admin_Reports.jsp">
                             <i class="fa fa-sliders fa-2x"></i>
                             <h3>Reports and Analize</h3>
                         </div>
