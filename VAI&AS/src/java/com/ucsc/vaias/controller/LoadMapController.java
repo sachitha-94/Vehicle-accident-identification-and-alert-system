@@ -96,9 +96,11 @@ public class LoadMapController extends HttpServlet {
                 
                 
              
-
+            json.put("aid", searchLastRow.getAID());
             json.put("lat", searchLastRow.getLAT());
             json.put("lon", searchLastRow.getLON());
+            json.put("pid",searchLastRow.getPID());
+            json.put("hid", searchLastRow.getHID());
             
             }else{
             

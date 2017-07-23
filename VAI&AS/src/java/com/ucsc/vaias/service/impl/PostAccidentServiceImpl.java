@@ -24,5 +24,15 @@ public class PostAccidentServiceImpl implements PostAccidentService{
     public PostAccident SearchLastRow(Connection connection) throws ClassNotFoundException, SQLException {
         return postAccidentDAO.SearchLastRow(connection);
     }
+
+    @Override
+    public boolean updatePID(Connection connection, PostAccident postAccident) throws ClassNotFoundException, SQLException {
+        return postAccidentDAO.UpdatePID(connection, postAccident);
+    }
+
+    @Override
+    public boolean updateHID(Connection connection, PostAccident postAccident) throws ClassNotFoundException, SQLException {
+        return postAccidentDAO.UpdateHID(connection, postAccident);
+    }
     
 }

@@ -55,9 +55,8 @@
 
 
 
-
         <div id="floating-panel">
-            
+
             <select style="visibility: hidden;"  id="mode">
                 <option value="DRIVING">Driving</option>
                 <option value="WALKING">Walking</option>
@@ -78,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            <div id="viewprofile" style="display: none"><jsp:include page="profileview.jsp" /></div>
+            <div id="viewprofile" style="display: none"><jsp:include page="Hospital_profileview.jsp" /></div>
             <header>
 
                 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -96,9 +95,11 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
+
+
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a class="" href="AdminIndex.jsp">Home</a></li>
-                                <li><a class="getApp" href="Admin_dashboard.jsp">Admin Panel</a>
+                                <li><a class="getApp" href="#getApp" id="view">View Details</a>
                                 </li>
 
                                 <li><a href="index.jsp">Log Out</a>
@@ -111,9 +112,11 @@
                 </nav>
 
 
+
                 <!--RevSlider-->
                 <div id="banner"  style="height: 150px;">
                 </div>
+
 
 
 
@@ -138,19 +141,18 @@
                             success: function (data) {
                                 var lat = data.lat;
                                 var lon = data.lon;
+                                var id = data.aid;
+                                
                                 if ((prelat != lat) && (prelon != lon)) {
                                     //marker.setPosition(new google.maps.LatLng(lat, lon));
                                     // map.panTo(new google.maps.LatLng(lat, lon));
 
-                                    marker.addListener('click', function () {
-                                        $("#viewprofile").toggle("slow");
-                                        loadData();
-                                        document.getElementById("map").style.opacity = "0.5";
-                                    });
-
+                                   
                                     prelat = lat;
                                     prelon = lon;
                                     passLatLon(lat, lon);
+                                    document.getElementById("AID").value = id;
+                                    
                                 }
 
                             }
@@ -237,7 +239,7 @@
                             ;
                     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
                     var d = R * c; // Distance in 
-                  
+
                     return d;
                 }
 
@@ -250,31 +252,35 @@
 
                     jQuery.ajax({
                         type: 'POST',
-                        url: "HospitalController",
+                        url: "PoliceStationController",
                         dataType: 'json',
                         success: function (data) {
                             var mindistance = 10000;
                             var minlat = 0;
                             var minlon = 0;
+                            var minid = 0;
 
-                            for (var i = 0; i < 20; i++) {
+                            for (var i = 0; i <40; i++) {
 
                                 if (data[i] != undefined) {
                                     var distance = getDistanceFromLatLonInKm(lat, lon, data[i], data[i + 1]);
-                                    
+
                                     if (mindistance > distance) {
                                         mindistance = distance;
                                         minlat = data[i];
                                         minlon = data[++i];
+                                        minid = data[++i];
                                     } else {
-                                        i++;
+                                        i = i + 2;
                                     }
 
 
 
                                 }
                             }
-
+                            alert(minid);
+                            document.getElementById("PID").value = minid;
+                            //document.form[0].submit();
                             //minlat = 6.8625;
                             //minlon = 79.8855;
                             //lat=6.8817;
@@ -333,11 +339,21 @@
 
                     });
 
-
+                    $('#view').click(function () {
+                        $("#viewprofile").toggle("slow");
+                        loadData();
+                        document.getElementById("map").style.opacity = "0.5";
+                    });
 
                 </script>
             </div>
         </div>
+
+        <form class="getApp" style="float: right; " name="someForm" action="PostAccidentController" method="POST">
+            <input type="hidden" name="PID" id="PID" />
+            <input type="hidden" name="AID" id="AID" />
+            <input type="submit"  value="SEND REQUEST" name="Submit" />
+        </form>
     </body>
 
 </html>

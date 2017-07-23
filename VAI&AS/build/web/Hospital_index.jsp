@@ -256,6 +256,7 @@
                             var mindistance = 10000;
                             var minlat = 0;
                             var minlon = 0;
+                            var minid=0;
 
                             for (var i = 0; i < 20; i++) {
 
@@ -266,8 +267,10 @@
                                         mindistance = distance;
                                         minlat = data[i];
                                         minlon = data[++i];
+                                        minid = data[++i];
+                                        
                                     } else {
-                                        i++;
+                                        i+2;
                                     }
 
 

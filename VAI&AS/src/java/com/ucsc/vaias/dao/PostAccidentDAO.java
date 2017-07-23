@@ -16,4 +16,8 @@ import java.sql.SQLException;
 public interface PostAccidentDAO {
     public PostAccident SearchLastRow(Connection connection)throws ClassNotFoundException,SQLException;
     
+    public boolean UpdatePID(Connection connection,PostAccident postAccident)throws ClassNotFoundException,SQLException;
+
+    public boolean UpdateHID(Connection connection, PostAccident postAccident)throws ClassNotFoundException,SQLException;
+    
 }

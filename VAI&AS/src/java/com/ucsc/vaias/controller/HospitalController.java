@@ -157,7 +157,11 @@ public class HospitalController extends HttpServlet {
                     jsono.put(i, h.getLAT());
                     ++i;
                     jsono.put(i, h.getLON());
+                    ++i;
+                    jsono.put(i, h.getHID());
                     i++;
+                    
+                    
                 }
                 response.setContentType("json");
                 out.print(jsono);

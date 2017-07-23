@@ -27,16 +27,16 @@
                             <div class="row">
                                 <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
                                 <script>
-                                    function loadData() {
+                                    load();
+                                    function load(){  
                                        
-                                       var res;
                                         jQuery.ajax({
                                             type: 'POST',
                                             url: "PostAccidentController",
                                             dataType: 'json',
-                                            success: function (data) {
+                                            success: function(data) {
                                                 
-                                                //alert(data);
+                                               
                                                 //alert(JSON.stringify(data));
                                                 document.getElementById("bloodgroup").innerHTML = data.BLOOD_GROUP;
                                                 document.getElementById("licenno").innerHTML = data.LICENSE_NO;
@@ -51,8 +51,8 @@
                                         });
                                        
                                         //document.getElementById("bloodgroup").innerHTML = res.;
-                                            
                                     }
+                                    
                                 </script>
 
                                 <div class=" col-md-9 col-lg-9 "> 
@@ -93,8 +93,7 @@
                                         </tbody>
                                     </table>
 
-                                    <a href="Police_index.jsp" class="btn btn-primary">Police Station</a>
-                                    <a href="Hospital_index.jsp" class="btn btn-primary">Hospital</a>
+                                   
                                 </div>
                             </div>
                         </div>

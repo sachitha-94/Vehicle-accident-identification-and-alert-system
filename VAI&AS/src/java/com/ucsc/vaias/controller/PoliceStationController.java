@@ -7,9 +7,12 @@ package com.ucsc.vaias.controller;
 
 
 import com.ucsc.vaias.connection.factory.DBResourceFactory;
+import com.ucsc.vaias.model.Hospital;
 import com.ucsc.vaias.model.PoliceStation;
+import com.ucsc.vaias.service.HospitalService;
 
 import com.ucsc.vaias.service.PoliceStationService;
+import com.ucsc.vaias.service.impl.HospitalServiceImpl;
 
 import com.ucsc.vaias.service.impl.PoliceStationServiceImpl;
 import java.io.IOException;
@@ -18,12 +21,15 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.SQLDataException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.json.JSONArray;
+import org.json.JSONException;
 
 /**
  *
@@ -52,7 +58,7 @@ public class PoliceStationController extends HttpServlet {
             
             float LAT = Float.valueOf(request.getParameter("LAT"));
             float LON = Float.valueOf(request.getParameter("LON"));
-            int TP = Integer.valueOf(request.getParameter("TP"));
+            String TP = (request.getParameter("TP"));
             
             PoliceStation police =  new PoliceStation(PID, PROVINCE, DIVISION, CITY, LAT, LON, TP);
             
@@ -104,7 +110,42 @@ public class PoliceStationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       try {
+            DBResourceFactory dBResourceFactory = new DBResourceFactory();
+            Connection connection = null;
+            connection = dBResourceFactory.getFactoryConnection().getConnection();
+            PoliceStationService policeStationService = new PoliceStationServiceImpl();
+            ArrayList<PoliceStation> res_Select = policeStationService.selectAllPoliceStations(connection);
+            JSONArray jsono = new JSONArray();
+            PrintWriter out = response.getWriter();
+
+            if (!res_Select.isEmpty()) {
+                int i = 0;
+                for (PoliceStation h : res_Select) {
+                    jsono.put(i, h.getLAT());
+                    ++i;
+                    jsono.put(i, h.getLON());
+                    ++i;
+                    jsono.put(i, h.getPID());
+                    i++;
+                    
+                    
+                }
+                response.setContentType("json");
+                out.print(jsono);
+
+                out.flush();
+                out.close();
+                return;
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (JSONException ex) {
+            Logger.getLogger(HospitalController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

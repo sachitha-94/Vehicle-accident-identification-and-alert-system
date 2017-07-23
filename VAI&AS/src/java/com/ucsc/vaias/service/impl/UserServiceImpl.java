@@ -11,7 +11,6 @@ import com.ucsc.vaias.model.User;
 import com.ucsc.vaias.service.UserService;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 /**
  *
@@ -44,17 +43,5 @@ public class UserServiceImpl implements UserService {
 
         return udao.searchUserByUID(user, connection);
     }
-    public ArrayList<User> selectAllUsers(Connection connection) throws ClassNotFoundException, SQLException {
-
-        return udao.selectAllUsers(connection);
-    }
-    
-    
-
-    @Override
-    public ArrayList<User> searchUsers(User user, Connection connection) throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 
 }

@@ -21,14 +21,14 @@
 
                     <div class="panel panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Sheena Shrestha</h3>
+                            <h3 class="panel-title"></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://babyinfoforyou.com/wp-content/uploads/2014/10/avatar-300x300.png" class="img-circle img-responsive"> </div>
                                 <script>
                                     function loadData() {
-                                       // alert("hgvsdcgsdv");
+                                       
                                        var res;
                                         jQuery.ajax({
                                             type: 'POST',

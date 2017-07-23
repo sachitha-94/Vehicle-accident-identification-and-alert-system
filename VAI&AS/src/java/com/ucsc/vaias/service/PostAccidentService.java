@@ -17,4 +17,7 @@ public interface PostAccidentService {
     
     public PostAccident SearchLastRow(Connection connection)throws ClassNotFoundException,SQLException;
     
+    public boolean updatePID(Connection connection,PostAccident postAccident) throws ClassNotFoundException,SQLException;
+    public boolean updateHID(Connection connection,PostAccident postAccident) throws ClassNotFoundException,SQLException;
+    
 }

@@ -40,8 +40,14 @@ public class AdminController extends HttpServlet {
            
                // RequestDispatcher dispatcher=request.getRequestDispatcher("AdminIndex.jsp");
                // dispatcher.forward(request, response);
-            }else if(email.equals("jhon@gmail.com")&& password.equals("123")){
+            }else if(email.equals("ganusha@gmail.com")&& password.equals("123")){
             response.sendRedirect("UserIndex.jsp");
+            
+            }else if(email.equals("hospital@gmail.com")&& password.equals("123")){
+            response.sendRedirect("Home_hospital.jsp");
+            
+            }else if(email.equals("police@gmail.com")&& password.equals("123")){
+            response.sendRedirect("Home_police.jsp");
             }else{
                 
             response.sendRedirect("Index.jsp");
